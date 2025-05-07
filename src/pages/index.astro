@@ -19,16 +19,78 @@ try {
   );
   courses = [];
 }
+
+// Calculate unique values for filters
+const unique_semesters = [...new Set(courses.map(c => c.semester))].sort(
+  (a, b) => a - b,
+);
+const difficulty_order = [
+  "Fundamental",
+  "Beginner",
+  "Intermediate",
+  "Advanced",
+  "Unknown",
+];
+const unique_difficulties = [...new Set(courses.map(c => c.difficulty))];
+const sorted_difficulties = difficulty_order.filter(d =>
+  unique_difficulties.includes(d),
+);
+
+const has_initial_courses = courses.length > 0;
 ---
 
 <Layout title="Homepage | Fourth Wall Curriculum">
   <main class="container mx-auto px-4 py-8 text-white min-h-screen">
     <section class="py-12">
       <h2 class="text-4xl font-bold text-center mb-12">Course Curriculum</h2>
-      {
-        courses.length > 0 ? (
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8">
-            {courses.map(course => (
+
+      {/* Filter UI */}
+      <div class="flex flex-col sm:flex-row justify-center gap-4 mb-10 px-4">
+        <div class="flex-1 sm:flex-none">
+          <label
+            for="semester-filter"
+            class="block text-sm font-medium text-gray-400 mb-1"
+            >Filter by Semester:</label
+          >
+          <select
+            id="semester-filter"
+            name="semester"
+            class="bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+            <option value="all">All Semesters</option>
+            {
+              unique_semesters.map(semester => (
+                <option value={semester}>{semester}</option>
+              ))
+            }
+          </select>
+        </div>
+        <div class="flex-1 sm:flex-none">
+          <label
+            for="difficulty-filter"
+            class="block text-sm font-medium text-gray-400 mb-1"
+            >Filter by Difficulty:</label
+          >
+          <select
+            id="difficulty-filter"
+            name="difficulty"
+            class="bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+            <option value="all">All Difficulties</option>
+            {
+              sorted_difficulties.map(difficulty => (
+                <option value={difficulty}>{difficulty}</option>
+              ))
+            }
+          </select>
+        </div>
+      </div>
+
+      {/* Render Course Cards directly */}
+      <div
+        id="course-grid"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8">
+        {
+          courses.length > 0 ? (
+            courses.map(course => (
               <CourseCard
                 course_code={course.course_code}
                 course_name={course.course_name}
@@ -36,16 +98,143 @@ try {
                 difficulty={course.difficulty}
                 programming_language={course.programming_language}
               />
-            ))}
-          </div>
-        ) : (
-          <p class="text-center text-xl text-gray-400">
-            No courses found. This could be due to an error reading or parsing
-            the curriculum.md file. Please check the console for error messages.
-            Ensure curriculum.md is in the project root and has content.
-          </p>
-        )
-      }
+            ))
+          ) : (
+            <p class="text-center text-xl text-gray-400 md:col-span-2 lg:col-span-3">
+              No courses found. Check curriculum.md or server console.
+            </p>
+          )
+        }
+        {/* Message for no matching filters (controlled by JS) */}
+        <p
+          id="no-results-message"
+          class="text-center text-xl text-gray-400 md:col-span-2 lg:col-span-3 hidden">
+          No courses match the selected filters.
+        </p>
+      </div>
     </section>
   </main>
+
+  {/* Re-added client-side script (plain JS) */}
+  <script define:vars={{has_initial_courses}}>
+    const semester_filter = document.getElementById("semester-filter");
+    const difficulty_filter = document.getElementById("difficulty-filter");
+    const course_cards = document.querySelectorAll(".course-card-wrapper");
+    const no_results_message = document.getElementById("no-results-message");
+
+    // Function to update URL without reloading
+    function update_url(semester, difficulty) {
+      const params = new URLSearchParams(window.location.search);
+      if (semester && semester !== "all") {
+        params.set("semester", semester);
+      } else {
+        params.delete("semester");
+      }
+      if (difficulty && difficulty !== "all") {
+        params.set("difficulty", difficulty);
+      } else {
+        params.delete("difficulty");
+      }
+      const new_relative_path_query =
+        window.location.pathname + "?" + params.toString();
+      // Use replaceState to avoid polluting history too much on repeated filtering
+      history.replaceState(null, "", new_relative_path_query);
+    }
+
+    // Function to apply filters based on current state (dropdowns or URL)
+    function apply_filters(update_url_flag = false) {
+      if (
+        !semester_filter ||
+        !difficulty_filter ||
+        !course_cards ||
+        !no_results_message
+      )
+        return;
+
+      const selected_semester = semester_filter.value;
+      const selected_difficulty = difficulty_filter.value;
+      let visible_count = 0;
+
+      // Update URL if triggered by user change
+      if (update_url_flag) {
+        update_url(selected_semester, selected_difficulty);
+      }
+
+      course_cards.forEach(element => {
+        const card = element;
+        const card_semester = card.dataset.semester;
+        const card_difficulty = card.dataset.difficulty;
+
+        const semester_match =
+          selected_semester === "all" || card_semester === selected_semester;
+        const difficulty_match =
+          selected_difficulty === "all" ||
+          card_difficulty === selected_difficulty;
+
+        if (semester_match && difficulty_match) {
+          card.style.display = "block";
+          visible_count++;
+        } else {
+          card.style.display = "none";
+        }
+      });
+
+      if (visible_count === 0) {
+        no_results_message.style.display = "block";
+      } else {
+        no_results_message.style.display = "none";
+      }
+    }
+
+    // Function to initialize filters based on URL
+    function initialize_filters() {
+      if (!semester_filter || !difficulty_filter) return;
+
+      const params = new URLSearchParams(window.location.search);
+      const initial_semester = params.get("semester") || "all";
+      const initial_difficulty = params.get("difficulty") || "all";
+
+      semester_filter.value = initial_semester;
+      difficulty_filter.value = initial_difficulty;
+
+      // Apply filters based on the restored state
+      apply_filters(false); // Don't update URL again on initial load
+
+      // Hide the no results message initially if cards exist
+      if (
+        no_results_message &&
+        has_initial_courses &&
+        document.querySelectorAll(
+          '.course-card-wrapper[style*="display: block"]',
+        ).length > 0
+      ) {
+        no_results_message.style.display = "none";
+      } else if (no_results_message && has_initial_courses) {
+        // If filters applied initially and resulted in zero cards, show the message
+        if (
+          document.querySelectorAll(
+            '.course-card-wrapper[style*="display: block"]',
+          ).length === 0
+        ) {
+          no_results_message.style.display = "block";
+        }
+      }
+    }
+
+    // Initial setup on page load
+    if (semester_filter && difficulty_filter) {
+      initialize_filters(); // Set dropdowns and filter based on URL
+
+      // Add event listeners - call apply_filters *with* URL update flag
+      semester_filter.addEventListener("change", () => apply_filters(true));
+      difficulty_filter.addEventListener("change", () => apply_filters(true));
+
+      // Listen for back/forward navigation
+      window.addEventListener("popstate", () => {
+        initialize_filters(); // Re-read URL, set dropdowns, and apply filters
+      });
+    } else {
+      console.error("Could not attach filter event listeners.");
+    }
+  </script>
 </Layout>

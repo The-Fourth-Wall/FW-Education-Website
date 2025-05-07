@@ -38,7 +38,9 @@ const detail_page_url = `/courses/${course_code.toLowerCase()}`;
 
 <a
   href={detail_page_url}
-  class={`block bg-gray-900 rounded-lg shadow-lg p-4 mb-6 text-white hover:bg-gray-800 transition-all duration-150 ease-in-out border-l-4 ${border_color_class}`}>
+  class={`course-card-wrapper block bg-gray-900 rounded-lg shadow-lg p-4 mb-6 text-white hover:bg-gray-800 transition-all duration-150 ease-in-out border-l-4 ${border_color_class}`}
+  data-semester={semester.toString()}
+  data-difficulty={difficulty}>
   <div class="flex justify-between items-start mb-3">
     <h2 class="text-lg font-semibold text-blue-400 mr-2">{course_name}</h2>
     <span
