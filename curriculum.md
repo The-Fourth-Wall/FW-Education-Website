@@ -199,7 +199,7 @@
     - bipolar transistors
     - differential amplifiers
     - frequency response
-- FW-204 (Digital Design I)
+- FW-214 (Digital Design I)
   - programming:
     - examples in simulation software
   - references:
