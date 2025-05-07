@@ -1,0 +1,47 @@
+---
+import type { Course } from "../types";
+
+// Update Props to include semester and difficulty, remove description
+export interface Props {
+  course_code: string;
+  course_name: string;
+  semester: number;
+  difficulty: string;
+  programming_language?: string;
+  // description?: string; // Removed
+  // Detailed lists are no longer props for the card itself
+}
+
+const { 
+  course_code,
+  course_name,
+  semester,
+  difficulty,
+  programming_language
+  // description // Removed
+} = Astro.props;
+
+const detail_page_url = `/courses/${course_code.toLowerCase()}`;
+---
+<a 
+  href={detail_page_url} 
+  class="block bg-gray-800 border border-gray-700 rounded-lg shadow-lg p-4 mb-6 text-white hover:bg-gray-700 hover:border-gray-600 transition-all duration-150 ease-in-out"
+>
+  <div class="flex justify-between items-start mb-3">
+    <h2 class="text-lg font-semibold text-blue-400 mr-2">{course_name}</h2>
+    <span class="text-xs font-medium bg-gray-700 text-gray-300 px-2 py-0.5 rounded-md whitespace-nowrap">{course_code}</span>
+  </div>
+  <div class="text-sm text-gray-300">
+    <p class="mb-1">
+      <span class="font-medium text-gray-400">Semester:</span> {semester}
+    </p>
+    <p class="mb-1">
+      <span class="font-medium text-gray-400">Difficulty:</span> {difficulty}
+    </p>
+    {programming_language && (
+      <p>
+        <span class="font-medium text-gray-400">Language:</span> {programming_language}
+      </p>
+    )}
+  </div>
+</a>

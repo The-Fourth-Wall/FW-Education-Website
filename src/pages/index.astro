@@ -1,11 +1,56 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import CourseCard from "../components/CourseCard.astro";
+import fs from "node:fs";
+import path from "node:path";
+import type {Course} from "../types";
+import {parse_curriculum_file_content} from "../utils/parser";
+
+let courses: Course[] = [];
+const curriculum_file_path = path.resolve(process.cwd(), "curriculum.md");
+
+try {
+  const file_content_local = fs.readFileSync(curriculum_file_path, "utf-8");
+  courses = parse_curriculum_file_content(file_content_local);
+} catch (error) {
+  console.error(
+    `Error reading or parsing ${curriculum_file_path}:`,
+    error instanceof Error ? error.message : String(error),
+  );
+  courses = [];
+}
 ---
 
-<Layout title="Hello World">
-  <main
-    class="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white">
-    <h1 class="text-5xl font-bold mb-8">Hello World!</h1>
-    <p class="text-xl">Welcome to your first Astro project.</p>
+<Layout title="Homepage | Fourth Wall Curriculum">
+  <main class="container mx-auto px-4 py-8 bg-gray-900 text-white min-h-screen">
+    <div class="text-center py-12">
+      <h1 class="text-5xl font-bold mb-8">Hello World!</h1>
+      <p class="text-xl">Welcome to your first Astro project.</p>
+    </div>
+
+    <section class="py-12">
+      <h2 class="text-4xl font-bold text-center mb-12">Course Curriculum</h2>
+      {
+        courses.length > 0 ? (
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8">
+            {courses.map(course => (
+              <CourseCard
+                course_code={course.course_code}
+                course_name={course.course_name}
+                semester={course.semester}
+                difficulty={course.difficulty}
+                programming_language={course.programming_language}
+              />
+            ))}
+          </div>
+        ) : (
+          <p class="text-center text-xl text-gray-400">
+            No courses found. This could be due to an error reading or parsing
+            the curriculum.md file. Please check the console for error messages.
+            Ensure curriculum.md is in the project root and has content.
+          </p>
+        )
+      }
+    </section>
   </main>
 </Layout>

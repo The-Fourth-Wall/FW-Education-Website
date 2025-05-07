@@ -1,0 +1,666 @@
+- Generic Notes
+
+  - Explain real world usage of (almost) everything.
+  - Showcase cohesion between different topics.
+  - Suggest connected reading material and courses (Linear with matrices with AI and so on).
+  - Goal to make the series affordable to low income communities.
+    - Provide windows/linux/mac/android/iOS/iPad options.
+    - Recommend free/cheap tools.
+  - Provide a visual prerequisite map showing dependencies between courses.
+  - When designing the course think of AI / Decentralized Governance / Synthetic Biology / Quantum / Nanotech
+    - Integrate ethics and history of all those.
+  - Try bringing prominent people to talk about topics (Eli, Alan Kay, Bret Victor)
+
+- Course Designation System
+
+  - 1st -> Semester
+  - 2nd -> Difficulty
+    - 0 -> Fundamental
+    - 1 -> Beginner
+    - 2 -> Intermediate
+    - 3 -> Advanced
+  - 3rd -> Course Number
+
+- FW-101 (Calculus I)
+  - programming:
+    - optional examples in C as extras lectures
+  - references:
+    - Calculus by Larson, Hostetler & Edwards
+    - Schaum's Advanced Calculus by Murray R. Spiegel
+  - topics:
+    - numbers, cartesian plane and functions
+    - limits
+    - differentiation
+    - newtons method, mean value theorem, rolle's
+    - integration, riemann sums
+- FW-102 (Linear Algebra I)
+  - programming:
+    - optional examples in C as extras lectures (redo on APL later)
+  - references:
+    - Introduction to Linear Algebra by Gilbert Strang
+  - topics:
+    - vectors, matrices, gaussian elimination
+    - vector spaces
+    - orthogonality
+    - determinants
+    - eigenvalues, eigenvectors
+- FW-103 (Foundational Science for Computing)
+  - programming:
+    - no language
+  - references:
+    - Feynman Lectures on Physics
+  - topics:
+    - physics
+      - basic thermodynamics
+        - first law of thermodynamics (ΔU = Q - W) energy conservation, heat, work
+        - second law of thermodynamics (entropy, heat dissipation),
+        - power consumption (P = I _ V, E = P _ t) cooling
+        - landauer's principle for limits of computation (E = k*B * T \_ ln(2))
+      - basic electromagnetism
+        - charge, current, voltage, resistance (Q, I = ΔQ/Δt), Ohm’s Law (V = I \* R)
+        - capacitance (C), (Q = C _ V), (E = 1/2 _ C \* V^2)
+        - inductance (L), (V = -L _ dI/dt), (E = 1/2 _ L \* I^2)
+        - electric and magnetic fields, how signals propagate (wires, wireless)
+      - waves & optics
+        - basic wave properties (frequency (f), wavelength (λ), (c = f \* λ) amplitude
+        - electromagnetic spectrum (EM radiation), (E = h \* f)
+        - light interaction with matter (reflection, refraction, absorption)
+        - basis for fiber optics (Total Internal Reflection Principle), displays (LCD, OLED), optical sensors (CMOS, CCD sensors)
+        - manufacturing (lithography)
+    - chemistry
+      - basic chemical reactions
+        - reaction rates (temperature, concentration, surface area, catalysts)
+        - activation energy (Le Chatelier’s Principle).
+      - electrochemistry
+        - redox reactions (oxidation is loss, reduction is gain (of electrons)), (OIL RIG, LEO GER)
+        - batteries, corrosion (anode oxidation, cathode reduction, electrolyte for ion flow, external circuit for elector flow)
+        - basic principles of chemical sensors.
+    - materials science
+      - atomic & molecular structure
+        - basic atomic model (protons, electrons, valence electrons)
+        - bonding (covalent, ionic)
+        - how atoms form materials (repeated bonding patterns lead to larger structures).
+      - properties of materials
+        - conductors
+          - materials that allow electric current to flow easily
+          - abundance of free electrons in metals
+          - copper, aluminum, gold
+        - insulators
+          - materials that resist the flow of electric current
+          - electrons are tightly bound to atoms (large band gap)
+          - (silicon dioxide, plastics, glass, air)
+        - semiconductors (intrinsic vs. doped)
+          - controlled conductivity between insulators and conductors
+          - intrinsic (silicon, germanium)
+          - doped (n-type, p-type, p-n junction)
+      - scale & nanotechnology
+        - introduction to nanoscale phenomena
+          - 1-100 nm
+          - quantum effects line tunnelling, confinement break down conventional physics
+        - relevance to transistor size
+          - transistors can become so small that we have heat dissipation problems, leakage due to quantum effects
+        - materials science.
+          - Graphene, carbon nanotubes
+      - biocompatibility concepts
+        - pacemakers, defibrillators, neural implants, cochlear implants, knee implants
+        - wearable smartwatches, fitness trackers
+        - medical monitors
+    - biology
+      - information storage & processing
+        - DNA structure and replication as information encoding/copying
+          - nucleotides (sugar, phosphate, base)
+          - hydrogen bonds between base pairs (A-T, C-G) and their role in stability and unzipping for replication
+          - replication by DNA polymerase as the builder
+      - evolutionary concepts
+        - natural selection (variation, heritability, fitness, result)
+        - adaptation as optimization processes. (newer iterations become better designed)
+- FW-104 (Analog Design I)
+  - programming:
+    - examples in simulation software
+      - https://www.tinkercad.com/learn/circuits
+      - https://everycircuit.com/app
+  - references:
+    - Analog Electronics Applications by Fernandez Canque, Hernando Lautar
+  - topics:
+    - basic circuit theory (ohm, kirchhoff)
+    - resistors, capacitors
+    - thevenin and norton
+    - RLC
+    - bode diagrams
+    - filters
+- FW-105 (Programming Fundamentals in C)
+  - programming:
+    - using C language fundamentals without pointers
+  - references:
+    - Effective C by Robert C. Seacord
+    - The C Programming Language by Kernighan & Ritchie (K&R book)
+    - 21st Century C by Ben Klemens
+  - topics:
+    - assignments, conditionals, iterations
+    - built-in types, operators
+    - if/switch, for/while/do
+    - goto, labels
+    - functions
+    - preprocessor (simple)
+    - arrays
+    - structs
+- FW-106 (Computer Systems Design I)
+
+  - programming:
+    - very simple problems with the Scratch ide
+  - references:
+    - …
+  - topics:
+    - hardware/software/application distinction
+    - high level overview of how computers behave and function
+    - what is an operating system and overview of different OSes
+    - open source software
+    - git/hub
+    - …
+
+- FW-211 (Calculus II)
+  - programming:
+    - examples in C
+  - references:
+    - Calculus by Larson, Hostetler & Edwards
+    - Schaum's Advanced Calculus by Rurray R. Spiegel
+  - topics:
+    - complex numbers
+    - taylor’s theorem
+    - eucledian geometry
+    - vector-valued functions
+    - multi-variable functions
+    - multiple integration
+    - differential equations
+- FW-202 (Discrete Math)
+  - programming:
+    - examples in C
+  - references:
+    - ...
+  - topics:
+    - propositional logic, propositional calculus, formal proofs
+    - proof techniques: contraposition, contradictions, mathematical induction
+    - boolean algebra
+    - set theory
+    - number theory
+    - discrete probability
+- FW-213 (Analog Design II)
+  - programming:
+    - examples in simulation software
+      - https://www.tinkercad.com/learn/circuits
+      - https://everycircuit.com/app
+  - references:
+    - Analog Electronics Applications by Fernandez Canque, Hernando Lautar
+  - topics:
+    - semiconductors
+    - amplifiers, operational amps
+    - diodes
+    - mosfet
+    - bipolar transistors
+    - differential amplifiers
+    - frequency response
+- FW-204 (Digital Design I)
+  - programming:
+    - examples in simulation software
+  - references:
+    - Digital Logic Design by Brian Holdsworth, Clive Woods
+  - topics:
+    - boolean algebra
+    - adders
+    - multiplexers, demultiplexers
+    - encoders, decoders
+    - flip-flops
+    - registers
+- FW-205 (Object Oriented Programming with Ruby)
+  - programming:
+    - fundamentals of OOP in Ruby without a lot of metaprogramming
+  - references:
+    - POODR by Sandi Metz
+    - The Ruby Programming Language: Everything You Need to Know by matz
+  - topics:
+    - follow rubymonk.com
+    - objects, messages
+    - strings, conditions loops
+    - arrays, hashes
+    - classes, methods, modules
+    - blocks, procs, lambdas
+    - inheritance, advanced classes
+    - advanced arrays
+    - object model
+- FW-206 (Command Line Basics)
+
+  - programming:
+    - using bash scripts with linux commands
+  - references:
+    - The Linux Command Line by William Shotts
+  - topics:
+    - navigating the filesystem (pwd, cd, ls, ., .., ~)
+    - working with file and directories (touch, mkdir, cp, -r, mv, rm, rmdir)
+    - manpages (man)
+    - i/o and redirection (stdin, stdout, stderr, >, >>, |)
+    - viewing, editing files (cat, less, more, VIM teaching)
+    - finding files (find, grep)
+    - permissions and ownership (chmod, chown, chgrp, 755)
+    - basic processes (ps, kill)
+    - archiving and compression (tar, gzip, bzip2)
+    - basic scripts
+
+- FW-311 (Numerical Analysis)
+  - programming:
+    - gruff examples in Ruby
+  - references:
+    - …
+  - topics:
+    - …
+- FW-312 (Data and Probability)
+  - programming:
+    - probability and statistics examples in Ruby
+  - references:
+    - …
+  - topics:
+    - …
+- FW-323 (Digital Design II)
+  - programming:
+    - examples in simulation software
+    - simple intro to SystemVerilog
+  - references:
+    - …
+  - topics:
+    - digital circuits
+    - memory, RAM
+    - FPGAs
+    - algorithmic state machines
+- FW-314 (Data Structures Algorithms I)
+  - programming:
+    - DSA in C
+  - references:
+    - …
+  - topics:
+    - dynamic memory allocation, pointers
+    - arrays, lists
+    - algorithm analysis, complexity
+    - recursive algorithms
+    - divide-and-conquer
+    - bags/stacks/queues
+    - selection
+    - sorting
+    - matching
+- FW-315 (Class Based Development in Java)
+
+  - programming:
+    - classes in Java and following interface based implementations
+  - references:
+    - …
+  - topics:
+    - patterns of OOP
+    - class diagrams
+    - interfaces
+    - model driven development
+
+- FW-421 (Theory of Computation)
+  - programming:
+    - …
+  - references:
+    - …
+  - topics:
+    - …
+- FW-412 (Digital Signal Processing)
+  - programming:
+    - …
+  - references:
+    - …
+  - topics:
+    - …
+- FW-423 (Quantum Mechanics)
+  - programming:
+    - examples in Ruby
+  - references:
+    - …
+  - topics:
+    - revision on eigenvalues/eigenvectors
+    - …
+- FW-424 (Paradigms of Programming Languages)
+  - programming:
+    - Algol, Scheme, SmallTalk, Prolog for paradigms
+  - references:
+    - Seven Languages in Seven Weeks by Bruce A. Tate
+    - Seven More Languages in Seven Weeks by Bruce A. Tate, Ian Dees, Jack Moffitt
+    - SmallTalk BYTE Magazine August 1981
+    - SmallTalk 80 by Adele Goldberg and David Robson
+    - LISP 1.5 Porgrammer's Manual by McCarthy, Abrahams, Edwards, Hart, Levin
+    - Land of Lisp: Learn to Program in Lisp, One Game at a Time! by Conrad Barski
+    - Prolog and Natural-Language Analysis by Fernando C. N. Pereira, Stuart M. Shieber
+    -
+    - Structure and Interpretation of Computer Programs by Harold Abelson, Gerald Jay Sussman, Julie Sussman
+  - topics:
+    - Procedural, Functional, OO, Logic
+    - simple problem solved in 4 different languages and compare methodologies
+- FW-425 (Data Structures Algorithms II)
+  - programming:
+    - DSA in C
+  - references:
+    - …
+  - topics:
+    - union-find
+    - graphs and trees
+    - graph algorithms
+    - priority queues
+    - binary search trees
+    - shortest paths, span trees
+    - balanced trees
+    - tries/digital trees
+    - reductions
+    - P, NP, NP-completeness
+- FW-426 (Database Management Systems)
+
+  - programming:
+    - SQL, GraphQL, JSON and stuff
+  - references:
+    - …
+  - topics:
+    - different types of dbms
+    - 7 types of databases (not all of them potentially)
+    - …
+
+- FW-521 (Linear Algebra II)
+  - programming:
+    - APL solutions of Linear I and II
+  - references:
+    - Introduction to Linear Algebra by Gilbert Strang
+  - topics:
+    - positive definite matrices
+    - computations with matrices
+    - linear programming, game theory
+    - vector norms
+    - chomsky analysis
+- FW-522 (Telecommunication Systems)
+  - programming:
+    - ...
+  - references:
+    - ...
+  - topics:
+    - ...
+- FW-513 (Teaching of Informatics)
+  - programming:
+    - using Scratch as a tool for educators
+    - using Lua on computercraft extensions
+  - references:
+    - ...
+  - topics:
+    - guided education
+    - constructivist systems
+    - montessori
+    - creating teaching scripts
+    - history of logo/smalltalk
+    - cognitive theory
+    - failure of constructivism
+- FW-514 (Artificial Intelligence)
+  - programming:
+    - …
+  - references:
+    - …
+  - topics:
+    - …
+- FW-525 (Computer Architecture)
+  - programming:
+    - learning the MIPS assembler
+  - references:
+    - ...
+  - topics:
+    - ...
+- FW-516 (Web Applications)
+
+  - programming:
+    - HTML, CSS and JavaScript for webistes and backend
+  - references:
+    - …
+  - topics:
+    - frontend vs backend
+    - html/css/js for frontend
+    - javascript tutorial
+    - nodejs for backend
+    - GET/POST requests
+    - async operations for servers
+    - routing
+
+- FW-621 (Topology and Graphs)
+  - programming:
+    - …
+  - references:
+    - …
+  - topics:
+    - …
+- FW-622 (Computer Graphics)
+  - programming:
+    - …
+  - references:
+    - …
+  - topics:
+    - …
+- FW-623 (Machine Learning)
+  - programming:
+    - …
+  - references:
+    - …
+  - topics:
+    - …
+- FW-624 (Networks I)
+  - programming:
+    - …
+  - references:
+    - …
+  - topics:
+    - …
+- FW-615 (Ethics of Computing)
+  - programming:
+    - …
+  - references:
+    - showcase software/hardware failures that resulted in death.
+  - topics:
+    - …
+- FW-626 (Nanotechnology)
+
+  - programming:
+    - …
+  - references:
+    - …
+  - topics:
+    - …
+
+- FW-731 (Neural Networks)
+  - programming:
+    - …
+  - references:
+    - …
+  - topics:
+    - …
+- FW-722 (Synthetic Biology Fundamentals)
+  - programming:
+    - …
+  - references:
+    - …
+  - topics:
+    - …
+- FW-733 (Networks II)
+  - programming:
+    - emulate in Lua computercraft using rednet scripts
+  - references:
+    - ...
+  - topics:
+    - ...
+- FW-714 (Computer Systems Design II)
+  - programming:
+    - maybe Java or C
+  - references:
+    - Object Oriented Software Engineering A Use Case Driven Approach by Ivar Jacobson
+  - topics:
+    - licensing
+    - life cycle processes
+    - reference to waterfall, scrum
+    - data flow diagrams, structured analysis
+    - testing (code first)
+- FW-725 (Parallel Computing)
+  - programming:
+    - C for OpenMP, MPI and CUDA
+  - references:
+    - …
+  - topics:
+    - amdahls law
+    - clusters
+    - topology
+    - openmp
+    - mpi
+    - cuda
+- FW-706 (History of Computing)
+
+  - programming:
+    - …
+  - references:
+    - https://www.0de5.net/explore
+  - topics:
+    - turing
+    - von neumann
+    - mccarthy
+    - RAND
+    - ARPA
+    - algol and EU meeting
+    - engelbart
+    - sutherland
+    - NASA, hamilton
+    - Xerox PARC
+    - SmallTalk
+    - …
+
+- FW-821 (Cryptography)
+  - programming:
+    - Crystal or C for crypto examples.
+  - references:
+    - Serious Cryptography by Jean-Philippe Aumasson
+  - topics:
+    - randomness
+    - security
+    - block vs stream ciphers
+    - hash functions, keyed hashing
+    - RSA
+    - diffie-hellman
+    - elliptic curves
+    - post-quantum cryptography
+    - merkle trees, blockchain ideas
+- FW-832 (Distributed Tolerant Systems)
+  - programming:
+    - using Erlang and OTP
+  - references:
+    - ...
+  - topics:
+    - ...
+- FW-833 (Interpreters)
+  - programming:
+    - self eval interpreter on Racket
+    - tree parser in Java
+    - bytecode interpreter in C
+  - references:
+    - Crafting Interpreters by Robert Nystrom
+  - topics:
+    - tree walking
+    - lexer
+    - parser
+    - control flow
+    - state, variables
+    - function
+    - bytecode
+    - hashing
+    - closures
+    - analysis of Lua source code
+- FW-824 (Computer Systems Design III)
+  - programming:
+    - small C examples
+  - references:
+    - …
+  - topics:
+    - static code analysis
+    - safety critical systems (NASA guidelines)
+    - address sanitizers, memory safe programming
+    - testing, BDD/TDD
+    - reference to monolith vs microservices
+    - non functional requirements
+    - devops, deployment, pipelines
+    - CI/CD
+    - cloud computing, services
+- FW-835 (Data Structures Algorithms III)
+  - programming:
+    - DOD in C
+  - references:
+    - …
+  - topics:
+    - data oriented design
+    - hashing
+    - efficient hashtables
+    - locality sensitive hashing
+    - benchmarking
+    - red-black trees
+    - fibonacci heaps
+    - genetic algorithms
+    - garbage collectors
+    - differential evolution
+    - ant colony optimization
+    - particle swarm optimization
+    - deflection and stretching
+    - gradient-descent, Newton method, AdaGrad and Adam method
+- FW-826 (Internet of Things)
+
+  - programming:
+    - …
+  - references:
+    - …
+  - topics:
+    - …
+
+- FW-931 (Human-Computer Interaction)
+  - programming:
+    - …
+  - references:
+    - BRET VICTOR stuff
+  - topics:
+    - …
+- FW-932 (Computer Systems Design IV)
+  - programming:
+    - …
+  - references:
+    - …
+  - topics:
+    - probably full end-to-end system with multiple languages, services, ideas.
+    - viewers can submit new assignments that would be 932-worthy and I display them.
+- FW-933 (Cryptocurrency and Blockchain Technologies)
+  - programming:
+    - Solidity for ethereum, Rust for solana.
+  - references:
+    - …
+  - topics:
+    - history of blockchain and crypto.
+    - types of cryptos (L1, L0, L2, PoW, PoS).
+    - merkle trees and bitcoin.
+    - zero knowledge proofs and monero.
+    - smart contracts and ethereum.
+    - efficient execution and solana.
+- FW-934 (Penetration Testing and Offensive Security)
+  - programming:
+    - lots of tools, maybe Python for scripts.
+  - references:
+    - Metasploit book
+  - topics:
+    - pipeline of pentesting
+    - PIG, AIG, ENUM, VA, EX, PEX, REP
+- FW-935 (Quantum Computing)
+  - programming:
+    - using simulated programs or actual IBM language for quantum computers.
+  - references:
+    - Quantum Computing by Andrew Glassner (2025 release)
+  - topics:
+    - …
+- FW-936 (Internet of Bio-NanoThings)
+  - programming:
+    - …
+  - references:
+    - …
+  - topics:
+    - …

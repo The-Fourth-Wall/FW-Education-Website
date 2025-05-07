@@ -1,0 +1,22 @@
+---
+import type {SimpleListItem} from "../types";
+
+export interface Props {
+  item: SimpleListItem;
+}
+
+const {item} = Astro.props;
+---
+
+<li>
+  {item.text}
+  {
+    item.sub_items && item.sub_items.length > 0 && (
+      <ul class="list-disc list-inside ml-4 mt-1">
+        {item.sub_items.map(sub_item => (
+          <Astro.self item={sub_item} />
+        ))}
+      </ul>
+    )
+  }
+</li>

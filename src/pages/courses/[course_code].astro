@@ -1,0 +1,107 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import RecursiveListItem from "../../components/RecursiveListItem.astro";
+import {parse_curriculum_file_content} from "../../utils/parser";
+import type {Course} from "../../types";
+import fs from "node:fs";
+import path from "node:path";
+
+export interface Props {
+  course: Course;
+}
+
+export async function getStaticPaths() {
+  const curriculum_file_path = path.resolve(process.cwd(), "curriculum.md");
+  let courses_data: Course[] = [];
+  try {
+    const file_content = fs.readFileSync(curriculum_file_path, "utf-8");
+    courses_data = parse_curriculum_file_content(file_content);
+  } catch (e: unknown) {
+    console.error(
+      "Error fetching courses for static paths:",
+      e instanceof Error ? e.message : String(e),
+    );
+    return [];
+  }
+
+  return courses_data.map((course_item: Course) => ({
+    params: {course_code: course_item.course_code.toLowerCase()},
+    props: {course: course_item},
+  }));
+}
+
+const {course} = Astro.props;
+---
+
+<Layout title={`${course.course_code}: ${course.course_name} Details`}>
+  <main class="container mx-auto px-4 py-8 bg-gray-900 text-white min-h-screen">
+    <article
+      class="bg-gray-800 border border-gray-700 rounded-lg shadow-lg p-6 md:p-8">
+      <div class="flex items-center mb-2">
+        <h1 class="text-4xl font-bold text-blue-400 mr-4">{course.course_name}</h1>
+        <span class="text-sm font-medium bg-gray-700 text-gray-300 px-3 py-1 rounded-md whitespace-nowrap">{course.course_code}</span>
+      </div>
+
+      <div class="flex items-center space-x-4 text-sm text-gray-400 mb-4">
+        <span>Semester: <span class="font-medium text-gray-300">{course.semester}</span></span>
+        <span>&bull;</span>
+        <span>Difficulty: <span class="font-medium text-gray-300">{course.difficulty}</span></span>
+      </div>
+
+      {
+        course.description && (
+          <p class="text-lg text-gray-300 mb-6 italic">{course.description}</p>
+        )
+      }
+
+      {
+        course.programming_details && course.programming_details.length > 0 && (
+          <section class="mb-6">
+            <h2 class="text-2xl font-semibold mb-3 text-teal-400">
+              Programming Details:
+            </h2>
+            <ul class="list-none pl-0 text-gray-300">
+              {course.programming_details.map(item => (
+                <RecursiveListItem item={item} />
+              ))}
+            </ul>
+          </section>
+        )
+      }
+
+      {
+        course.references_list && course.references_list.length > 0 && (
+          <section class="mb-6">
+            <h2 class="text-2xl font-semibold mb-3 text-teal-400">
+              References:
+            </h2>
+            <ul class="list-none pl-0 text-gray-300">
+              {course.references_list.map(item => (
+                <RecursiveListItem item={item} />
+              ))}
+            </ul>
+          </section>
+        )
+      }
+
+      {
+        course.topics_list && course.topics_list.length > 0 && (
+          <section>
+            <h2 class="text-2xl font-semibold mb-3 text-teal-400">Topics:</h2>
+            <ul class="list-none pl-0 text-gray-300">
+              {course.topics_list.map(item => (
+                <RecursiveListItem item={item} />
+              ))}
+            </ul>
+          </section>
+        )
+      }
+
+      <div class="mt-8">
+        <a href="/" class="text-blue-400 hover:text-blue-300 hover:underline"
+          >&laquo; Back to Curriculum Overview</a
+        >
+      </div>
+    </article>
+  </main>
+</Layout>

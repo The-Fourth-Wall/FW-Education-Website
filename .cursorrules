@@ -12,8 +12,11 @@ Key Principles
 - Leverage Astro's partial hydration and multi-framework support effectively.
 - Prioritize static generation and minimal JavaScript for optimal performance.
 - Use descriptive variable names and follow Astro's naming conventions.
-- Make sure variable names are in snake_case while any classes in PascalCase.
+- Make sure variable names are in snake_case
+- Make sure any classes are in PascalCase.
+- Make sure all function anmes are in snake_case.
 - Organize files using Astro's file-based routing system.
+- Do not overuse types when typescript inference can do the job. Apply as few types as possible.
 
 Astro Project Structure
 
