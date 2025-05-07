@@ -20,10 +20,12 @@ Key Principles
 
 Astro Project Structure
 
-- Use the recommended Astro project structure:
+- Use this project structure:
   - src/
-    - components/
+    - atoms/
     - layouts/
+    - models/
+    - molecules/
     - pages/
     - styles/
   - public/

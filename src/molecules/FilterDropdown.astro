@@ -1,0 +1,32 @@
+---
+export interface Props {
+  label_text: string;
+  id: string;
+  name: string;
+  options: Array<{value: string | number; text: string | number}>;
+  default_option_text: string;
+  extra_classes?: string;
+}
+
+const {
+  label_text,
+  id,
+  name,
+  options,
+  default_option_text,
+  extra_classes = "",
+} = Astro.props;
+---
+
+<div class={`flex-1 sm:flex-none ${extra_classes}`.trim()}>
+  <label for={id} class="block text-sm font-medium text-gray-400 mb-1"
+    >{label_text}</label
+  >
+  <select
+    id={id}
+    name={name}
+    class="bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+    <option value="all">{default_option_text}</option>
+    {options.map(option => <option value={option.value}>{option.text}</option>)}
+  </select>
+</div>

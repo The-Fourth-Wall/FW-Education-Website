@@ -1,12 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import CourseCard from "../components/CourseCard.astro";
+import CourseCard from "../molecules/CourseCard.astro";
+import FilterDropdown from "../molecules/FilterDropdown.astro";
+import Heading from "../atoms/Heading.astro";
 import fs from "node:fs";
 import path from "node:path";
-import type {Course} from "../types";
+import type {Course} from "../models/types";
 import {parse_curriculum_file_content} from "../utils/parser";
 
-const courses = (() => {
+const courses: Course[] = (() => {
   try {
     return parse_curriculum_file_content(
       fs.readFileSync(path.resolve(process.cwd(), "curriculum.md"), "utf-8"),
@@ -20,71 +22,56 @@ const courses = (() => {
   }
 })();
 
-const grouped_courses = courses.reduce(
-  (acc, course) => {
+const grouped_courses: Record<number, Course[]> = courses.reduce(
+  (acc: Record<number, Course[]>, course: Course) => {
     (acc[course.semester] ??= []).push(course);
     return acc;
   },
   {} as Record<number, Course[]>,
 );
 
-const sorted_semester_keys = Object.keys(grouped_courses)
+const sorted_semester_keys: number[] = Object.keys(grouped_courses)
   .map(Number)
   .sort((a, b) => a - b);
-const unique_semesters = [...new Set(courses.map(c => c.semester))].sort(
-  (a, b) => a - b,
-);
-const sorted_difficulties = [
+const unique_semesters: number[] = [
+  ...new Set(courses.map((c: Course) => c.semester)),
+].sort((a: number, b: number) => a - b);
+const sorted_difficulties: string[] = [
   "Fundamental",
   "Beginner",
   "Intermediate",
   "Advanced",
   "Unknown",
-].filter(d => courses.some(c => c.difficulty === d));
+].filter(d => courses.some((c: Course) => c.difficulty === d));
+
+const semester_options = unique_semesters.map(s => ({value: s, text: s}));
+const difficulty_options = sorted_difficulties.map(d => ({value: d, text: d}));
 ---
 
 <Layout title="Homepage | Fourth Wall Curriculum">
   <main class="container mx-auto px-4 py-8 text-white min-h-screen">
     <section class="py-12">
-      <h2 class="text-4xl font-bold text-center mb-12">Course Curriculum</h2>
+      <Heading
+        level={2}
+        text="Course Curriculum"
+        extra_classes="text-4xl font-bold text-center mb-12"
+      />
 
       <div class="flex flex-col sm:flex-row justify-center gap-4 mb-10 px-4">
-        <div class="flex-1 sm:flex-none">
-          <label
-            for="semester-filter"
-            class="block text-sm font-medium text-gray-400 mb-1"
-            >Filter by Semester:</label
-          >
-          <select
-            id="semester-filter"
-            name="semester"
-            class="bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-            <option value="all">All Semesters</option>
-            {
-              unique_semesters.map(semester => (
-                <option value={semester}>{semester}</option>
-              ))
-            }
-          </select>
-        </div>
-        <div class="flex-1 sm:flex-none">
-          <label
-            for="difficulty-filter"
-            class="block text-sm font-medium text-gray-400 mb-1"
-            >Filter by Difficulty:</label
-          >
-          <select
-            id="difficulty-filter"
-            name="difficulty"
-            class="bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-            <option value="all">All Difficulties</option>
-            {
-              sorted_difficulties.map(difficulty => (
-                <option value={difficulty}>{difficulty}</option>
-              ))
-            }
-          </select>
-        </div>
+        <FilterDropdown
+          label_text="Filter by Semester:"
+          id="semester-filter"
+          name="semester"
+          options={semester_options}
+          default_option_text="All Semesters"
+        />
+        <FilterDropdown
+          label_text="Filter by Difficulty:"
+          id="difficulty-filter"
+          name="difficulty"
+          options={difficulty_options}
+          default_option_text="All Difficulties"
+        />
       </div>
 
       <div
@@ -97,11 +84,13 @@ const sorted_difficulties = [
                 <div
                   class="semester-header md:col-span-2 lg:col-span-3 mt-8 first:mt-0"
                   data-semester={semester_key}>
-                  <h3 class="text-2xl font-semibold text-gray-400 pb-2 mb-4 border-b border-gray-700">
-                    Semester {semester_key}
-                  </h3>
+                  <Heading
+                    level={3}
+                    text={`Semester ${semester_key}`}
+                    extra_classes="text-2xl font-semibold text-gray-400 pb-2 mb-4 border-b border-gray-700"
+                  />
                 </div>
-                {grouped_courses[semester_key].map(course => (
+                {grouped_courses[semester_key].map((course: Course) => (
                   <CourseCard {...course} />
                 ))}
               </>

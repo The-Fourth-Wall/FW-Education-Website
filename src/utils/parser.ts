@@ -1,4 +1,4 @@
-import type {Course, SimpleListItem} from "../types";
+import type {Course, SimpleListItem} from "../models/types";
 
 const difficulty_map: Record<number, string> = {
   0: "Fundamental",

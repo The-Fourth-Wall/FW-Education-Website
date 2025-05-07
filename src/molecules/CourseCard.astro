@@ -1,4 +1,8 @@
 ---
+import Badge from "./../atoms/Badge.astro";
+import LabeledText from "./../atoms/LabeledText.astro";
+import Heading from "./../atoms/Heading.astro";
+
 export interface Props {
   course_code: string;
   course_name: string;
@@ -27,27 +31,19 @@ const detail_page_url = `/courses/${course_code.toLowerCase()}`;
   data-semester={semester.toString()}
   data-difficulty={difficulty}>
   <div class="flex justify-between items-start mb-3">
-    <h2 class="text-lg font-semibold text-blue-400 mr-2">{course_name}</h2>
-    <span
-      class="text-xs font-medium bg-gray-800 text-gray-300 px-2 py-0.5 rounded-md whitespace-nowrap"
-      >{course_code}</span
-    >
+    <Heading
+      level={2}
+      text={course_name}
+      extra_classes="text-blue-400 mr-2 !text-lg"
+    />
+    <Badge text={course_code} extra_classes="bg-gray-800" />
   </div>
   <div class="text-sm text-gray-300">
-    <p class="mb-1">
-      <span class="font-medium text-gray-400">Semester:</span>
-      {semester}
-    </p>
-    <p class="mb-1">
-      <span class="font-medium text-gray-400">Difficulty:</span>
-      {difficulty}
-    </p>
+    <LabeledText label="Semester" text={semester} />
+    <LabeledText label="Difficulty" text={difficulty} />
     {
       programming_language && (
-        <p>
-          <span class="font-medium text-gray-400">Language:</span>{" "}
-          {programming_language}
-        </p>
+        <LabeledText label="Language" text={programming_language} />
       )
     }
   </div>

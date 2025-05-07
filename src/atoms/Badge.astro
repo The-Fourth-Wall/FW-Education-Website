@@ -1,0 +1,25 @@
+---
+export interface Props {
+  text: string;
+  variant?: "default" | "info" | "success" | "warning" | "danger";
+  extra_classes?: string;
+}
+
+const {text, variant = "default", extra_classes = ""} = Astro.props;
+
+const base_classes =
+  "text-xs font-medium px-2 py-0.5 rounded-md whitespace-nowrap";
+
+const variant_classes: Record<string, string> = {
+  default: "bg-gray-700 text-gray-300",
+  info: "bg-blue-700 text-blue-200",
+  success: "bg-green-700 text-green-200",
+  warning: "bg-yellow-700 text-yellow-200",
+  danger: "bg-red-700 text-red-200",
+};
+
+const final_classes =
+  `${base_classes} ${variant_classes[variant] || variant_classes.default} ${extra_classes}`.trim();
+---
+
+<span class={final_classes}>{text}</span>
