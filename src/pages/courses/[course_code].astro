@@ -5,7 +5,8 @@ import type {Course} from "../../models/types";
 import fs from "node:fs";
 import path from "node:path";
 import Button from "../../atoms/Button.astro";
-import CourseDetailCard from "../../components/CourseDetailCard.astro";
+import DetailSection from "../../molecules/DetailSection.astro";
+import CourseHeader from "../../molecules/CourseHeader.astro";
 
 export type Props = {
   course: Course;
@@ -76,11 +77,35 @@ const badge_style_class =
         extra_classes="text-sky-400 hover:text-sky-300 transition-colors duration-150 text-sm"
       />
     </div>
-    <CourseDetailCard
-      course={course}
-      border_color_class={border_color_class}
-      text_color_class={text_color_class}
-      badge_style_class={badge_style_class}
-    />
+    <article
+      class={`bg-gray-900 rounded-lg shadow-lg p-6 md:p-8 border-l-8 ${border_color_class}`}>
+      <CourseHeader
+        course_name={course.course_name}
+        course_code={course.course_code}
+        semester={course.semester}
+        difficulty={course.difficulty}
+        text_color_class={text_color_class}
+        badge_style_class={badge_style_class}
+      />
+
+      {
+        course.description && (
+          <p class="text-lg text-gray-300 mb-6 italic">{course.description}</p>
+        )
+      }
+
+      <DetailSection
+        title="Programming Details:"
+        items={course.programming_details || []}
+      />
+
+      <DetailSection title="References:" items={course.references_list || []} />
+
+      <DetailSection
+        title="Topics:"
+        items={course.topics_list || []}
+        extra_section_classes=""
+      />
+    </article>
   </main>
 </Layout>
