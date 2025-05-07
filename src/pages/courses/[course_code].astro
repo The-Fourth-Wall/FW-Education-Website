@@ -68,17 +68,18 @@ const badge_style_class =
 ---
 
 <Layout title={`${course.course_code}: ${course.course_name} Details`}>
-  <main class="container mx-auto px-4 py-8 text-white min-h-screen">
-    <div class="mb-6">
+  <main
+    class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 text-white min-h-screen">
+    <div class="mb-8">
       <Button
         href="/"
-        text="« Return to Courses"
+        text="« Back to All Courses"
         variant="link"
-        extra_classes="text-sky-400 hover:text-sky-300 transition-colors duration-150 text-sm"
+        extra_classes="text-sky-400 hover:text-sky-300 transition-colors duration-150 text-sm inline-flex items-center"
       />
     </div>
     <article
-      class={`bg-gray-900 rounded-lg shadow-lg p-6 md:p-8 border-l-8 ${border_color_class}`}>
+      class={`bg-gray-900 rounded-lg shadow-xl p-6 md:p-8 lg:p-10 border-t-8 ${border_color_class}`}>
       <CourseHeader
         course_name={course.course_name}
         course_code={course.course_code}
@@ -90,21 +91,37 @@ const badge_style_class =
 
       {
         course.description && (
-          <p class="text-lg text-gray-300 mb-6 italic">{course.description}</p>
+          <section class="mt-8 prose prose-invert max-w-none prose-lg text-gray-300">
+            <p>{course.description}</p>
+          </section>
         )
       }
 
       <DetailSection
-        title="Programming Details:"
-        items={course.programming_details || []}
+        title="What You'll Learn"
+        items={course.topics_list || []}
+        heading_level={2}
+        extra_heading_classes="!text-2xl sm:!text-3xl font-bold text-gray-100 mt-10 mb-4 pb-2 border-b border-gray-700"
+        extra_section_classes="mt-8"
+        extra_list_classes="list-disc pl-5 space-y-1 text-gray-300 prose prose-invert max-w-none"
       />
 
-      <DetailSection title="References:" items={course.references_list || []} />
+      <DetailSection
+        title="Technical Focus"
+        items={course.programming_details || []}
+        heading_level={2}
+        extra_heading_classes="!text-2xl sm:!text-3xl font-bold text-gray-100 mt-10 mb-4 pb-2 border-b border-gray-700"
+        extra_section_classes="mt-8"
+        extra_list_classes="list-disc pl-5 space-y-1 text-gray-300 prose prose-invert max-w-none"
+      />
 
       <DetailSection
-        title="Topics:"
-        items={course.topics_list || []}
-        extra_section_classes=""
+        title="Further Reading & Resources"
+        items={course.references_list || []}
+        heading_level={2}
+        extra_heading_classes="!text-2xl sm:!text-3xl font-bold text-gray-100 mt-10 mb-4 pb-2 border-b border-gray-700"
+        extra_section_classes="mt-8"
+        extra_list_classes="list-disc pl-5 space-y-1 text-gray-300 prose prose-invert max-w-none"
       />
     </article>
   </main>
