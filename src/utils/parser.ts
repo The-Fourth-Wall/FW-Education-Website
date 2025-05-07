@@ -1,18 +1,31 @@
 import type {Course, SimpleListItem} from "../types";
 
 // Helper map for difficulty
-const difficulty_map: { [key: string]: string } = {
-  '0': 'Fundamental',
-  '1': 'Beginner',
-  '2': 'Intermediate',
-  '3': 'Advanced'
+const difficulty_map: {[key: string]: string} = {
+  "0": "Fundamental",
+  "1": "Beginner",
+  "2": "Intermediate",
+  "3": "Advanced",
 };
 
 // List of languages to look for in the programming section header line
 const target_languages = [
-    'C', 'Ruby', 'Java', 'Bash', 'Lua', 'Python', 
-    'Crystal', 'Erlang', 'APL', 'Solidity', 'Rust', 
-    'Scheme', 'Prolog', 'SmallTalk', 'SystemVerilog', 'Algol'
+  "C",
+  "Ruby",
+  "Java",
+  "Bash",
+  "Lua",
+  "Python",
+  "Crystal",
+  "Erlang",
+  "APL",
+  "Solidity",
+  "Rust",
+  "Scheme",
+  "Prolog",
+  "SmallTalk",
+  "SystemVerilog",
+  "Algol",
 ];
 
 export function parse_curriculum_file_content(
@@ -34,7 +47,7 @@ export function parse_curriculum_file_content(
     const course_match = line.match(course_header_regex);
     if (course_match) {
       if (current_course) parsed_courses.push(current_course);
-      
+
       const course_code_full = course_match[1];
       const semester_digit = course_match[2];
       const difficulty_digit = course_match[3];
@@ -44,7 +57,7 @@ export function parse_curriculum_file_content(
         course_code: course_code_full,
         course_name: course_name_match,
         semester: parseInt(semester_digit, 10),
-        difficulty: difficulty_map[difficulty_digit] || 'Unknown',
+        difficulty: difficulty_map[difficulty_digit] || "Unknown",
         description: "",
         programming_language: undefined, // Initialize language
         programming_details: [],
@@ -66,17 +79,17 @@ export function parse_curriculum_file_content(
         | "topics";
       parent_item_stack = [];
       const inline_content = section_match[2]?.trim();
-      
+
       // Try to extract language if this is the programming section header line
       if (current_section_name === "programming" && inline_content) {
-          for (const lang of target_languages) {
-              // Use word boundaries to avoid partial matches (e.g., 'C' in 'Calculus')
-              const lang_regex = new RegExp(`\\b${lang}\\b`, 'i'); 
-              if (lang_regex.test(inline_content)) {
-                  current_course.programming_language = lang;
-                  break; // Take the first matched language
-              }
+        for (const lang of target_languages) {
+          // Use word boundaries to avoid partial matches (e.g., 'C' in 'Calculus')
+          const lang_regex = new RegExp(`\\b${lang}\\b`, "i");
+          if (lang_regex.test(inline_content)) {
+            current_course.programming_language = lang;
+            break; // Take the first matched language
           }
+        }
       }
       continue;
     }
