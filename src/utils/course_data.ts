@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
-import type {Course} from "../models/types";
-import {parse_curriculum_file_content} from "./parser";
+import type {Course} from "@models/types";
+import {parse_curriculum_file_content} from "@utils/parser";
 
 export interface ProcessedCourseData {
   courses: Course[];

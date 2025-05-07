@@ -1,12 +1,12 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import {parse_curriculum_file_content} from "../../utils/parser";
-import type {Course} from "../../models/types";
+import Layout from "@layouts/Layout.astro";
+import {parse_curriculum_file_content} from "@utils/parser";
+import type {Course} from "@models/types";
 import fs from "node:fs";
 import path from "node:path";
-import Button from "../../atoms/Button.astro";
-import DetailSection from "../../molecules/DetailSection.astro";
-import CourseHeader from "../../molecules/CourseHeader.astro";
+import Button from "@atoms/Button.astro";
+import DetailSection from "@molecules/DetailSection.astro";
+import CourseHeader from "@molecules/CourseHeader.astro";
 
 export type Props = {
   course: Course;

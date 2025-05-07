@@ -1,4 +1,4 @@
-import type {Course, SimpleListItem} from "../models/types";
+import type {Course, SimpleListItem} from "@models/types";
 
 const difficulty_map: Record<number, string> = {
   0: "Fundamental",
@@ -28,7 +28,7 @@ export function parse_curriculum_file_content(
       current_course = {
         course_code: course_match[1],
         course_name: course_match[4].trim(),
-        semester: parseInt(course_match[2], 10),
+        semester: course_match[2],
         difficulty: difficulty_map[parseInt(course_match[3], 10)] || "Unknown",
         description: "",
         programming_language: undefined,
