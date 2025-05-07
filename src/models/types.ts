@@ -1,9 +1,9 @@
-export interface SimpleListItem {
+export type SimpleListItem = {
   text: string;
   sub_items?: SimpleListItem[];
-}
+};
 
-export interface Course {
+export type Course = {
   course_code: string;
   course_name: string;
   description?: string;
@@ -13,4 +13,4 @@ export interface Course {
   programming_details: SimpleListItem[];
   references_list: SimpleListItem[];
   topics_list: SimpleListItem[];
-}
+};

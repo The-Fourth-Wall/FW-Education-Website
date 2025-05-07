@@ -1,9 +1,9 @@
 ---
-export interface Props {
+export type Props = {
   label: string;
   text: string | number;
   extra_classes?: string;
-}
+};
 
 const {label, text, extra_classes = ""} = Astro.props;
 ---

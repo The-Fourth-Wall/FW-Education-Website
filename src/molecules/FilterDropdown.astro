@@ -1,12 +1,12 @@
 ---
-export interface Props {
+export type Props = {
   label_text: string;
   id: string;
   name: string;
   options: Array<{value: string | number; text: string | number}>;
   default_option_text: string;
   extra_classes?: string;
-}
+};
 
 const {
   label_text,

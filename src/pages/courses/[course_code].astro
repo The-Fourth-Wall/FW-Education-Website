@@ -6,9 +6,9 @@ import type {Course} from "../../models/types";
 import fs from "node:fs";
 import path from "node:path";
 
-export interface Props {
+export type Props = {
   course: Course;
-}
+};
 
 export async function getStaticPaths() {
   const curriculum_file_path = path.resolve(process.cwd(), "curriculum.md");

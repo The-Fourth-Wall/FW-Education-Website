@@ -3,13 +3,13 @@ import Badge from "./../atoms/Badge.astro";
 import LabeledText from "./../atoms/LabeledText.astro";
 import Heading from "./../atoms/Heading.astro";
 
-export interface Props {
+export type Props = {
   course_code: string;
   course_name: string;
   semester: number;
   difficulty: string;
   programming_language?: string;
-}
+};
 
 const {course_code, course_name, semester, difficulty, programming_language} =
   Astro.props;
