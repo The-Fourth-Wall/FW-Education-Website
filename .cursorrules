@@ -23,6 +23,7 @@ Astro Project Structure
 - Use this project structure:
   - src/
     - atoms/
+    - components/
     - layouts/
     - models/
     - molecules/
