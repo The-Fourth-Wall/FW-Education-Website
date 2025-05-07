@@ -1,0 +1,45 @@
+---
+import Heading from "../atoms/Heading.astro";
+import Badge from "../atoms/Badge.astro";
+import InfoItem from "../atoms/InfoItem.astro";
+
+export interface Props {
+  course_name: string;
+  course_code: string;
+  semester: string;
+  difficulty: string;
+  text_color_class: string;
+  badge_style_class: string;
+}
+
+const {
+  course_name,
+  course_code,
+  semester,
+  difficulty,
+  text_color_class,
+  badge_style_class,
+} = Astro.props;
+---
+
+<div class="flex items-center mb-2">
+  <Heading
+    level={1}
+    text={course_name}
+    extra_classes={`!text-4xl font-bold mr-4 ${text_color_class}`}
+  />
+  <Badge
+    text={course_code}
+    extra_classes={`${badge_style_class} !text-sm !px-3 !py-1`}
+  />
+</div>
+
+<div class="flex items-center space-x-4 text-sm text-gray-400 mb-4">
+  <InfoItem label="Semester" value={semester} />
+  <span>&bull;</span>
+  <InfoItem
+    label="Difficulty"
+    value={difficulty}
+    value_classes={`font-medium ${text_color_class}`}
+  />
+</div>

@@ -1,12 +1,12 @@
 ---
-import Badge from "./../atoms/Badge.astro";
-import LabeledText from "./../atoms/LabeledText.astro";
-import Heading from "./../atoms/Heading.astro";
+import Badge from "../atoms/Badge.astro";
+import LabeledText from "../atoms/LabeledText.astro";
+import Heading from "../atoms/Heading.astro";
 
 export type Props = {
   course_code: string;
   course_name: string;
-  semester: number;
+  semester: string;
   difficulty: string;
   programming_language?: string;
 };
@@ -22,21 +22,41 @@ const border_color_class =
     Advanced: "border-red-700 hover:border-red-600",
   }[difficulty] || "border-gray-800 hover:border-gray-700";
 
+const difficulty_badge_styles: Record<string, string> = {
+  Fundamental: "bg-green-800 text-green-200",
+  Beginner: "bg-blue-800 text-blue-200",
+  Intermediate: "bg-yellow-700 text-yellow-200",
+  Advanced: "bg-red-800 text-red-200",
+  Unknown: "bg-gray-800 text-gray-300",
+};
+const badge_style_class =
+  difficulty_badge_styles[difficulty] || difficulty_badge_styles.Unknown;
+
+const difficulty_text_colors: {[key: string]: string} = {
+  Fundamental: "text-green-400",
+  Beginner: "text-blue-400",
+  Intermediate: "text-yellow-400",
+  Advanced: "text-red-400",
+  Unknown: "text-gray-400",
+};
+const text_color_class =
+  difficulty_text_colors[difficulty] || difficulty_text_colors["Unknown"];
+
 const detail_page_url = `/courses/${course_code.toLowerCase()}`;
 ---
 
 <a
   href={detail_page_url}
   class={`course-card-wrapper block bg-gray-900 rounded-lg shadow-lg p-4 mb-6 text-white hover:bg-gray-800 transition-all duration-150 ease-in-out border-l-4 ${border_color_class}`}
-  data-semester={semester.toString()}
+  data-semester={semester}
   data-difficulty={difficulty}>
   <div class="flex justify-between items-start mb-3">
     <Heading
       level={2}
       text={course_name}
-      extra_classes="text-blue-400 mr-2 !text-lg"
+      extra_classes={`mr-2 !text-lg ${text_color_class}`}
     />
-    <Badge text={course_code} extra_classes="bg-gray-800" />
+    <Badge text={course_code} extra_classes={badge_style_class} />
   </div>
   <div class="text-sm text-gray-300">
     <LabeledText label="Semester" text={semester} />

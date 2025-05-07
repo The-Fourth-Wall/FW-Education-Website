@@ -7,7 +7,7 @@ export type Course = {
   course_code: string;
   course_name: string;
   description?: string;
-  semester: number;
+  semester: string;
   difficulty: string;
   programming_language?: string;
   programming_details: SimpleListItem[];

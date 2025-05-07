@@ -1,0 +1,27 @@
+---
+export type Props = {
+  href: string;
+  text: string;
+  variant?: "link" | "primary" | "secondary";
+  extra_classes?: string;
+};
+
+const {href, text, variant = "link", extra_classes = ""} = Astro.props;
+
+let button_classes = "inline-block transition-colors duration-150 ease-in-out";
+
+if (variant === "link") {
+  button_classes += " text-blue-400 hover:text-blue-300 hover:underline";
+} else if (variant === "primary") {
+  button_classes +=
+    " bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center";
+} else {
+  button_classes += " text-gray-400 hover:text-gray-200";
+}
+
+button_classes = `${button_classes} ${extra_classes}`.trim();
+---
+
+<a href={href} class={button_classes}>
+  {text}
+</a>

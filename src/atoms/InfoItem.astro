@@ -1,0 +1,13 @@
+---
+export interface Props {
+  label: string;
+  value: string;
+  value_classes?: string;
+}
+
+const {label, value, value_classes = "font-medium text-gray-300"} = Astro.props;
+---
+
+<span>
+  {label}: <span class:list={[value_classes]}>{value}</span>
+</span>
