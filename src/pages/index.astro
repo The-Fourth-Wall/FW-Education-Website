@@ -6,37 +6,41 @@ import path from "node:path";
 import type {Course} from "../types";
 import {parse_curriculum_file_content} from "../utils/parser";
 
-let courses: Course[] = [];
-const curriculum_file_path = path.resolve(process.cwd(), "curriculum.md");
+const courses = (() => {
+  try {
+    return parse_curriculum_file_content(
+      fs.readFileSync(path.resolve(process.cwd(), "curriculum.md"), "utf-8"),
+    );
+  } catch (error) {
+    console.error(
+      "Error reading or parsing curriculum.md:",
+      error instanceof Error ? error.message : String(error),
+    );
+    return [];
+  }
+})();
 
-try {
-  const file_content_local = fs.readFileSync(curriculum_file_path, "utf-8");
-  courses = parse_curriculum_file_content(file_content_local);
-} catch (error) {
-  console.error(
-    `Error reading or parsing ${curriculum_file_path}:`,
-    error instanceof Error ? error.message : String(error),
-  );
-  courses = [];
-}
+const grouped_courses = courses.reduce(
+  (acc, course) => {
+    (acc[course.semester] ??= []).push(course);
+    return acc;
+  },
+  {} as Record<number, Course[]>,
+);
 
-// Calculate unique values for filters
+const sorted_semester_keys = Object.keys(grouped_courses)
+  .map(Number)
+  .sort((a, b) => a - b);
 const unique_semesters = [...new Set(courses.map(c => c.semester))].sort(
   (a, b) => a - b,
 );
-const difficulty_order = [
+const sorted_difficulties = [
   "Fundamental",
   "Beginner",
   "Intermediate",
   "Advanced",
   "Unknown",
-];
-const unique_difficulties = [...new Set(courses.map(c => c.difficulty))];
-const sorted_difficulties = difficulty_order.filter(d =>
-  unique_difficulties.includes(d),
-);
-
-const has_initial_courses = courses.length > 0;
+].filter(d => courses.some(c => c.difficulty === d));
 ---
 
 <Layout title="Homepage | Fourth Wall Curriculum">
@@ -44,7 +48,6 @@ const has_initial_courses = courses.length > 0;
     <section class="py-12">
       <h2 class="text-4xl font-bold text-center mb-12">Course Curriculum</h2>
 
-      {/* Filter UI */}
       <div class="flex flex-col sm:flex-row justify-center gap-4 mb-10 px-4">
         <div class="flex-1 sm:flex-none">
           <label
@@ -84,20 +87,24 @@ const has_initial_courses = courses.length > 0;
         </div>
       </div>
 
-      {/* Render Course Cards directly */}
       <div
         id="course-grid"
         class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8">
         {
-          courses.length > 0 ? (
-            courses.map(course => (
-              <CourseCard
-                course_code={course.course_code}
-                course_name={course.course_name}
-                semester={course.semester}
-                difficulty={course.difficulty}
-                programming_language={course.programming_language}
-              />
+          sorted_semester_keys.length > 0 ? (
+            sorted_semester_keys.map(semester_key => (
+              <>
+                <div
+                  class="semester-header md:col-span-2 lg:col-span-3 mt-8 first:mt-0"
+                  data-semester={semester_key}>
+                  <h3 class="text-2xl font-semibold text-gray-400 pb-2 mb-4 border-b border-gray-700">
+                    Semester {semester_key}
+                  </h3>
+                </div>
+                {grouped_courses[semester_key].map(course => (
+                  <CourseCard {...course} />
+                ))}
+              </>
             ))
           ) : (
             <p class="text-center text-xl text-gray-400 md:col-span-2 lg:col-span-3">
@@ -105,7 +112,6 @@ const has_initial_courses = courses.length > 0;
             </p>
           )
         }
-        {/* Message for no matching filters (controlled by JS) */}
         <p
           id="no-results-message"
           class="text-center text-xl text-gray-400 md:col-span-2 lg:col-span-3 hidden">
@@ -115,126 +121,101 @@ const has_initial_courses = courses.length > 0;
     </section>
   </main>
 
-  {/* Re-added client-side script (plain JS) */}
-  <script define:vars={{has_initial_courses}}>
-    const semester_filter = document.getElementById("semester-filter");
-    const difficulty_filter = document.getElementById("difficulty-filter");
-    const course_cards = document.querySelectorAll(".course-card-wrapper");
-    const no_results_message = document.getElementById("no-results-message");
+  <script>
+    {
+      const semester_filter = document.getElementById(
+        "semester-filter",
+      ) as HTMLSelectElement;
+      const difficulty_filter = document.getElementById(
+        "difficulty-filter",
+      ) as HTMLSelectElement;
+      const course_cards = document.querySelectorAll<HTMLDivElement>(
+        ".course-card-wrapper",
+      );
+      const semester_headers =
+        document.querySelectorAll<HTMLDivElement>(".semester-header");
+      const no_results_message = document.getElementById(
+        "no-results-message",
+      ) as HTMLElement;
 
-    // Function to update URL without reloading
-    function update_url(semester, difficulty) {
-      const params = new URLSearchParams(window.location.search);
-      if (semester && semester !== "all") {
-        params.set("semester", semester);
-      } else {
-        params.delete("semester");
-      }
-      if (difficulty && difficulty !== "all") {
-        params.set("difficulty", difficulty);
-      } else {
-        params.delete("difficulty");
-      }
-      const new_relative_path_query =
-        window.location.pathname + "?" + params.toString();
-      // Use replaceState to avoid polluting history too much on repeated filtering
-      history.replaceState(null, "", new_relative_path_query);
-    }
-
-    // Function to apply filters based on current state (dropdowns or URL)
-    function apply_filters(update_url_flag = false) {
-      if (
-        !semester_filter ||
-        !difficulty_filter ||
-        !course_cards ||
-        !no_results_message
-      )
-        return;
-
-      const selected_semester = semester_filter.value;
-      const selected_difficulty = difficulty_filter.value;
-      let visible_count = 0;
-
-      // Update URL if triggered by user change
-      if (update_url_flag) {
-        update_url(selected_semester, selected_difficulty);
-      }
-
-      course_cards.forEach(element => {
-        const card = element;
-        const card_semester = card.dataset.semester;
-        const card_difficulty = card.dataset.difficulty;
-
-        const semester_match =
-          selected_semester === "all" || card_semester === selected_semester;
-        const difficulty_match =
-          selected_difficulty === "all" ||
-          card_difficulty === selected_difficulty;
-
-        if (semester_match && difficulty_match) {
-          card.style.display = "block";
-          visible_count++;
-        } else {
-          card.style.display = "none";
-        }
-      });
-
-      if (visible_count === 0) {
-        no_results_message.style.display = "block";
-      } else {
-        no_results_message.style.display = "none";
-      }
-    }
-
-    // Function to initialize filters based on URL
-    function initialize_filters() {
-      if (!semester_filter || !difficulty_filter) return;
-
-      const params = new URLSearchParams(window.location.search);
-      const initial_semester = params.get("semester") || "all";
-      const initial_difficulty = params.get("difficulty") || "all";
-
-      semester_filter.value = initial_semester;
-      difficulty_filter.value = initial_difficulty;
-
-      // Apply filters based on the restored state
-      apply_filters(false); // Don't update URL again on initial load
-
-      // Hide the no results message initially if cards exist
-      if (
-        no_results_message &&
-        has_initial_courses &&
-        document.querySelectorAll(
-          '.course-card-wrapper[style*="display: block"]',
-        ).length > 0
-      ) {
-        no_results_message.style.display = "none";
-      } else if (no_results_message && has_initial_courses) {
-        // If filters applied initially and resulted in zero cards, show the message
+      function apply_filters(update_url = false) {
         if (
-          document.querySelectorAll(
-            '.course-card-wrapper[style*="display: block"]',
-          ).length === 0
-        ) {
-          no_results_message.style.display = "block";
+          !semester_filter ||
+          !difficulty_filter ||
+          !course_cards ||
+          !no_results_message
+        )
+          return;
+
+        const selected_semester = semester_filter.value;
+        const selected_difficulty = difficulty_filter.value;
+
+        if (update_url) {
+          const params = new URLSearchParams(window.location.search);
+          selected_semester === "all"
+            ? params.delete("semester")
+            : params.set("semester", selected_semester);
+          selected_difficulty === "all"
+            ? params.delete("difficulty")
+            : params.set("difficulty", selected_difficulty);
+          history.replaceState(
+            null,
+            "",
+            `${window.location.pathname}${params.toString() ? "?" + params.toString() : ""}`,
+          );
         }
+
+        let visible_count = 0;
+        const visible_semesters = new Set<string>();
+
+        course_cards.forEach(card => {
+          const matches =
+            (selected_semester === "all" ||
+              card.dataset.semester === selected_semester) &&
+            (selected_difficulty === "all" ||
+              card.dataset.difficulty === selected_difficulty);
+          card.style.display = matches ? "block" : "none";
+          if (matches) {
+            visible_count++;
+            visible_semesters.add(card.dataset.semester || "");
+          }
+        });
+
+        semester_headers.forEach(header => {
+          const semester = header.dataset.semester || "";
+          const has_visible_cards = Array.from(
+            document.querySelectorAll<HTMLDivElement>(
+              `.course-card-wrapper[data-semester="${semester}"]`,
+            ),
+          ).some(card => card.style.display !== "none");
+          header.style.display = has_visible_cards ? "block" : "none";
+        });
+
+        no_results_message.style.display =
+          visible_count === 0 ? "block" : "none";
       }
-    }
 
-    // Initial setup on page load
-    if (semester_filter && difficulty_filter) {
-      initialize_filters(); // Set dropdowns and filter based on URL
+      if (semester_filter && difficulty_filter) {
+        const params = new URLSearchParams(window.location.search);
+        semester_filter.value =
+          new URLSearchParams(window.location.search).get("semester") || "all";
+        difficulty_filter.value =
+          new URLSearchParams(window.location.search).get("difficulty") ||
+          "all";
+        apply_filters();
 
-      // Add event listeners - call apply_filters *with* URL update flag
-      semester_filter.addEventListener("change", () => apply_filters(true));
-      difficulty_filter.addEventListener("change", () => apply_filters(true));
-
-      // Listen for back/forward navigation
-      window.addEventListener("popstate", () => {
-        initialize_filters(); // Re-read URL, set dropdowns, and apply filters
-      });
-    } else {
-      console.error("Could not attach filter event listeners.");
+        semester_filter.addEventListener("change", () => apply_filters(true));
+        difficulty_filter.addEventListener("change", () => apply_filters(true));
+        window.addEventListener("popstate", () => {
+          semester_filter.value =
+            new URLSearchParams(window.location.search).get("semester") ||
+            "all";
+          difficulty_filter.value =
+            new URLSearchParams(window.location.search).get("difficulty") ||
+            "all";
+          apply_filters();
+        });
+      }
     }
   </script>
 </Layout>

@@ -1,37 +1,22 @@
 ---
-import type {Course} from "../types";
-
-// Update Props to include semester and difficulty, remove description
 export interface Props {
   course_code: string;
   course_name: string;
   semester: number;
   difficulty: string;
   programming_language?: string;
-  // description?: string; // Removed
-  // Detailed lists are no longer props for the card itself
 }
 
-const {
-  course_code,
-  course_name,
-  semester,
-  difficulty,
-  programming_language,
-  // description // Removed
-} = Astro.props;
-
-// Updated Difficulty to Tailwind Border Color Mapping
-const difficulty_colors: {[key: string]: string} = {
-  Fundamental: "border-green-700 hover:border-green-600", // Changed to Green
-  Beginner: "border-blue-700 hover:border-blue-600", // Changed to Blue
-  Intermediate: "border-yellow-600 hover:border-yellow-500", // Changed to Yellow (using slightly lighter shades often default in Tailwind)
-  Advanced: "border-red-700 hover:border-red-600", // Changed to Red
-  Unknown: "border-gray-800 hover:border-gray-700", // Updated fallback border
-};
+const {course_code, course_name, semester, difficulty, programming_language} =
+  Astro.props;
 
 const border_color_class =
-  difficulty_colors[difficulty] || difficulty_colors["Unknown"];
+  {
+    Fundamental: "border-green-700 hover:border-green-600",
+    Beginner: "border-blue-700 hover:border-blue-600",
+    Intermediate: "border-yellow-600 hover:border-yellow-500",
+    Advanced: "border-red-700 hover:border-red-600",
+  }[difficulty] || "border-gray-800 hover:border-gray-700";
 
 const detail_page_url = `/courses/${course_code.toLowerCase()}`;
 ---
