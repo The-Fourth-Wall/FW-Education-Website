@@ -102,18 +102,6 @@ Build and Deployment
 - Use static hosting platforms compatible with Astro (Vercel).
 - Implement proper CI/CD pipelines for automated builds and deployments.
 
-Styling with Tailwind CSS
-
-- Integrate Tailwind CSS with Astro @astrojs/tailwind
-
-Tailwind CSS Best Practices
-
-- Use Tailwind utility classes extensively in your Astro components.
-- Leverage Tailwind's responsive design utilities (sm:, md:, lg:, etc.).
-- Utilize Tailwind's color palette and spacing scale for consistency.
-- Implement custom theme extensions in tailwind.config.cjs when necessary.
-- Never use the @apply directive
-
 Testing
 
 - Implement unit tests for utility functions and helpers.
