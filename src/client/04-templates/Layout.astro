@@ -1,6 +1,9 @@
 ---
 import "@styles/colors.css";
 import "@styles/resets.css";
+import "@styles/fonts.css";
+
+import Head from "@organisms/Head.astro";
 
 type Props = {
   title: string;
@@ -11,17 +14,48 @@ const {title} = Astro.props;
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-  </head>
-  <body
-    class="min-h-screen flex flex-col"
-    style="background-color: var(--amethyst);">
-    <slot />
+  <Head title={title} />
+
+  <body>
+    <main>
+      <slot />
+    </main>
+
+    <style is:global>
+      :root {
+        font-family: Space Mono;
+        font-weight: normal;
+        font-feature-settings: "lnum";
+        color-scheme: light dark;
+
+        /* Font smoothing */
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      body {
+        background-color: var(--almond);
+        color: var(--amethyst);
+      }
+
+      ::selection {
+        background-color: var(--amethyst);
+        color: var(--almond);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        body {
+          background-color: var(--amethyst);
+          color: var(--almond);
+        }
+        ::selection {
+          background-color: var(--almond);
+          color: var(--amethyst);
+        }
+      }
+    </style>
   </body>
 </html>

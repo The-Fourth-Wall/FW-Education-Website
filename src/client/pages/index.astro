@@ -1,7 +1,11 @@
 ---
 import Layout from "@templates/Layout.astro";
+import Center from "@atoms/debug/Center.astro";
+import Text from "@atoms/text/Text.astro";
 ---
 
 <Layout title="Fourth Wall Education">
-  <main style="color: var(--white);">HELLO WORLD</main>
+  <Center>
+    <Text label="int main(void) {}" size={64} />
+  </Center>
 </Layout>

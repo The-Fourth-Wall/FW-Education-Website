@@ -1,0 +1,13 @@
+---
+type Props = {
+  label?: string;
+  size?: number;
+  color?: string;
+};
+
+const {label, size = 16, color = "var(--text-primary)"} = Astro.props;
+---
+
+<span style={`font-size: ${size}px; color: ${color};`}>
+  {label}
+</span>
