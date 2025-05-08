@@ -1,0 +1,15 @@
+:root {
+  --coral: #f88379;       --red: #ed1c24;      --crimson: #dc143c;    --rosewood: #65000b;  --cherry: #330000;
+  --almond: #efdecd;      --brown: #9F8170;    --coffee: #6f4e37;     --umbral: #635147;    --bean: #2c1810;
+  --gold: #ffd700;        --orange: #f7941d;   --pomodoro: #ff6347;   --mahogany: #c04000;  --clay: #4e1500;
+  --cream: #fffcc9;       --yellow: #fff200;   --citrine: #e4d00a;    --saffron: #f4c431;   --ochre: #3b2f00;
+  --lime: #9efd3f;        --green: #00a651;    --olive: #7ba05b;      --forest: #00563B;    --pine: #003020;
+  --azure: #e4ffff;       --cyan: #15f4ee;     --tiffany: #81D8D0;    --teal: #009494;      --abyss: #002626;
+  --periwinkle: #ccccff;  --blue: #1414ff;     --lapis: #26619c;      --navy: #000094;      --depth: #000033;
+  --lilac: #c8a2c8;       --purple: #a020f0;   --royal: #7851a9;      --indigo: #4b0082;    --amethyst: #110019;
+  --blush: #e082b7;       --magenta: #ff0090;  --violet: #c71585;     --murrey: #7d0047;    --wine: #2e000f;
+  --champagne: #f1ddcf;   --pink: #ffc0cb;     --valentine: #e6a6be;  --rose: #c08081;      --berry: #2d1517;
+  --snow: #fffafa;        --white: #f7f7f7;    --smoke: #f5f5f5;      --bone: #e3dac9;      --graphite: #1a1a1a;
+  --silver: #c0c0c0;      --gray: #848482;     --dim: #555555;        --metal: #2a3439;     --obsidian: #0c0c0c;
+  --onyx: #353839;        --black: #1b1b1b;    --raisin: #242124;     --night: #111111;     --void: #050505;
+}

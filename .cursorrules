@@ -17,6 +17,7 @@ Key Principles
 - Make sure all function anmes are in snake_case.
 - Organize files using Astro's file-based routing system.
 - Do not overuse types when typescript inference can do the job. Apply as few types as possible.
+- Use pnpm for package management.
 
 Astro Project Structure
 
@@ -32,8 +33,8 @@ Astro Project Structure
       - 02-molecules/
       - 03-organisms/
       - 04-templates/
-      - 05-pages/
-      - 99-styles/
+      - pages/
+      - styles/
   - public/
   - astro.config.mjs
 

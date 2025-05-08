@@ -4,14 +4,20 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
-      "@atoms/*": ["src/atoms/*"],
-      "@components/*": ["src/components/*"],
-      "@layouts/*": ["src/layouts/*"],
-      "@models/*": ["src/models/*"],
-      "@molecules/*": ["src/molecules/*"],
-      "@pages/*": ["src/pages/*"],
-      "@styles/*": ["src/styles/*"],
-      "@utils/*": ["src/utils/*"]
+      "@models": ["src/client/00-models"],
+      "@models/*": ["src/client/00-models/*"],
+      "@atoms": ["src/client/01-atoms"],
+      "@atoms/*": ["src/client/01-atoms/*"],
+      "@molecules": ["src/client/02-molecules"],
+      "@molecules/*": ["src/client/02-molecules/*"],
+      "@organisms": ["src/client/03-organisms"],
+      "@organisms/*": ["src/client/03-organisms/*"],
+      "@templates": ["src/client/04-templates"],
+      "@templates/*": ["src/client/04-templates/*"],
+      "@pages": ["src/client/pages"],
+      "@pages/*": ["src/client/pages/*"],
+      "@styles": ["src/client/styles"],
+      "@styles/*": ["src/client/styles/*"]
     }
   }
 }
