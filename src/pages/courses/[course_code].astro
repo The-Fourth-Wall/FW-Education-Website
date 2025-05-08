@@ -55,16 +55,6 @@ const difficulty_text_colors: {[key: string]: string} = {
 const text_color_class =
   difficulty_text_colors[course.difficulty] ||
   difficulty_text_colors["Unknown"];
-
-const difficulty_badge_styles: Record<string, string> = {
-  Fundamental: "bg-green-800 text-green-200",
-  Beginner: "bg-blue-800 text-blue-200",
-  Intermediate: "bg-yellow-700 text-yellow-200",
-  Advanced: "bg-red-800 text-red-200",
-  Unknown: "bg-gray-800 text-gray-300",
-};
-const badge_style_class =
-  difficulty_badge_styles[course.difficulty] || difficulty_badge_styles.Unknown;
 ---
 
 <Layout title={`${course.course_code}: ${course.course_name} Details`}>
@@ -86,7 +76,6 @@ const badge_style_class =
         semester={course.semester}
         difficulty={course.difficulty}
         text_color_class={text_color_class}
-        badge_style_class={badge_style_class}
       />
 
       {

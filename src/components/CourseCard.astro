@@ -22,16 +22,6 @@ const border_color_class =
     Advanced: "border-red-700 hover:border-red-600",
   }[difficulty] || "border-gray-800 hover:border-gray-700";
 
-const difficulty_badge_styles: Record<string, string> = {
-  Fundamental: "bg-green-800 text-green-200",
-  Beginner: "bg-blue-800 text-blue-200",
-  Intermediate: "bg-yellow-700 text-yellow-200",
-  Advanced: "bg-red-800 text-red-200",
-  Unknown: "bg-gray-800 text-gray-300",
-};
-const badge_style_class =
-  difficulty_badge_styles[difficulty] || difficulty_badge_styles.Unknown;
-
 const difficulty_text_colors: {[key: string]: string} = {
   Fundamental: "text-green-400",
   Beginner: "text-blue-400",
@@ -56,7 +46,7 @@ const detail_page_url = `/courses/${course_code.toLowerCase()}`;
       text={course_name}
       extra_classes={`mr-2 !text-lg ${text_color_class}`}
     />
-    <Badge text={course_code} extra_classes={badge_style_class} />
+    <Badge text={course_code} variant={difficulty.toLowerCase() as any} />
   </div>
   <div class="text-sm text-gray-300">
     <LabeledText label="Semester" text={semester} />
