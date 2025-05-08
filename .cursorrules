@@ -20,15 +20,20 @@ Key Principles
 
 Astro Project Structure
 
-- Use this project structure:
+- Use the Atomic Design by Brad Frost for the project structure like such:
   - src/
-    - atoms/
-    - components/
-    - layouts/
-    - models/
-    - molecules/
-    - pages/
-    - styles/
+    - app/
+      - 01-first-use-case
+      - 02-second-use-case
+      - ...
+    - client/
+      - 00-models/
+      - 01-atoms/
+      - 02-molecules/
+      - 03-organisms/
+      - 04-templates/
+      - 05-pages/
+      - 99-styles/
   - public/
   - astro.config.mjs
 
