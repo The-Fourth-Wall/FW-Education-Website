@@ -26,7 +26,7 @@ const {title} = Astro.props;
         font-family: Space Mono;
         font-weight: normal;
         font-feature-settings: "lnum";
-        color-scheme: light dark;
+        color-scheme: dark;
 
         /* Font smoothing */
         font-synthesis: none;
@@ -37,24 +37,13 @@ const {title} = Astro.props;
       }
 
       body {
-        background-color: var(--almond);
-        color: var(--amethyst);
-      }
-
-      ::selection {
         background-color: var(--amethyst);
         color: var(--almond);
       }
 
-      @media (prefers-color-scheme: dark) {
-        body {
-          background-color: var(--amethyst);
-          color: var(--almond);
-        }
-        ::selection {
-          background-color: var(--almond);
-          color: var(--amethyst);
-        }
+      ::selection {
+        background-color: var(--almond);
+        color: var(--amethyst);
       }
     </style>
   </body>

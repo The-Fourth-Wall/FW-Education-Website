@@ -34,9 +34,7 @@ const difficulty_colors = {
 
 <style>
   .card {
-    --light-border: rgba(0, 0, 0, 0.1);
     --dark-border: rgba(255, 255, 255, 0.1);
-    --light-shadow: rgba(0, 0, 0, 0.08);
     --dark-shadow: rgba(0, 0, 0, 0.2);
     border: 1px solid var(--dark-border);
     border-left: 8px solid var(--accent);
@@ -64,29 +62,6 @@ const difficulty_colors = {
     box-shadow:
       0 8px 32px -2px var(--dark-shadow),
       0 2px 4px 0 rgba(255, 255, 255, 0.05);
-  }
-  @media (prefers-color-scheme: light) {
-    .card {
-      border-color: var(--light-border);
-      background: linear-gradient(
-        145deg,
-        rgba(255, 255, 255, 0.5),
-        rgba(255, 255, 255, 0.2)
-      );
-      box-shadow:
-        0 4px 24px -1px var(--light-shadow),
-        0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    }
-    .card:hover {
-      background: linear-gradient(
-        145deg,
-        rgba(255, 255, 255, 0.7),
-        rgba(255, 255, 255, 0.3)
-      );
-      box-shadow:
-        0 8px 32px -2px var(--light-shadow),
-        0 2px 4px 0 rgba(0, 0, 0, 0.05);
-    }
   }
   .header {
     display: flex;
