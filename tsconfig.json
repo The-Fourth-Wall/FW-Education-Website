@@ -4,6 +4,8 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
+      "@app": ["src/app"],
+      "@app/*": ["src/app/*"],
       "@models": ["src/client/00-models"],
       "@models/*": ["src/client/00-models/*"],
       "@atoms": ["src/client/01-atoms"],

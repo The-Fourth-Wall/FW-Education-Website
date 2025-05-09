@@ -1,7 +1,7 @@
 ---
 type Props = {
   text: string;
-  variant: "Beginner" | "Fundamental" | "Intermediate" | "Advanced";
+  variant: "fundamental" | "beginner" | "intermediate" | "advanced";
   size: number;
 };
 
@@ -9,7 +9,7 @@ const {text, variant, size} = Astro.props;
 ---
 
 <span
-  class={`badge badge-${variant.toLowerCase()}`}
+  class={`badge badge-${variant}`}
   style={`
     font-size: ${size}rem;
     padding: ${size * 0.286}rem ${size * 0.857}rem;
