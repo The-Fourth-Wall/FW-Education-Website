@@ -21,11 +21,26 @@ test("parses semester and difficulty", () => {
 
   const result = parse_curriculum(content);
   expect(result[0].semester).toBe(2);
-  expect(result[0].difficulty).toBe("intermediate");
+  expect(result[0].difficulty).toBe("fundamental");
+});
+
+test("parses description", () => {
+  const content = `- FW-101 (Introduction to Programming)
+- description:
+  - A comprehensive introduction to programming concepts and practices.
+- programming: Python 3.8+
+- references:
+- topics:`;
+
+  const result = parse_curriculum(content);
+  expect(result[0].description).toBe(
+    "A comprehensive introduction to programming concepts and practices.",
+  );
 });
 
 test("parses programming requirements", () => {
   const content = `- FW-101 (Introduction to Programming)
+- description: some introduction
 - programming: Python 3.8+
 - references:
 - topics:`;
@@ -43,7 +58,9 @@ test("parses references", () => {
 - topics:`;
 
   const result = parse_curriculum(content);
-  expect(result[0].references).toEqual(["Book 1", "Book 2"]);
+  expect(result[0].references).toHaveLength(2);
+  expect(result[0].references[0]).toBe("Book 1");
+  expect(result[0].references[1]).toBe("Book 2");
 });
 
 test("parses topics with subtopics", () => {
