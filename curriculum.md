@@ -1,3 +1,5 @@
+Curriculum
+
 - Generic Notes
 
   - Explain real world usage of (almost) everything.
@@ -10,6 +12,11 @@
   - When designing the course think of AI / Decentralized Governance / Synthetic Biology / Quantum / Nanotech
     - Integrate ethics and history of all those.
   - Try bringing prominent people to talk about topics (Eli, Alan Kay, Bret Victor)
+
+- PROBLEMS
+- Add analog I, II, III (vlsi, transistors)
+- Add digital I, II, III (architecture, MIPS)
+-
 
 - Course Designation System
 
@@ -37,7 +44,7 @@
     - integration, riemann sums
 - FW-102 (Linear Algebra I)
   - description:
-    - A crucial mathematical basis for working with scalars, vectors and matrices, vert important and essential for all modern areas of computing.
+    - A crucial mathematical basis for working with scalars, vectors and matrices, very important and essential for all modern areas of computing.
   - programming:
     - optional examples in C as extras lectures (redo on APL later)
   - references:
@@ -172,7 +179,7 @@
 
 - FW-211 (Calculus II)
   - description:
-    - …
+    - A deeper understanding of Algebra for complicated functions.
   - programming:
     - examples in C
   - references:
@@ -188,7 +195,7 @@
     - differential equations
 - FW-202 (Discrete Math)
   - description:
-    - …
+    - Explore essential structures, proofs and reasoning to build algorithmic intuition.
   - programming:
     - examples in C
   - references:
@@ -202,7 +209,7 @@
     - discrete probability
 - FW-213 (Analog Design II)
   - description:
-    - …
+    - Delve into semiconductors, transistors and the more advanced building blocks of electronic circuits.
   - programming:
     - examples in simulation software
       - https://www.tinkercad.com/learn/circuits
@@ -219,7 +226,7 @@
     - frequency response
 - FW-214 (Digital Design I)
   - description:
-    - …
+    - Learn how logic gates behave, gain foundational knowledge of digital circuit construction and design.
   - programming:
     - examples in simulation software
   - references:
@@ -233,7 +240,7 @@
     - registers
 - FW-205 (Object Oriented Programming with Ruby)
   - description:
-    - …
+    - Master objects and messages, build extensible software and scale your understanding using OOP.
   - programming:
     - fundamentals of OOP in Ruby without a lot of metaprogramming
   - references:
@@ -252,7 +259,7 @@
 - FW-206 (Command Line Basics)
 
   - description:
-    - …
+    - Wield command line interfaces and script automations on Linux.
   - programming:
     - using bash scripts with linux commands
   - references:
@@ -271,7 +278,7 @@
 
 - FW-311 (Numerical Analysis)
   - description:
-    - …
+    - A robust analysis of linear systems, approximations of functions, derivatives and integrals.
   - programming:
     - gruff examples in Ruby
   - references:
@@ -280,7 +287,7 @@
     - …
 - FW-312 (Data and Probability)
   - description:
-    - …
+    - Explore statistics, probability and data, understand uncertainty and make data-driven decisions.
   - programming:
     - probability and statistics examples in Ruby
   - references:
@@ -289,7 +296,7 @@
     - …
 - FW-323 (Digital Design II)
   - description:
-    - …
+    - Architect more complex digital systems, from sophisticated memory to FPGAs.
   - programming:
     - examples in simulation software
     - simple intro to SystemVerilog
@@ -302,7 +309,7 @@
     - algorithmic state machines
 - FW-314 (Data Structures Algorithms I)
   - description:
-    - …
+    - Master fundamental data structures and algorithms, achieving performance and true scalability.
   - programming:
     - DSA in C
   - references:
@@ -320,7 +327,7 @@
 - FW-315 (Class Based Development in Java)
 
   - description:
-    - …
+    - Engineer interface-driven implementations, experience enterprise-grade application development.
   - programming:
     - classes in Java and following interface based implementations
   - references:
@@ -333,7 +340,7 @@
 
 - FW-421 (Theory of Computation)
   - description:
-    - …
+    - Discover formal languages, automata, computability and the fundamental nature of computation itself.
   - programming:
     - …
   - references:
@@ -342,7 +349,7 @@
     - …
 - FW-412 (Digital Signal Processing)
   - description:
-    - …
+    - Analyze and transform digital signals and unlock applications from audio processing to medical imaging.
   - programming:
     - …
   - references:
@@ -351,7 +358,7 @@
     - …
 - FW-423 (Quantum Mechanics)
   - description:
-    - …
+    - An introductory course on quantum phenomena, effects and behaviours.
   - programming:
     - examples in Ruby
   - references:
@@ -361,7 +368,7 @@
     - …
 - FW-424 (Paradigms of Programming Languages)
   - description:
-    - …
+    - Understand the many different programming paradigms, their strengths and weaknesses.
   - programming:
     - Algol, Scheme, SmallTalk, Prolog for paradigms
   - references:
@@ -379,7 +386,7 @@
     - simple problem solved in 4 different languages and compare methodologies
 - FW-425 (Data Structures Algorithms II)
   - description:
-    - …
+    - The second iteration of the DSA course teaching you more advanced algorithms with a focus on problem spaces.
   - programming:
     - DSA in C
   - references:
@@ -398,7 +405,7 @@
 - FW-426 (Database Management Systems)
 
   - description:
-    - …
+    - A dedicated course for the different types of database management systems and their use in the real world.
   - programming:
     - SQL, GraphQL, JSON and stuff
   - references:
@@ -410,7 +417,7 @@
 
 - FW-521 (Linear Algebra II)
   - description:
-    - …
+    - A course on the more advanced applications of linear algebra, from vector norms to game theory.
   - programming:
     - APL solutions of Linear I and II
   - references:
@@ -423,7 +430,7 @@
     - chomsky analysis
 - FW-522 (Telecommunication Systems)
   - description:
-    - …
+    - Discover the underlying theoretical and practical structure of technologies that enable telecommunications.
   - programming:
     - …
   - references:
@@ -432,7 +439,7 @@
     - …
 - FW-513 (Teaching of Informatics)
   - description:
-    - …
+    - A detailed overview of major theories of teaching with a focus on computing education.
   - programming:
     - using Scratch as a tool for educators
     - using Lua on computercraft extensions
@@ -448,7 +455,7 @@
     - failure of constructivism
 - FW-514 (Artificial Intelligence)
   - description:
-    - …
+    - An introduction to the foundational techniques driving the field of AI.
   - programming:
     - …
   - references:
@@ -457,7 +464,7 @@
     - …
 - FW-525 (Computer Architecture)
   - description:
-    - …
+    - Understand how hardware integrates with turing-complete assemblers and how to program them efficiently.
   - programming:
     - learning the MIPS assembler
   - references:
@@ -467,9 +474,9 @@
 - FW-516 (Web Applications)
 
   - description:
-    - …
+    - A knowledge packed course on the roadmap of a full stack developer for the modern era.
   - programming:
-    - HTML, CSS and JavaScript for webistes and backend
+    - HTML, CSS and JavaScript for websites and backend
   - references:
     - …
   - topics:
@@ -484,7 +491,7 @@
 
 - FW-621 (Topology and Graphs)
   - description:
-    - …
+    - Learn about graph theory, delve into the mathematical foundations of topology and apply that knowledge to the real world of computing.
   - programming:
     - …
   - references:
@@ -493,7 +500,7 @@
     - …
 - FW-622 (Computer Graphics)
   - description:
-    - …
+    - Learn the core algorithms used to create, represent and display visual content and interactive experiences.
   - programming:
     - …
   - references:
@@ -502,7 +509,7 @@
     - …
 - FW-623 (Machine Learning)
   - description:
-    - …
+    - A foray into supervised, unsupervised or reinforcement learning, adding intelligent capabilities to the computer.
   - programming:
     - …
   - references:
@@ -511,7 +518,7 @@
     - …
 - FW-624 (Networks I)
   - description:
-    - …
+    - An exploration of the multi-layered architecture of computer networks from cable to application.
   - programming:
     - …
   - references:
@@ -520,7 +527,7 @@
     - …
 - FW-615 (Ethics of Computing)
   - description:
-    - …
+    - Navigate the complex moral landscape of the digital age, learn to recognize the biases, impacts and responsibilities of deploying systems for the benefit of humanity at large.
   - programming:
     - …
   - references:
@@ -530,7 +537,7 @@
 - FW-626 (Nanotechnology)
 
   - description:
-    - …
+    - An explanation of atomically precise manufacturing and its transformative potential across computing and modern science.
   - programming:
     - …
   - references:
@@ -540,16 +547,16 @@
 
 - FW-731 (Neural Networks)
   - description:
-    - …
+    - Unlock the power of deep learning, convolutional, recurrent neural networks and transformers, the very tools and technologies that enable modern large language models.
   - programming:
     - …
   - references:
     - …
   - topics:
     - …
-- FW-722 (Synthetic Biology Fundamentals)
+- FW-722 (Synthetic Biology)
   - description:
-    - …
+    - A deep dive into the construction of novel biological systems and an introduction to realigning existing ones to human goals.
   - programming:
     - …
   - references:
@@ -558,7 +565,7 @@
     - …
 - FW-733 (Networks II)
   - description:
-    - …
+    - A more advanced learning experience for modern networked systems, network programming, routing and architectures for scalable apps.
   - programming:
     - emulate in Lua computercraft using rednet scripts
   - references:
@@ -567,7 +574,7 @@
     - ...
 - FW-714 (Computer Systems Design II)
   - description:
-    - …
+    - Elevate your software engineering practices using the use case driven approach for long-term projects.
   - programming:
     - maybe Java or C
   - references:
@@ -580,7 +587,7 @@
     - testing (code first)
 - FW-725 (Parallel Computing)
   - description:
-    - …
+    - A course on harnessing the power of multi-core environments and accelerators from a theoretical to a practical level.
   - programming:
     - C for OpenMP, MPI and CUDA
   - references:
@@ -595,7 +602,7 @@
 - FW-716 (History of Computing)
 
   - description:
-    - …
+    - A journey through the historical log of pivotal breakthroughs, visionary thinkers, and landmark systems that shaped the modern world of computation.
   - programming:
     - …
   - references:
@@ -616,7 +623,7 @@
 
 - FW-821 (Cryptography)
   - description:
-    - …
+    - A comprehensive set of mathematical foundations, practical applications, and the systems of modern cryptography that secure the authenticity and privacy of information.
   - programming:
     - Crystal or C for crypto examples.
   - references:
@@ -633,7 +640,7 @@
     - merkle trees, blockchain ideas
 - FW-832 (Distributed Tolerant Systems)
   - description:
-    - …
+    - Learn about the inner workings of fault tolerant systems with a high degree of distribution for availability, performance and consistency of information.
   - programming:
     - using Erlang and OTP
   - references:
@@ -642,7 +649,7 @@
     - ...
 - FW-833 (Interpreters)
   - description:
-    - …
+    - Create your own programming languages gaining a profound understanding of how interpreters turn code into execution.
   - programming:
     - self eval interpreter on Racket
     - tree parser in Java
@@ -662,7 +669,7 @@
     - analysis of Lua source code
 - FW-824 (Computer Systems Design III)
   - description:
-    - …
+    - Learn how real critical safety and very high performant systems can be created, how to scale development and how to deploy automatically.
   - programming:
     - small C examples
   - references:
@@ -679,7 +686,7 @@
     - cloud computing, services
 - FW-835 (Data Structures Algorithms III)
   - description:
-    - …
+    - Explore the most advanced algorithms and data structures tackling the most demanding computational problems.
   - programming:
     - DOD in C
   - references:
@@ -702,7 +709,7 @@
 - FW-826 (Internet of Things)
 
   - description:
-    - …
+    - Architect interconnected mini systems, design the protocols and deploy vast networks of smart devices.
   - programming:
     - …
   - references:
@@ -712,7 +719,7 @@
 
 - FW-931 (Human-Computer Interaction)
   - description:
-    - …
+    - A redefinition of the interaction between individuals and machines, the humane representation of thought, and the intuitive, immersive platforms that extend intellectual reach.
   - programming:
     - …
   - references:
@@ -721,7 +728,7 @@
     - …
 - FW-932 (Computer Systems Design IV)
   - description:
-    - …
+    - Deploy end-to-end systems connecting multiple languages, services and methodologies, a culmination of all knowledge paths of computing.
   - programming:
     - …
   - references:
@@ -731,7 +738,7 @@
     - viewers can submit new assignments that would be 932-worthy and I display them.
 - FW-933 (Cryptocurrency and Blockchain Technologies)
   - description:
-    - …
+    - A detailed introduction to the world of cryptocurrency, decentralized applications and blockchain systems.
   - programming:
     - Solidity for ethereum, Rust for solana.
   - references:
@@ -745,7 +752,7 @@
     - efficient execution and solana.
 - FW-934 (Penetration Testing and Offensive Security)
   - description:
-    - …
+    - Learning to think like an attacker in an end-to-end penetration testing roadmap for securing systems against real-world threats.
   - programming:
     - lots of tools, maybe Python for scripts.
   - references:
@@ -755,7 +762,7 @@
     - PIG, AIG, ENUM, VA, EX, PEX, REP
 - FW-935 (Quantum Computing)
   - description:
-    - …
+    - Leverage quantum mechanics and harness the power of qubits to solve non-classical computing problems.
   - programming:
     - using simulated programs or actual IBM language for quantum computers.
   - references:
@@ -764,7 +771,7 @@
     - …
 - FW-936 (Internet of Bio-NanoThings)
   - description:
-    - …
+    - Explore the design of microscopic interconnected devices within biological systems.
   - programming:
     - …
   - references:
