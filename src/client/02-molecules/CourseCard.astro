@@ -1,0 +1,127 @@
+---
+import type {Course} from "@models/course.model";
+import Badge from "@atoms/buttons/Badge.astro";
+import Text from "@atoms/text/Text.astro";
+
+type Props = {course: Course};
+const {course} = Astro.props;
+const difficulty_colors = {
+  fundamental: "var(--green)",
+  beginner: "var(--blue)",
+  intermediate: "var(--orange)",
+  advanced: "var(--red)",
+} as const;
+---
+
+<div class="card" style={`--accent: ${difficulty_colors[course.difficulty]}`}>
+  <div class="header">
+    <div class="title">
+      <Text label={course.name} size={18} variant="primary" />
+    </div>
+    <div class="right-column">
+      <Badge text={course.code} variant={course.difficulty} size={0.75} />
+      <Text
+        label={`Semester ${course.semester}`}
+        size={14}
+        variant="secondary"
+      />
+    </div>
+  </div>
+  <div class="description">
+    <Text label={course.description} size={14} variant="secondary" />
+  </div>
+</div>
+
+<style>
+  .card {
+    --light-border: rgba(0, 0, 0, 0.1);
+    --dark-border: rgba(255, 255, 255, 0.1);
+    --light-shadow: rgba(0, 0, 0, 0.08);
+    --dark-shadow: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--dark-border);
+    border-left: 8px solid var(--accent);
+    border-radius: 4px;
+    padding: 1.5rem;
+    background: linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.05),
+      rgba(255, 255, 255, 0.02)
+    );
+    box-shadow:
+      0 4px 24px -1px var(--dark-shadow),
+      0 1px 2px 0 rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    container-type: inline-size;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.07),
+      rgba(255, 255, 255, 0.03)
+    );
+    box-shadow:
+      0 8px 32px -2px var(--dark-shadow),
+      0 2px 4px 0 rgba(255, 255, 255, 0.05);
+  }
+  @media (prefers-color-scheme: light) {
+    .card {
+      border-color: var(--light-border);
+      background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.2)
+      );
+      box-shadow:
+        0 4px 24px -1px var(--light-shadow),
+        0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    }
+    .card:hover {
+      background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.7),
+        rgba(255, 255, 255, 0.3)
+      );
+      box-shadow:
+        0 8px 32px -2px var(--light-shadow),
+        0 2px 4px 0 rgba(0, 0, 0, 0.05);
+    }
+  }
+  .header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .title {
+    font-weight: 800;
+    flex: 1;
+    min-width: 0;
+  }
+  .right-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.75rem;
+    flex-shrink: 0;
+  }
+  .description {
+    margin: 1rem 0 0.5rem;
+    width: 75%;
+  }
+  @container (max-width: 200px) {
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .right-column {
+      align-items: flex-start;
+      width: 100%;
+    }
+    .description {
+      width: 100%;
+    }
+  }
+</style>

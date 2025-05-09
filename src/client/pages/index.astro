@@ -1,11 +1,28 @@
 ---
 import Layout from "@templates/Layout.astro";
-import Center from "@atoms/debug/Center.astro";
-import Text from "@atoms/text/Text.astro";
+import {read_curriculum} from "@/app/02-read-curriculum/read_curriculum";
+import CourseList from "@organisms/CourseList.astro";
+import Spacer from "@atoms/text/Spacer.astro";
+import Header from "@organisms/Header.astro";
+
+const courses = read_curriculum("curriculum.md");
 ---
 
 <Layout title="Fourth Wall Education">
-  <Center>
-    <Text label="int main(void) {}" size={64} />
-  </Center>
+  <div class="main">
+    <Header
+      title="Fourth Wall Education"
+      subtitle="Explore our comprehensive curriculum"
+    />
+    <Spacer size={2} />
+    <CourseList courses={courses} />
+  </div>
 </Layout>
+
+<style>
+  .main {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+</style>

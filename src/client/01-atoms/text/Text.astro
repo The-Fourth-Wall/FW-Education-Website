@@ -1,13 +1,41 @@
 ---
 type Props = {
-  label?: string;
-  size?: number;
+  label: string;
+  size: number;
   color?: string;
+  variant?: "primary" | "secondary" | "accent";
 };
 
-const {label, size = 16, color = "var(--text-primary)"} = Astro.props;
+const {
+  label,
+  size,
+  color = "var(--text-primary)",
+  variant = "primary",
+} = Astro.props;
+
+const text_color =
+  variant === "primary"
+    ? "var(--text-primary)"
+    : variant === "secondary"
+      ? "var(--text-secondary)"
+      : color;
 ---
 
-<span style={`font-size: ${size}px; color: ${color};`}>
+<span class={variant} style={`font-size: ${size}px; color: ${text_color};`}>
   {label}
 </span>
+
+<style>
+  .primary {
+    font-weight: 500;
+  }
+
+  .secondary {
+    font-weight: 400;
+    opacity: 0.9;
+  }
+
+  .accent {
+    font-weight: 600;
+  }
+</style>

@@ -1,0 +1,35 @@
+---
+import type {Course} from "@models/course.model";
+import CourseCard from "@molecules/CourseCard.astro";
+
+type Props = {
+  courses: Course[];
+};
+
+const {courses} = Astro.props;
+---
+
+<div class="grid">
+  {courses.map(course => <CourseCard course={course} />)}
+</div>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    width: 100%;
+  }
+
+  @media (max-width: 1024px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

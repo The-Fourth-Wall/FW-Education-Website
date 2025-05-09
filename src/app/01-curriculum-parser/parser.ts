@@ -6,13 +6,14 @@ export function parse_curriculum(content: string): Course[] {
   let current_course: Course = {
     code: "",
     name: "",
+    description: "",
     semester: 1,
     difficulty: "fundamental",
     programming: "",
     references: [],
     topics: [],
   };
-  let current_section = "programming";
+  let current_section = "";
   let topic_stack: {topic: Topic; indent: number}[] = [];
 
   const get_difficulty = (code: string): Difficulty => {
@@ -24,6 +25,8 @@ export function parse_curriculum(content: string): Course[] {
         return "beginner";
       case 2:
         return "intermediate";
+      case 3:
+        return "advanced";
       default:
         return "advanced";
     }
@@ -47,6 +50,7 @@ export function parse_curriculum(content: string): Course[] {
       current_course = {
         code,
         name,
+        description: "",
         semester: parseInt(code[3]),
         difficulty: get_difficulty(code),
         programming: "",
@@ -58,14 +62,28 @@ export function parse_curriculum(content: string): Course[] {
 
     const indent = line.search(/\S/);
 
-    if (trimmed.startsWith("- programming:")) {
+    if (trimmed.startsWith("- description:")) {
+      current_section = "description";
+
+      const inline_desc = trimmed.substring("- description:".length).trim();
+      if (inline_desc) {
+        current_course.description = inline_desc;
+      }
+    } else if (trimmed.startsWith("- programming:")) {
       current_section = "programming";
+      const inline_prog = trimmed.substring("- programming:".length).trim();
+      if (inline_prog) {
+        current_course.programming = inline_prog;
+      }
     } else if (trimmed.startsWith("- references:")) {
       current_section = "references";
     } else if (trimmed.startsWith("- topics:")) {
       current_section = "topics";
     } else if (trimmed.startsWith("- ")) {
       switch (current_section) {
+        case "description":
+          current_course.description = trimmed.substring(2);
+          break;
         case "programming":
           current_course.programming = trimmed.substring(2);
           break;

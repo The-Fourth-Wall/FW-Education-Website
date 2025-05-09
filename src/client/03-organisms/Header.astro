@@ -1,0 +1,21 @@
+---
+import Title from "@atoms/text/Title.astro";
+
+type Props = {
+  title: string;
+  subtitle: string;
+};
+
+const {title, subtitle} = Astro.props;
+---
+
+<div>
+  <Title text={title} level={1} />
+  <Title text={subtitle} level={5} />
+</div>
+
+<style>
+  div {
+    text_align: center;
+  }
+</style>

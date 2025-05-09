@@ -22,6 +22,8 @@
   - 3rd -> Course Number
 
 - FW-101 (Calculus I)
+  - description:
+    - An introduction to the foundations of Algebra for understanding of changing systems, a basic requirement for STEM.
   - programming:
     - optional examples in C as extras lectures
   - references:
@@ -34,6 +36,8 @@
     - newtons method, mean value theorem, rolle's
     - integration, riemann sums
 - FW-102 (Linear Algebra I)
+  - description:
+    - A crucial mathematical basis for working with scalars, vectors and matrices, vert important and essential for all modern areas of computing.
   - programming:
     - optional examples in C as extras lectures (redo on APL later)
   - references:
@@ -45,6 +49,8 @@
     - determinants
     - eigenvalues, eigenvectors
 - FW-103 (Foundational Science for Computing)
+  - description:
+    - A high level foray into the fields of physics, chemistry, materials science and biology, enabling the connection of computing to the real world.
   - programming:
     - no language
   - references:
@@ -115,6 +121,8 @@
         - natural selection (variation, heritability, fitness, result)
         - adaptation as optimization processes. (newer iterations become better designed)
 - FW-104 (Analog Design I)
+  - description:
+    - An introduction to analog circuits and the basic building blocks of computation.
   - programming:
     - examples in simulation software
       - https://www.tinkercad.com/learn/circuits
@@ -129,6 +137,8 @@
     - bode diagrams
     - filters
 - FW-105 (Programming Fundamentals in C)
+  - description:
+    - Your first contact with the language of computers and the ability to program them.
   - programming:
     - using C language fundamentals without pointers
   - references:
@@ -146,6 +156,8 @@
     - structs
 - FW-106 (Computer Systems Design I)
 
+  - description:
+    - Learning to think in terms of systems, understanding the connection between hardware, software and application.
   - programming:
     - very simple problems with the Scratch ide
   - references:
@@ -159,6 +171,8 @@
     - …
 
 - FW-211 (Calculus II)
+  - description:
+    - …
   - programming:
     - examples in C
   - references:
@@ -173,6 +187,8 @@
     - multiple integration
     - differential equations
 - FW-202 (Discrete Math)
+  - description:
+    - …
   - programming:
     - examples in C
   - references:
@@ -185,6 +201,8 @@
     - number theory
     - discrete probability
 - FW-213 (Analog Design II)
+  - description:
+    - …
   - programming:
     - examples in simulation software
       - https://www.tinkercad.com/learn/circuits
@@ -200,6 +218,8 @@
     - differential amplifiers
     - frequency response
 - FW-214 (Digital Design I)
+  - description:
+    - …
   - programming:
     - examples in simulation software
   - references:
@@ -212,6 +232,8 @@
     - flip-flops
     - registers
 - FW-205 (Object Oriented Programming with Ruby)
+  - description:
+    - …
   - programming:
     - fundamentals of OOP in Ruby without a lot of metaprogramming
   - references:
@@ -229,6 +251,8 @@
     - object model
 - FW-206 (Command Line Basics)
 
+  - description:
+    - …
   - programming:
     - using bash scripts with linux commands
   - references:
@@ -246,6 +270,8 @@
     - basic scripts
 
 - FW-311 (Numerical Analysis)
+  - description:
+    - …
   - programming:
     - gruff examples in Ruby
   - references:
@@ -253,6 +279,8 @@
   - topics:
     - …
 - FW-312 (Data and Probability)
+  - description:
+    - …
   - programming:
     - probability and statistics examples in Ruby
   - references:
@@ -260,6 +288,8 @@
   - topics:
     - …
 - FW-323 (Digital Design II)
+  - description:
+    - …
   - programming:
     - examples in simulation software
     - simple intro to SystemVerilog
@@ -271,6 +301,8 @@
     - FPGAs
     - algorithmic state machines
 - FW-314 (Data Structures Algorithms I)
+  - description:
+    - …
   - programming:
     - DSA in C
   - references:
@@ -287,6 +319,8 @@
     - matching
 - FW-315 (Class Based Development in Java)
 
+  - description:
+    - …
   - programming:
     - classes in Java and following interface based implementations
   - references:
@@ -298,6 +332,8 @@
     - model driven development
 
 - FW-421 (Theory of Computation)
+  - description:
+    - …
   - programming:
     - …
   - references:
@@ -305,6 +341,8 @@
   - topics:
     - …
 - FW-412 (Digital Signal Processing)
+  - description:
+    - …
   - programming:
     - …
   - references:
@@ -312,6 +350,8 @@
   - topics:
     - …
 - FW-423 (Quantum Mechanics)
+  - description:
+    - …
   - programming:
     - examples in Ruby
   - references:
@@ -320,6 +360,8 @@
     - revision on eigenvalues/eigenvectors
     - …
 - FW-424 (Paradigms of Programming Languages)
+  - description:
+    - …
   - programming:
     - Algol, Scheme, SmallTalk, Prolog for paradigms
   - references:
@@ -336,6 +378,8 @@
     - Procedural, Functional, OO, Logic
     - simple problem solved in 4 different languages and compare methodologies
 - FW-425 (Data Structures Algorithms II)
+  - description:
+    - …
   - programming:
     - DSA in C
   - references:
@@ -353,6 +397,8 @@
     - P, NP, NP-completeness
 - FW-426 (Database Management Systems)
 
+  - description:
+    - …
   - programming:
     - SQL, GraphQL, JSON and stuff
   - references:
@@ -363,6 +409,8 @@
     - …
 
 - FW-521 (Linear Algebra II)
+  - description:
+    - …
   - programming:
     - APL solutions of Linear I and II
   - references:
@@ -374,13 +422,17 @@
     - vector norms
     - chomsky analysis
 - FW-522 (Telecommunication Systems)
+  - description:
+    - …
   - programming:
-    - ...
+    - …
   - references:
-    - ...
+    - …
   - topics:
-    - ...
+    - …
 - FW-513 (Teaching of Informatics)
+  - description:
+    - …
   - programming:
     - using Scratch as a tool for educators
     - using Lua on computercraft extensions
@@ -395,6 +447,8 @@
     - cognitive theory
     - failure of constructivism
 - FW-514 (Artificial Intelligence)
+  - description:
+    - …
   - programming:
     - …
   - references:
@@ -402,6 +456,8 @@
   - topics:
     - …
 - FW-525 (Computer Architecture)
+  - description:
+    - …
   - programming:
     - learning the MIPS assembler
   - references:
@@ -410,6 +466,8 @@
     - ...
 - FW-516 (Web Applications)
 
+  - description:
+    - …
   - programming:
     - HTML, CSS and JavaScript for webistes and backend
   - references:
@@ -417,6 +475,7 @@
   - topics:
     - frontend vs backend
     - html/css/js for frontend
+    - atomic design
     - javascript tutorial
     - nodejs for backend
     - GET/POST requests
@@ -424,6 +483,8 @@
     - routing
 
 - FW-621 (Topology and Graphs)
+  - description:
+    - …
   - programming:
     - …
   - references:
@@ -431,6 +492,8 @@
   - topics:
     - …
 - FW-622 (Computer Graphics)
+  - description:
+    - …
   - programming:
     - …
   - references:
@@ -438,6 +501,8 @@
   - topics:
     - …
 - FW-623 (Machine Learning)
+  - description:
+    - …
   - programming:
     - …
   - references:
@@ -445,6 +510,8 @@
   - topics:
     - …
 - FW-624 (Networks I)
+  - description:
+    - …
   - programming:
     - …
   - references:
@@ -452,6 +519,8 @@
   - topics:
     - …
 - FW-615 (Ethics of Computing)
+  - description:
+    - …
   - programming:
     - …
   - references:
@@ -460,6 +529,8 @@
     - …
 - FW-626 (Nanotechnology)
 
+  - description:
+    - …
   - programming:
     - …
   - references:
@@ -468,6 +539,8 @@
     - …
 
 - FW-731 (Neural Networks)
+  - description:
+    - …
   - programming:
     - …
   - references:
@@ -475,6 +548,8 @@
   - topics:
     - …
 - FW-722 (Synthetic Biology Fundamentals)
+  - description:
+    - …
   - programming:
     - …
   - references:
@@ -482,6 +557,8 @@
   - topics:
     - …
 - FW-733 (Networks II)
+  - description:
+    - …
   - programming:
     - emulate in Lua computercraft using rednet scripts
   - references:
@@ -489,6 +566,8 @@
   - topics:
     - ...
 - FW-714 (Computer Systems Design II)
+  - description:
+    - …
   - programming:
     - maybe Java or C
   - references:
@@ -500,6 +579,8 @@
     - data flow diagrams, structured analysis
     - testing (code first)
 - FW-725 (Parallel Computing)
+  - description:
+    - …
   - programming:
     - C for OpenMP, MPI and CUDA
   - references:
@@ -513,6 +594,8 @@
     - cuda
 - FW-716 (History of Computing)
 
+  - description:
+    - …
   - programming:
     - …
   - references:
@@ -532,6 +615,8 @@
     - …
 
 - FW-821 (Cryptography)
+  - description:
+    - …
   - programming:
     - Crystal or C for crypto examples.
   - references:
@@ -547,6 +632,8 @@
     - post-quantum cryptography
     - merkle trees, blockchain ideas
 - FW-832 (Distributed Tolerant Systems)
+  - description:
+    - …
   - programming:
     - using Erlang and OTP
   - references:
@@ -554,6 +641,8 @@
   - topics:
     - ...
 - FW-833 (Interpreters)
+  - description:
+    - …
   - programming:
     - self eval interpreter on Racket
     - tree parser in Java
@@ -572,6 +661,8 @@
     - closures
     - analysis of Lua source code
 - FW-824 (Computer Systems Design III)
+  - description:
+    - …
   - programming:
     - small C examples
   - references:
@@ -587,6 +678,8 @@
     - CI/CD
     - cloud computing, services
 - FW-835 (Data Structures Algorithms III)
+  - description:
+    - …
   - programming:
     - DOD in C
   - references:
@@ -608,6 +701,8 @@
     - gradient-descent, Newton method, AdaGrad and Adam method
 - FW-826 (Internet of Things)
 
+  - description:
+    - …
   - programming:
     - …
   - references:
@@ -616,6 +711,8 @@
     - …
 
 - FW-931 (Human-Computer Interaction)
+  - description:
+    - …
   - programming:
     - …
   - references:
@@ -623,6 +720,8 @@
   - topics:
     - …
 - FW-932 (Computer Systems Design IV)
+  - description:
+    - …
   - programming:
     - …
   - references:
@@ -631,6 +730,8 @@
     - probably full end-to-end system with multiple languages, services, ideas.
     - viewers can submit new assignments that would be 932-worthy and I display them.
 - FW-933 (Cryptocurrency and Blockchain Technologies)
+  - description:
+    - …
   - programming:
     - Solidity for ethereum, Rust for solana.
   - references:
@@ -643,6 +744,8 @@
     - smart contracts and ethereum.
     - efficient execution and solana.
 - FW-934 (Penetration Testing and Offensive Security)
+  - description:
+    - …
   - programming:
     - lots of tools, maybe Python for scripts.
   - references:
@@ -651,6 +754,8 @@
     - pipeline of pentesting
     - PIG, AIG, ENUM, VA, EX, PEX, REP
 - FW-935 (Quantum Computing)
+  - description:
+    - …
   - programming:
     - using simulated programs or actual IBM language for quantum computers.
   - references:
@@ -658,6 +763,8 @@
   - topics:
     - …
 - FW-936 (Internet of Bio-NanoThings)
+  - description:
+    - …
   - programming:
     - …
   - references:

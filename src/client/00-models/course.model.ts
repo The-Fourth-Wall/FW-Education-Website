@@ -12,6 +12,7 @@ export type Difficulty =
 export type Course = {
   code: string;
   name: string;
+  description: string;
   semester: number;
   difficulty: Difficulty;
   programming: string;
