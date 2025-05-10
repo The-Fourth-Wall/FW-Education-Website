@@ -428,7 +428,7 @@ Curriculum
     - linear programming, game theory
     - vector norms
     - chomsky analysis
-- FW-522 (Telecommunication Systems)
+- FW-522 (Tele-Communication Systems)
   - description:
     - Discover the underlying theoretical and practical structure of technologies that enable telecommunications.
   - programming:
