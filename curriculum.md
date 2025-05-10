@@ -405,7 +405,7 @@ Curriculum
 - FW-426 (Database Management Systems)
 
   - description:
-    - A dedicated course for the different types of database management systems and their use in the real world.
+    - A dedicated course on the different types of database management systems and their use in the real world.
   - programming:
     - SQL, GraphQL, JSON and stuff
   - references:
