@@ -15,20 +15,24 @@ const difficulty_colors = {
 
 <div class="card" style={`--accent: ${difficulty_colors[course.difficulty]}`}>
   <div class="header">
-    <div class="title">
-      <Text label={course.name} size={18} variant="primary" />
-    </div>
+    <Text label={course.name} size={1.25} type="primary" color="var(--white)" />
     <div class="right-column">
       <Badge text={course.code} variant={course.difficulty} size={0.875} />
       <Text
         label={`Semester ${course.semester}`}
-        size={14}
-        variant="secondary"
+        size={0.875}
+        type="secondary"
+        color="var(--white)"
       />
     </div>
   </div>
   <div class="description">
-    <Text label={course.description} size={14} variant="secondary" />
+    <Text
+      label={course.description}
+      size={0.875}
+      type="secondary"
+      color="var(--white)"
+    />
   </div>
 </div>
 
@@ -70,7 +74,7 @@ const difficulty_colors = {
     gap: 1rem;
   }
   .title {
-    font-weight: 800;
+    font-weight: 700;
     flex: 1;
     min-width: 0;
   }
