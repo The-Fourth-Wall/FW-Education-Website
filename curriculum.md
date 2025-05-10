@@ -226,7 +226,7 @@ Curriculum
     - frequency response
 - FW-214 (Digital Design I)
   - description:
-    - Learn how logic gates behave, gain foundational knowledge of digital circuit construction and design.
+    - Get familiar with how logic gates behave, gain foundational knowledge of digital circuit construction and design.
   - programming:
     - examples in simulation software
   - references:
@@ -358,7 +358,7 @@ Curriculum
     - …
 - FW-423 (Quantum Mechanics)
   - description:
-    - An introductory course on quantum phenomena, effects and behaviours.
+    - A first look into quantum phenomena, effects and behaviours.
   - programming:
     - examples in Ruby
   - references:
@@ -455,7 +455,7 @@ Curriculum
     - failure of constructivism
 - FW-514 (Artificial Intelligence)
   - description:
-    - An introduction to the foundational techniques driving the field of AI.
+    - An course on the foundational techniques driving the field of AI.
   - programming:
     - …
   - references:
@@ -491,7 +491,7 @@ Curriculum
 
 - FW-621 (Topology and Graphs)
   - description:
-    - Learn about graph theory, delve into the mathematical foundations of topology and apply that knowledge to the real world of computing.
+    - Understand graph theory, delve into the mathematical foundations of topology and apply that knowledge to the real world of computing.
   - programming:
     - …
   - references:
@@ -509,7 +509,7 @@ Curriculum
     - …
 - FW-623 (Machine Learning)
   - description:
-    - A foray into supervised, unsupervised or reinforcement learning, adding intelligent capabilities to the computer.
+    - Supervised, unsupervised or reinforcement learning and the addition of intelligent capabilities to the computer.
   - programming:
     - …
   - references:
@@ -556,7 +556,7 @@ Curriculum
     - …
 - FW-722 (Synthetic Biology)
   - description:
-    - A deep dive into the construction of novel biological systems and an introduction to realigning existing ones to human goals.
+    - A deep dive into the construction of novel biological systems and the realigning of existing ones to human goals.
   - programming:
     - …
   - references:
@@ -565,7 +565,7 @@ Curriculum
     - …
 - FW-733 (Networks II)
   - description:
-    - A more advanced learning experience for modern networked systems, network programming, routing and architectures for scalable apps.
+    - A more advanced program on modern networked systems, network programming, routing and architectures for scalable apps.
   - programming:
     - emulate in Lua computercraft using rednet scripts
   - references:
@@ -623,7 +623,7 @@ Curriculum
 
 - FW-821 (Cryptography)
   - description:
-    - A comprehensive set of mathematical foundations, practical applications, and the systems of modern cryptography that secure the authenticity and privacy of information.
+    - A comprehensive set of maths, algorithms, practical applications, and the systems of modern cryptography that secure the authenticity and privacy of information.
   - programming:
     - Crystal or C for crypto examples.
   - references:
@@ -640,7 +640,7 @@ Curriculum
     - merkle trees, blockchain ideas
 - FW-832 (Distributed Tolerant Systems)
   - description:
-    - Learn about the inner workings of fault tolerant systems with a high degree of distribution for availability, performance and consistency of information.
+    - A course on the inner workings of fault tolerant systems with a high degree of distribution for availability, performance and consistency of information.
   - programming:
     - using Erlang and OTP
   - references:
@@ -669,7 +669,7 @@ Curriculum
     - analysis of Lua source code
 - FW-824 (Computer Systems Design III)
   - description:
-    - Learn how real critical safety and very high performant systems can be created, how to scale development and how to deploy automatically.
+    - Study how real critical safety and very high performant systems can be created, how to scale development and how to deploy automatically.
   - programming:
     - small C examples
   - references:
@@ -738,7 +738,7 @@ Curriculum
     - viewers can submit new assignments that would be 932-worthy and I display them.
 - FW-933 (Cryptocurrency and Blockchain Technologies)
   - description:
-    - A detailed introduction to the world of cryptocurrency, decentralized applications and blockchain systems.
+    - A detailed foray to the world of cryptocurrency, decentralized applications and blockchain systems.
   - programming:
     - Solidity for ethereum, Rust for solana.
   - references:
