@@ -1,0 +1,26 @@
+---
+const DISABLE: number = 0;
+
+type Props = {
+  color?: string;
+};
+
+const {color = "var(--green)"} = Astro.props;
+---
+
+{
+  DISABLE === 1 ? (
+    <div class="debug-border" style={`border-color: ${color};`}>
+      <slot />
+    </div>
+  ) : (
+    <slot />
+  )
+}
+
+<style>
+  .debug-border {
+    border-width: 1px;
+    border-style: solid;
+  }
+</style>
