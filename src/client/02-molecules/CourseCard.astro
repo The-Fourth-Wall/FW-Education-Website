@@ -43,6 +43,23 @@ const difficulty_colors = {
       color="var(--white)"
     />
   </div>
+
+  <div class="bottom_separator">
+    <Text
+      label={course.difficulty[0].toUpperCase() + course.difficulty.slice(1)}
+      size={0.75}
+      type="accent"
+      color="var(--accent)"
+    />
+    <div class="time">
+      <Text
+        label={course.time}
+        size={0.75}
+        type="secondary"
+        color="var(--white)"
+      />
+    </div>
+  </div>
 </div>
 
 <style>
@@ -64,6 +81,8 @@ const difficulty_colors = {
     backdrop-filter: blur(10px);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     container-type: inline-size;
+    display: flex;
+    flex-direction: column;
   }
   .card:hover {
     transform: translateY(-2px);
@@ -100,7 +119,22 @@ const difficulty_colors = {
   }
 
   .description {
-    margin: 1rem 0 0.5rem;
+    margin: 1rem 0 1.5rem;
+  }
+
+  .bottom_separator {
+    position: relative;
+    margin: auto -1rem -0.5rem 0rem;
+    padding: 0.25rem 0 0.25rem 0;
+    border-top: 1px solid var(--dark-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+  }
+
+  .time {
+    margin-right: 1rem;
   }
 
   @container (max-width: 280px) {

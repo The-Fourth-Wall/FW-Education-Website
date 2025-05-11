@@ -31,6 +31,8 @@ Curriculum
 - FW-101 (Calculus I)
   - description:
     - An introduction to the foundations of Algebra for understanding of changing systems, a basic requirement for STEM.
+  - time:
+    - 25 hours
   - programming:
     - optional examples in C as extras lectures
   - references:
@@ -45,6 +47,8 @@ Curriculum
 - FW-102 (Linear Algebra I)
   - description:
     - A crucial mathematical basis for working with scalars, vectors and matrices, very important and essential for all modern areas of computing.
+  - time:
+    - 25 hours
   - programming:
     - optional examples in C as extras lectures (redo on APL later)
   - references:
@@ -58,6 +62,8 @@ Curriculum
 - FW-103 (Foundational Science for Computing)
   - description:
     - A high level foray into the fields of physics, chemistry, materials science and biology, enabling the connection of computing to the real world.
+  - time:
+    - 25 hours
   - programming:
     - no language
   - references:
@@ -130,6 +136,8 @@ Curriculum
 - FW-104 (Analog Design I)
   - description:
     - An introduction to analog circuits and the basic building blocks of computation.
+  - time:
+    - 25 hours
   - programming:
     - examples in simulation software
       - https://www.tinkercad.com/learn/circuits
@@ -146,6 +154,8 @@ Curriculum
 - FW-105 (Programming Fundamentals in C)
   - description:
     - Your first contact with the language of computers and the ability to program them.
+  - time:
+    - 25 hours
   - programming:
     - using C language fundamentals without pointers
   - references:
@@ -165,6 +175,8 @@ Curriculum
 
   - description:
     - Learning to think in terms of systems, understanding the connection between hardware, software and application.
+  - time:
+    - 25 hours
   - programming:
     - very simple problems with the Scratch ide
   - references:
@@ -180,6 +192,8 @@ Curriculum
 - FW-211 (Calculus II)
   - description:
     - A deeper understanding of Algebra for complicated functions.
+  - time:
+    - ?? hours
   - programming:
     - examples in C
   - references:
@@ -196,6 +210,8 @@ Curriculum
 - FW-202 (Discrete Math)
   - description:
     - Explore essential structures, proofs and reasoning to build algorithmic intuition.
+  - time:
+    - ?? hours
   - programming:
     - examples in C
   - references:
@@ -210,6 +226,8 @@ Curriculum
 - FW-213 (Analog Design II)
   - description:
     - Delve into semiconductors, transistors and the more advanced building blocks of electronic circuits.
+  - time:
+    - ?? hours
   - programming:
     - examples in simulation software
       - https://www.tinkercad.com/learn/circuits
@@ -227,6 +245,8 @@ Curriculum
 - FW-214 (Digital Design I)
   - description:
     - Get familiar with how logic gates behave, gain foundational knowledge of digital circuit construction and design.
+  - time:
+    - ?? hours
   - programming:
     - examples in simulation software
   - references:
@@ -241,6 +261,8 @@ Curriculum
 - FW-205 (Object Oriented Programming with Ruby)
   - description:
     - Master objects and messages, build extensible software and scale your understanding using OOP.
+  - time:
+    - ?? hours
   - programming:
     - fundamentals of OOP in Ruby without a lot of metaprogramming
   - references:
@@ -260,6 +282,8 @@ Curriculum
 
   - description:
     - Wield command line interfaces and script automations on Linux.
+  - time:
+    - ?? hours
   - programming:
     - using bash scripts with linux commands
   - references:
@@ -279,6 +303,8 @@ Curriculum
 - FW-311 (Numerical Analysis)
   - description:
     - A robust analysis of linear systems, approximations of functions, derivatives and integrals.
+  - time:
+    - ?? hours
   - programming:
     - gruff examples in Ruby
   - references:
@@ -288,6 +314,8 @@ Curriculum
 - FW-312 (Data and Probability)
   - description:
     - Explore statistics, probability and data, understand uncertainty and make data-driven decisions.
+  - time:
+    - ?? hours
   - programming:
     - probability and statistics examples in Ruby
   - references:
@@ -297,6 +325,8 @@ Curriculum
 - FW-323 (Digital Design II)
   - description:
     - Architect more complex digital systems, from sophisticated memory to FPGAs.
+  - time:
+    - ?? hours
   - programming:
     - examples in simulation software
     - simple intro to SystemVerilog
@@ -310,6 +340,8 @@ Curriculum
 - FW-314 (Data Structures Algorithms I)
   - description:
     - Master fundamental data structures and algorithms, achieving performance and true scalability.
+  - time:
+    - ?? hours
   - programming:
     - DSA in C
   - references:
@@ -328,6 +360,8 @@ Curriculum
 
   - description:
     - Engineer interface-driven implementations, experience enterprise-grade application development.
+  - time:
+    - ?? hours
   - programming:
     - classes in Java and following interface based implementations
   - references:
@@ -341,6 +375,8 @@ Curriculum
 - FW-421 (Theory of Computation)
   - description:
     - Discover formal languages, automata, computability and the fundamental nature of computation itself.
+  - time:
+    - ?? hours
   - programming:
     - …
   - references:
@@ -350,6 +386,8 @@ Curriculum
 - FW-412 (Digital Signal Processing)
   - description:
     - Analyze and transform digital signals and unlock applications from audio processing to medical imaging.
+  - time:
+    - ?? hours
   - programming:
     - …
   - references:
@@ -359,6 +397,8 @@ Curriculum
 - FW-423 (Quantum Mechanics)
   - description:
     - A first look into quantum phenomena, effects and behaviours.
+  - time:
+    - ?? hours
   - programming:
     - examples in Ruby
   - references:
@@ -369,6 +409,8 @@ Curriculum
 - FW-424 (Paradigms of Programming Languages)
   - description:
     - Understand the many different programming paradigms, their strengths and weaknesses.
+  - time:
+    - ?? hours
   - programming:
     - Algol, Scheme, SmallTalk, Prolog for paradigms
   - references:
@@ -386,7 +428,10 @@ Curriculum
     - simple problem solved in 4 different languages and compare methodologies
 - FW-425 (Data Structures Algorithms II)
   - description:
-    - The second iteration of the DSA course teaching you more advanced algorithms with a focus on problem spaces.
+    - The second iteration of the DSA course teaching you more advanced algorithms with a focus on problem
+    - spaces.
+  - time:
+    - ?? hours
   - programming:
     - DSA in C
   - references:
@@ -406,6 +451,8 @@ Curriculum
 
   - description:
     - A dedicated course on the different types of database management systems and their use in the real world.
+  - time:
+    - ?? hours
   - programming:
     - SQL, GraphQL, JSON and stuff
   - references:
@@ -418,6 +465,8 @@ Curriculum
 - FW-521 (Linear Algebra II)
   - description:
     - A course on the more advanced applications of linear algebra, from vector norms to game theory.
+  - time:
+    - ?? hours
   - programming:
     - APL solutions of Linear I and II
   - references:
@@ -431,6 +480,8 @@ Curriculum
 - FW-522 (Tele-Communication Systems)
   - description:
     - Discover the underlying theoretical and practical structure of technologies that enable telecommunications.
+  - time:
+    - ?? hours
   - programming:
     - …
   - references:
@@ -440,6 +491,8 @@ Curriculum
 - FW-513 (Teaching of Informatics)
   - description:
     - A detailed overview of major theories of teaching with a focus on computing education.
+  - time:
+    - ?? hours
   - programming:
     - using Scratch as a tool for educators
     - using Lua on computercraft extensions
@@ -455,7 +508,9 @@ Curriculum
     - failure of constructivism
 - FW-514 (Artificial Intelligence)
   - description:
-    - An course on the foundational techniques driving the field of AI.
+    - A course on the foundational techniques driving the field of AI.
+  - time:
+    - ?? hours
   - programming:
     - …
   - references:
@@ -465,6 +520,8 @@ Curriculum
 - FW-525 (Computer Architecture)
   - description:
     - Understand how hardware integrates with turing-complete assemblers and how to program them efficiently.
+  - time:
+    - ?? hours
   - programming:
     - learning the MIPS assembler
   - references:
@@ -475,6 +532,8 @@ Curriculum
 
   - description:
     - A knowledge packed course on the roadmap of a full stack developer for the modern era.
+  - time:
+    - ?? hours
   - programming:
     - HTML, CSS and JavaScript for websites and backend
   - references:
@@ -492,6 +551,8 @@ Curriculum
 - FW-621 (Topology and Graphs)
   - description:
     - Understand graph theory, delve into the mathematical foundations of topology and apply that knowledge to the real world of computing.
+  - time:
+    - ?? hours
   - programming:
     - …
   - references:
@@ -501,6 +562,8 @@ Curriculum
 - FW-622 (Computer Graphics)
   - description:
     - Learn the core algorithms used to create, represent and display visual content and interactive experiences.
+  - time:
+    - ?? hours
   - programming:
     - …
   - references:
@@ -510,6 +573,8 @@ Curriculum
 - FW-623 (Machine Learning)
   - description:
     - Supervised, unsupervised or reinforcement learning and the addition of intelligent capabilities to the computer.
+  - time:
+    - ?? hours
   - programming:
     - …
   - references:
@@ -519,6 +584,8 @@ Curriculum
 - FW-624 (Networks I)
   - description:
     - An exploration of the multi-layered architecture of computer networks from cable to application.
+  - time:
+    - ?? hours
   - programming:
     - …
   - references:
@@ -528,6 +595,8 @@ Curriculum
 - FW-615 (Ethics of Computing)
   - description:
     - Navigate the complex moral landscape of the digital age, learn to recognize the biases, impacts and responsibilities of deploying systems for the benefit of humanity at large.
+  - time:
+    - ?? hours
   - programming:
     - …
   - references:
@@ -538,6 +607,8 @@ Curriculum
 
   - description:
     - An explanation of atomically precise manufacturing and its transformative potential across computing and modern science.
+  - time:
+    - ?? hours
   - programming:
     - …
   - references:
@@ -548,6 +619,8 @@ Curriculum
 - FW-731 (Neural Networks)
   - description:
     - Unlock the power of deep learning, convolutional, recurrent neural networks and transformers, the very tools and technologies that enable modern large language models.
+  - time:
+    - ?? hours
   - programming:
     - …
   - references:
@@ -557,6 +630,8 @@ Curriculum
 - FW-722 (Synthetic Biology)
   - description:
     - A deep dive into the construction of novel biological systems and the realigning of existing ones to human goals.
+  - time:
+    - ?? hours
   - programming:
     - …
   - references:
@@ -566,6 +641,8 @@ Curriculum
 - FW-733 (Networks II)
   - description:
     - A more advanced program on modern networked systems, network programming, routing and architectures for scalable apps.
+  - time:
+    - ?? hours
   - programming:
     - emulate in Lua computercraft using rednet scripts
   - references:
@@ -575,6 +652,8 @@ Curriculum
 - FW-714 (Computer Systems Design II)
   - description:
     - Elevate your software engineering practices using the use case driven approach for long-term projects.
+  - time:
+    - ?? hours
   - programming:
     - maybe Java or C
   - references:
@@ -588,6 +667,8 @@ Curriculum
 - FW-725 (Parallel Computing)
   - description:
     - A course on harnessing the power of multi-core environments and accelerators from a theoretical to a practical level.
+  - time:
+    - ?? hours
   - programming:
     - C for OpenMP, MPI and CUDA
   - references:
@@ -603,6 +684,8 @@ Curriculum
 
   - description:
     - A journey through the historical log of pivotal breakthroughs, visionary thinkers, and landmark systems that shaped the modern world of computation.
+  - time:
+    - ?? hours
   - programming:
     - …
   - references:
@@ -624,6 +707,8 @@ Curriculum
 - FW-821 (Cryptography)
   - description:
     - A comprehensive set of maths, algorithms, practical applications, and the systems of modern cryptography that secure the authenticity and privacy of information.
+  - time:
+    - ?? hours
   - programming:
     - Crystal or C for crypto examples.
   - references:
@@ -641,6 +726,8 @@ Curriculum
 - FW-832 (Distributed Tolerant Systems)
   - description:
     - A course on the inner workings of fault tolerant systems with a high degree of distribution for availability, performance and consistency of information.
+  - time:
+    - ?? hours
   - programming:
     - using Erlang and OTP
   - references:
@@ -650,6 +737,8 @@ Curriculum
 - FW-833 (Interpreters)
   - description:
     - Create your own programming languages gaining a profound understanding of how interpreters turn code into execution.
+  - time:
+    - ?? hours
   - programming:
     - self eval interpreter on Racket
     - tree parser in Java
@@ -670,6 +759,8 @@ Curriculum
 - FW-824 (Computer Systems Design III)
   - description:
     - Study how real critical safety and very high performant systems can be created, how to scale development and how to deploy automatically.
+  - time:
+    - ?? hours
   - programming:
     - small C examples
   - references:
@@ -687,6 +778,8 @@ Curriculum
 - FW-835 (Data Structures Algorithms III)
   - description:
     - Explore the most advanced algorithms and data structures tackling the most demanding computational problems.
+  - time:
+    - ?? hours
   - programming:
     - DOD in C
   - references:
@@ -710,6 +803,8 @@ Curriculum
 
   - description:
     - Architect interconnected mini systems, design the protocols and deploy vast networks of smart devices.
+  - time:
+    - ?? hours
   - programming:
     - …
   - references:
@@ -720,6 +815,8 @@ Curriculum
 - FW-931 (Human-Computer Interaction)
   - description:
     - A redefinition of the interaction between individuals and machines, the humane representation of thought, and the intuitive, immersive platforms that extend intellectual reach.
+  - time:
+    - ?? hours
   - programming:
     - …
   - references:
@@ -729,6 +826,8 @@ Curriculum
 - FW-932 (Computer Systems Design IV)
   - description:
     - Deploy end-to-end systems connecting multiple languages, services and methodologies, a culmination of all knowledge paths of computing.
+  - time:
+    - ?? hours
   - programming:
     - …
   - references:
@@ -739,6 +838,8 @@ Curriculum
 - FW-933 (Cryptocurrency and Blockchain Technologies)
   - description:
     - A detailed foray to the world of cryptocurrency, decentralized applications and blockchain systems.
+  - time:
+    - ?? hours
   - programming:
     - Solidity for ethereum, Rust for solana.
   - references:
@@ -753,6 +854,8 @@ Curriculum
 - FW-934 (Penetration Testing and Offensive Security)
   - description:
     - Learning to think like an attacker in an end-to-end penetration testing roadmap for securing systems against real-world threats.
+  - time:
+    - ?? hours
   - programming:
     - lots of tools, maybe Python for scripts.
   - references:
@@ -763,6 +866,8 @@ Curriculum
 - FW-935 (Quantum Computing)
   - description:
     - Leverage quantum mechanics and harness the power of qubits to solve non-classical computing problems.
+  - time:
+    - ?? hours
   - programming:
     - using simulated programs or actual IBM language for quantum computers.
   - references:
@@ -772,6 +877,8 @@ Curriculum
 - FW-936 (Internet of Bio-NanoThings)
   - description:
     - Explore the design of microscopic interconnected devices within biological systems.
+  - time:
+    - ?? hours
   - programming:
     - …
   - references:

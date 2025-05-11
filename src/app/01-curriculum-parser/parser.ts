@@ -9,6 +9,7 @@ export function parse_curriculum(content: string): Course[] {
     description: "",
     semester: "1",
     difficulty: "fundamental",
+    time: "0",
     programming: "",
     references: [],
     topics: [],
@@ -53,6 +54,7 @@ export function parse_curriculum(content: string): Course[] {
         description: "",
         semester: code[3],
         difficulty: get_difficulty(code),
+        time: "0",
         programming: "",
         references: [],
         topics: [],
@@ -62,7 +64,13 @@ export function parse_curriculum(content: string): Course[] {
 
     const indent = line.search(/\S/);
 
-    if (trimmed.startsWith("- description:")) {
+    if (trimmed.startsWith("- time:")) {
+      current_section = "time";
+      const time_match = trimmed.match(/- time:\s*(\d+)/);
+      if (time_match) {
+        current_course.time = time_match[1];
+      }
+    } else if (trimmed.startsWith("- description:")) {
       current_section = "description";
       const inline_desc = trimmed.substring("- description:".length).trim();
       if (inline_desc) {
@@ -80,6 +88,9 @@ export function parse_curriculum(content: string): Course[] {
       current_section = "topics";
     } else if (trimmed.startsWith("- ")) {
       switch (current_section) {
+        case "time":
+          current_course.time = trimmed.substring(2);
+          break;
         case "description":
           current_course.description = trimmed.substring(2);
           break;
