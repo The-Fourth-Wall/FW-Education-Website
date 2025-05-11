@@ -4,6 +4,7 @@ import "@styles/resets.css";
 import "@styles/fonts.css";
 
 import Head from "@organisms/Head.astro";
+import BorderToggle from "@atoms/buttons/BorderToggle.astro";
 
 type Props = {
   title: string;
@@ -17,6 +18,7 @@ const {title} = Astro.props;
   <Head title={title} />
 
   <body>
+    <BorderToggle />
     <main>
       <slot />
     </main>
@@ -27,6 +29,7 @@ const {title} = Astro.props;
         font-weight: 400;
         font-feature-settings: "lnum";
         color-scheme: dark;
+        --card-border-width: 0.5rem;
 
         /* Font smoothing */
         font-synthesis: none;
