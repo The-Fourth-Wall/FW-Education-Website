@@ -15,17 +15,26 @@ const difficulty_colors = {
 
 <div class="card" style={`--accent: ${difficulty_colors[course.difficulty]}`}>
   <div class="header">
-    <Text label={course.name} size={1.25} type="primary" color="var(--white)" />
-    <div class="right-column">
+    <div class="title" data-title>
+      <Text
+        label={course.name}
+        size={1.25}
+        type="primary"
+        color="var(--white)"
+      />
+    </div>
+
+    <div class="information">
       <Badge text={course.code} variant={course.difficulty} size={0.875} />
       <Text
         label={`Semester ${course.semester}`}
         size={0.875}
-        type="secondary"
+        type="accent"
         color="var(--white)"
       />
     </div>
   </div>
+
   <div class="description">
     <Text
       label={course.description}
@@ -41,9 +50,9 @@ const difficulty_colors = {
     --dark-border: rgba(255, 255, 255, 0.1);
     --dark-shadow: rgba(0, 0, 0, 0.2);
     border: 1px solid var(--dark-border);
-    border-left: 8px solid var(--accent);
-    border-radius: 4px;
-    padding: 1.5rem;
+    border-left: 0.5rem solid var(--accent);
+    border-radius: 0.25rem;
+    padding: 0.75rem 1rem;
     background: linear-gradient(
       145deg,
       rgba(255, 255, 255, 0.05),
@@ -67,40 +76,48 @@ const difficulty_colors = {
       0 8px 32px -2px var(--dark-shadow),
       0 2px 4px 0 rgba(255, 255, 255, 0.05);
   }
+
   .header {
     display: flex;
+    flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 0.5rem;
   }
-  .title {
-    font-weight: 700;
-    flex: 1;
-    min-width: 0;
-  }
-  .right-column {
+
+  .information {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    gap: 0.75rem;
+    align-items: center;
+    gap: 0.25rem;
     flex-shrink: 0;
+    margin: -0.75rem -1rem -0.5rem 0.75rem;
+    padding: 0.75rem;
+    border-left: 1px solid var(--dark-border);
+    border-bottom: 1px solid var(--dark-border);
+    border-bottom-left-radius: 0.25rem;
+    background: rgba(0, 0, 0, 0.1);
   }
+
   .description {
     margin: 1rem 0 0.5rem;
-    width: 75%;
   }
-  @container (max-width: 200px) {
+
+  @container (max-width: 280px) {
     .header {
       flex-direction: column;
-      align-items: flex-start;
-      gap: 0.5rem;
+      align-items: stretch;
+      gap: 1rem;
     }
-    .right-column {
-      align-items: flex-start;
-      width: 100%;
-    }
-    .description {
-      width: 100%;
+
+    .information {
+      flex-direction: row;
+      justify-content: flex-start;
+      margin: 0;
+      padding: 0 0 1.5rem 0;
+      border-left: none;
+      background: transparent;
+      gap: 1rem;
     }
   }
 </style>
