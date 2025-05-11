@@ -7,7 +7,7 @@ export function parse_curriculum(content: string): Course[] {
     code: "",
     name: "",
     description: "",
-    semester: 1,
+    semester: "1",
     difficulty: "fundamental",
     programming: "",
     references: [],
@@ -17,15 +17,15 @@ export function parse_curriculum(content: string): Course[] {
   let topic_stack: {topic: Topic; indent: number}[] = [];
 
   const get_difficulty = (code: string): Difficulty => {
-    const level = parseInt(code[4]);
+    const level = code[4];
     switch (level) {
-      case 0:
+      case "0":
         return "fundamental";
-      case 1:
+      case "1":
         return "beginner";
-      case 2:
+      case "2":
         return "intermediate";
-      case 3:
+      case "3":
         return "advanced";
       default:
         return "advanced";
@@ -51,7 +51,7 @@ export function parse_curriculum(content: string): Course[] {
         code,
         name,
         description: "",
-        semester: parseInt(code[3]),
+        semester: code[3],
         difficulty: get_difficulty(code),
         programming: "",
         references: [],
@@ -64,7 +64,6 @@ export function parse_curriculum(content: string): Course[] {
 
     if (trimmed.startsWith("- description:")) {
       current_section = "description";
-
       const inline_desc = trimmed.substring("- description:".length).trim();
       if (inline_desc) {
         current_course.description = inline_desc;

@@ -13,7 +13,7 @@ export type Course = {
   code: string;
   name: string;
   description: string;
-  semester: number;
+  semester: string;
   difficulty: Difficulty;
   programming: string;
   references: string[];
