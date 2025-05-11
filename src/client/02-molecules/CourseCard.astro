@@ -5,15 +5,15 @@ import Text from "@atoms/text/Text.astro";
 
 type Props = {course: Course};
 const {course} = Astro.props;
-const difficulty_colors = {
+const accent = {
   fundamental: "var(--green)",
   beginner: "var(--blue)",
   intermediate: "var(--orange)",
   advanced: "var(--red)",
-} as const;
+}[course.difficulty];
 ---
 
-<div class="card" style={`--accent: ${difficulty_colors[course.difficulty]}`}>
+<div class="card" style={`--accent: ${accent}`}>
   <div class="header">
     <div class="title" data-title>
       <Text
@@ -49,7 +49,7 @@ const difficulty_colors = {
       label={course.difficulty[0].toUpperCase() + course.difficulty.slice(1)}
       size={0.75}
       type="accent"
-      color="var(--accent)"
+      color={accent}
     />
     <div class="time">
       <Text
@@ -62,12 +62,27 @@ const difficulty_colors = {
   </div>
 </div>
 
+<script>
+  const update_border_style = (show_borders: boolean) => {
+    document.querySelectorAll<HTMLElement>(".card").forEach(card => {
+      card.style.borderLeft = show_borders
+        ? "0.5rem solid var(--accent)"
+        : "1px solid var(--dark-border)";
+    });
+  };
+
+  window.addEventListener("border_toggle", ((event: CustomEvent) => {
+    update_border_style(event.detail.show_borders);
+  }) as EventListener);
+
+  update_border_style(true);
+</script>
+
 <style>
   .card {
     --dark-border: rgba(255, 255, 255, 0.1);
     --dark-shadow: rgba(0, 0, 0, 0.2);
     border: 1px solid var(--dark-border);
-    border-left: var(--card-border-width) solid var(--accent);
     border-radius: 0.25rem;
     padding: 0.75rem 1rem;
     background: linear-gradient(

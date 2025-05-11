@@ -10,9 +10,10 @@
   if (toggle_button) {
     toggle_button.addEventListener("click", () => {
       show_borders = !show_borders;
-      document.documentElement.style.setProperty(
-        "--card-border-width",
-        show_borders ? "0.5rem" : "0",
+      window.dispatchEvent(
+        new CustomEvent("border_toggle", {
+          detail: {show_borders},
+        }),
       );
       toggle_button.setAttribute("aria-pressed", String(show_borders));
       const icon = toggle_button.querySelector(".icon");
