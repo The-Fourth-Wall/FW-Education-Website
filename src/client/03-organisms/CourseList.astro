@@ -1,6 +1,7 @@
 ---
 import type {Course} from "@models/course.model";
 import CourseCard from "@molecules/CourseCard.astro";
+import GridTitleAligner from "@organisms/GridTitleAligner.svelte";
 
 type Props = {
   courses: Course[];
@@ -9,6 +10,7 @@ type Props = {
 const {courses} = Astro.props;
 ---
 
+<GridTitleAligner client:load />
 <div class="grid">
   {courses.map(course => <CourseCard course={course} />)}
 </div>
