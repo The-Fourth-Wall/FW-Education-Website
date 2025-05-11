@@ -428,8 +428,7 @@ Curriculum
     - simple problem solved in 4 different languages and compare methodologies
 - FW-425 (Data Structures Algorithms II)
   - description:
-    - The second iteration of the DSA course teaching you more advanced algorithms with a focus on problem
-    - spaces.
+    - The second iteration of the DSA course teaching you more advanced algorithms with a focus on problem spaces.
   - time:
     - ?? hours
   - programming:
