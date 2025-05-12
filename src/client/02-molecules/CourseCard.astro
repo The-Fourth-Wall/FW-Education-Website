@@ -7,10 +7,10 @@ type Props = {course: Course};
 const {course} = Astro.props;
 
 const accent = {
-  fundamental: "var(--green)",
-  beginner: "var(--blue)",
+  fundamental: "color-mix(in srgb, var(--green) 90%, var(--white))",
+  beginner: "color-mix(in srgb, var(--blue) 80%, var(--white))",
   intermediate: "var(--orange)",
-  advanced: "var(--red)",
+  advanced: "color-mix(in srgb, var(--crimson) 85%, var(--white))",
 }[course.difficulty];
 ---
 
@@ -132,7 +132,7 @@ const accent = {
 <style>
   .card {
     --dark-border: rgba(255, 255, 255, 0.1);
-    --hover-border: rgba(255, 255, 255, 0.33);
+    --hover-border: rgba(255, 255, 255, 0.5);
     --dark-shadow: rgba(0, 0, 0, 0.2);
     --animation-time: 50ms;
 
