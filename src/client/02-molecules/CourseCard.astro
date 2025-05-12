@@ -5,6 +5,7 @@ import Text from "@atoms/text/Text.astro";
 
 type Props = {course: Course};
 const {course} = Astro.props;
+
 const accent = {
   fundamental: "var(--green)",
   beginner: "var(--blue)",
@@ -61,22 +62,6 @@ const accent = {
     </div>
   </div>
 </div>
-
-<script>
-  const update_border_style = (show_borders: boolean) => {
-    document.querySelectorAll<HTMLElement>(".card").forEach(card => {
-      card.style.borderLeft = show_borders
-        ? "0.5rem solid var(--accent)"
-        : "1px solid var(--dark-border)";
-    });
-  };
-
-  window.addEventListener("border_toggle", ((event: CustomEvent) => {
-    update_border_style(event.detail.show_borders);
-  }) as EventListener);
-
-  update_border_style(true);
-</script>
 
 <style>
   .card {
