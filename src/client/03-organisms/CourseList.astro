@@ -2,20 +2,74 @@
 import type {Course} from "@models/course.model";
 import CourseCard from "@molecules/CourseCard.astro";
 import GridTitleAligner from "@organisms/GridTitleAligner.svelte";
+import Text from "@atoms/text/Text.astro";
 
 type Props = {
   courses: Course[];
 };
 
 const {courses} = Astro.props;
+
+const semesters = courses.reduce<Course[][]>((acc, course) => {
+  const newest = acc[acc.length - 1];
+
+  if (!newest || newest[0].semester !== course.semester) {
+    acc.push([course]);
+  } else {
+    newest.push(course);
+  }
+
+  return acc;
+}, []);
 ---
 
 <GridTitleAligner client:load />
-<div class="grid">
-  {courses.map(course => <CourseCard course={course} />)}
-</div>
+{
+  semesters.map(semester_courses => (
+    <div class="semester_group">
+      <div class="semester_title">
+        <Text
+          label={`Semester ${semester_courses[0].semester}`}
+          size={2}
+          type="primary"
+          color="var(--white)"
+        />
+        <div class="separator" />
+      </div>
+      <div class="grid">
+        {semester_courses.map(course => (
+          <CourseCard course={course} />
+        ))}
+      </div>
+    </div>
+  ))
+}
 
 <style>
+  .semester_group {
+    margin-bottom: 5rem;
+    margin-top: 2.5rem;
+  }
+
+  .semester_title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    gap: 1.5rem;
+  }
+
+  .separator {
+    margin-top: 0.25rem;
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      var(--white) 0%,
+      rgba(255, 255, 255, 0.5) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+
   .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -32,6 +86,10 @@ const {courses} = Astro.props;
   @media (max-width: 864px) {
     .grid {
       grid-template-columns: 1fr;
+    }
+
+    .semester_title {
+      gap: 1rem;
     }
   }
 </style>
