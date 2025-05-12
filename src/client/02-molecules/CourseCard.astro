@@ -65,6 +65,70 @@ const accent = {
   </div>
 </div>
 
+<script>
+  const cards = document.querySelectorAll<HTMLDivElement>(".card");
+  const edge_threshold = 150;
+
+  document.addEventListener("mousemove", (e: MouseEvent) => {
+    const global_x = e.clientX;
+    const global_y = e.clientY;
+
+    cards.forEach((card: HTMLDivElement) => {
+      const rect = card.getBoundingClientRect();
+
+      const is_hovering =
+        global_x >= rect.left &&
+        global_x <= rect.right &&
+        global_y >= rect.top &&
+        global_y <= rect.bottom;
+
+      if (is_hovering) {
+        const x = global_x - rect.left;
+        const y = global_y - rect.top;
+
+        card.style.background = `
+          radial-gradient(
+            1200px circle at ${x}px ${y}px,
+            rgba(255, 255, 255, 0.09),
+            rgba(255, 255, 255, 0.03) 12%,
+            rgba(255, 255, 255, 0.01) 20%
+          )
+        `;
+      } else {
+        const dist_to_left = Math.abs(global_x - rect.left);
+        const dist_to_right = Math.abs(global_x - rect.right);
+        const dist_to_top = Math.abs(global_y - rect.top);
+        const dist_to_bottom = Math.abs(global_y - rect.bottom);
+
+        const min_distance = Math.min(
+          dist_to_left,
+          dist_to_right,
+          dist_to_top,
+          dist_to_bottom,
+        );
+
+        if (min_distance < edge_threshold) {
+          const x = global_x - rect.left;
+          const y = global_y - rect.top;
+
+          const intensity = 1 - min_distance / edge_threshold;
+
+          card.style.background = `
+            radial-gradient(
+              1200px circle at ${x}px ${y}px,
+              rgba(255, 255, 255, ${0.09 * intensity}),
+              rgba(255, 255, 255, ${0.03 * intensity}) 12%,
+              rgba(255, 255, 255, ${0.01 * intensity}) 20%
+            )
+          `;
+        } else {
+          card.style.background = "transparent";
+        }
+      }
+    });
+  });
+</script>
+
 <style>
   .card {
     --dark-border: rgba(255, 255, 255, 0.1);
@@ -75,11 +139,7 @@ const accent = {
     border: 1px solid var(--dark-border);
     border-radius: 0.25rem;
     padding: 0.75rem 1rem;
-    background: linear-gradient(
-      145deg,
-      rgba(255, 255, 255, 0.05),
-      rgba(255, 255, 255, 0.02)
-    );
+    background: transparent;
     box-shadow:
       0 4px 24px -1px var(--dark-shadow),
       0 1px 2px 0 rgba(255, 255, 255, 0.05);
@@ -173,11 +233,6 @@ const accent = {
   }
 
   .card:hover {
-    background: linear-gradient(
-      145deg,
-      rgba(255, 255, 255, 0.07),
-      rgba(255, 255, 255, 0.03)
-    );
     border: 1px solid transparent;
   }
 
