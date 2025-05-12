@@ -37,7 +37,11 @@ const {title} = Astro.props;
       }
 
       body {
-        background-color: var(--amethyst);
+        background: linear-gradient(
+          90deg,
+          var(--amethyst) 0%,
+          color-mix(in srgb, var(--amethyst) 96%, var(--white))
+        );
         color: var(--white);
       }
 
