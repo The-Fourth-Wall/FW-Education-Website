@@ -40,22 +40,24 @@
     }
 
     raf = requestAnimationFrame(() => {
-      const grid = document.querySelector(grid_selector);
-      if (!grid) {
-        return;
-      }
-
-      const cards = Array.from(grid.querySelectorAll(card_selector));
-      if (!cards.length) {
+      const grids = document.querySelectorAll(grid_selector);
+      if (!grids.length) {
         return;
       }
 
       reset_heights();
-      const columns = get_column_count(grid);
 
-      for (let i = 0; i < cards.length; i += columns) {
-        align_row(cards.slice(i, i + columns));
-      }
+      grids.forEach(grid => {
+        const cards = Array.from(grid.querySelectorAll(card_selector));
+        if (!cards.length) {
+          return;
+        }
+
+        const columns = get_column_count(grid);
+        for (let i = 0; i < cards.length; i += columns) {
+          align_row(cards.slice(i, i + columns));
+        }
+      });
     });
   };
 
@@ -72,17 +74,19 @@
       return;
     }
 
-    const grid = document.querySelector(grid_selector);
-    if (!grid) {
+    const grids = document.querySelectorAll(grid_selector);
+    if (!grids.length) {
       return;
     }
 
-    const cards = Array.from(grid.querySelectorAll(card_selector));
-    cards.forEach(card => {
-      const title = card.querySelector(title_selector);
-      if (title) {
-        titles.set(card, title);
-      }
+    grids.forEach(grid => {
+      const cards = Array.from(grid.querySelectorAll(card_selector));
+      cards.forEach(card => {
+        const title = card.querySelector(title_selector);
+        if (title) {
+          titles.set(card, title);
+        }
+      });
     });
 
     const debounced_align = create_debounced_align();
@@ -97,8 +101,10 @@
     });
 
     window.addEventListener("resize", debounced_align);
+
+    const all_cards = Array.from(document.querySelectorAll(card_selector));
     observer = new ResizeObserver(debounced_align);
-    cards.forEach(card => observer.observe(card));
+    all_cards.forEach(card => observer.observe(card));
 
     setTimeout(align_cards, 100);
 
