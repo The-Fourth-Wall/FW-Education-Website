@@ -14,9 +14,11 @@ const accent = {
 }[course.difficulty];
 ---
 
-<div class="card" style={`--accent: ${accent}`}>
+<div class="card">
+  <div class="border_bottom"></div>
+  <div class="border_left"></div>
   <div class="header">
-    <div class="title" data-title>
+    <div data-title>
       <Text
         label={course.name}
         size={1.25}
@@ -66,7 +68,10 @@ const accent = {
 <style>
   .card {
     --dark-border: rgba(255, 255, 255, 0.1);
+    --hover-border: rgba(255, 255, 255, 0.25);
     --dark-shadow: rgba(0, 0, 0, 0.2);
+    --animation-time: 50ms;
+
     border: 1px solid var(--dark-border);
     border-radius: 0.25rem;
     padding: 0.75rem 1rem;
@@ -78,22 +83,102 @@ const accent = {
     box-shadow:
       0 4px 24px -1px var(--dark-shadow),
       0 1px 2px 0 rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    container-type: inline-size;
+    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     flex-direction: column;
+    position: relative;
+    overflow: hidden;
   }
+
+  .card::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 0;
+    height: 1px;
+    background: var(--hover-border);
+    transition: width var(--animation-time) ease-out;
+  }
+
+  .card::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 1px;
+    height: 0;
+    background: var(--hover-border);
+    transition: height var(--animation-time) ease-out;
+  }
+
+  .card .border_bottom {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 0;
+    height: 1px;
+    background: var(--hover-border);
+    transition: width var(--animation-time) ease-out;
+  }
+
+  .card .border_left {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 1px;
+    height: 0;
+    background: var(--hover-border);
+    transition: height var(--animation-time) ease-out;
+  }
+
+  .card:hover::before {
+    width: calc(100% + 2px);
+    transition-delay: 0;
+  }
+
+  .card:hover::after {
+    height: calc(100% + 2px);
+    transition-delay: var(--animation-time);
+  }
+
+  .card:hover .border_bottom {
+    width: calc(100% + 2px);
+    transition-delay: calc(var(--animation-time) * 2);
+  }
+
+  .card:hover .border_left {
+    height: calc(100% + 2px);
+    transition-delay: calc(var(--animation-time) * 3);
+  }
+
+  .card:not(:hover)::before {
+    width: 0;
+    transition-delay: calc(var(--animation-time) * 3);
+  }
+
+  .card:not(:hover)::after {
+    height: 0;
+    transition-delay: calc(var(--animation-time) * 2);
+  }
+
+  .card:not(:hover) .border_bottom {
+    width: 0;
+    transition-delay: var(--animation-time);
+  }
+
+  .card:not(:hover) .border_left {
+    height: 0;
+    transition-delay: 0;
+  }
+
   .card:hover {
-    transform: translateY(-2px);
     background: linear-gradient(
       145deg,
       rgba(255, 255, 255, 0.07),
       rgba(255, 255, 255, 0.03)
     );
-    box-shadow:
-      0 8px 32px -2px var(--dark-shadow),
-      0 2px 4px 0 rgba(255, 255, 255, 0.05);
+    border: 1px solid transparent;
   }
 
   .header {
@@ -116,6 +201,58 @@ const accent = {
     border-bottom: 1px solid var(--dark-border);
     border-bottom-left-radius: 0.25rem;
     background: rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .information::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 1px;
+    width: 1px;
+    height: 0;
+    background: var(--hover-border);
+    transition: height var(--animation-time) ease-out;
+  }
+
+  .information::after {
+    content: "";
+    position: absolute;
+    left: -1px;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background: var(--hover-border);
+    transition: width var(--animation-time) ease-out;
+  }
+
+  .card:hover .information {
+    border-left: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    transition:
+      border-left calc(var(--animation-time) * 5) step-end,
+      border-bottom calc(var(--animation-time) * 6) step-end;
+  }
+
+  .card:hover .information::before {
+    height: 100%;
+    transition-delay: calc(var(--animation-time) * 4);
+  }
+
+  .card:hover .information::after {
+    width: 100%;
+    transition-delay: calc(var(--animation-time) * 5);
+  }
+
+  .card:not(:hover) .information::before {
+    height: 0;
+    transition-delay: var(--animation-time);
+  }
+
+  .card:not(:hover) .information::after {
+    width: 0;
+    transition-delay: 0;
   }
 
   .description {
@@ -131,6 +268,33 @@ const accent = {
     align-items: center;
     justify-content: space-between;
     background: linear-gradient(to left, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+  }
+
+  .bottom_separator::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    right: 1px;
+    width: 0;
+    height: 1px;
+    background: var(--hover-border);
+    transition: width var(--animation-time) ease-out;
+    transform-origin: right;
+  }
+
+  .card:hover .bottom_separator::before {
+    width: 100%;
+    transition-delay: calc(var(--animation-time) * 6);
+  }
+
+  .card:not(:hover) .bottom_separator::before {
+    width: 0;
+    transition-delay: calc(var(--animation-time) * 2);
+  }
+
+  .card:hover .bottom_separator {
+    border-top: 1px solid transparent;
+    transition: border-top calc(var(--animation-time) * 7) step-end;
   }
 
   .time {
@@ -152,6 +316,14 @@ const accent = {
       border-left: none;
       background: transparent;
       gap: 1rem;
+    }
+
+    .information::before {
+      display: none;
+    }
+
+    .card:hover .information {
+      border-left: 0;
     }
   }
 </style>
