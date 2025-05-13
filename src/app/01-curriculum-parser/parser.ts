@@ -28,6 +28,10 @@ export function parse_curriculum(content: string): Course[] {
         return "intermediate";
       case "3":
         return "advanced";
+      case "4":
+        return "expert";
+      case "5":
+        return "master";
       default:
         return "advanced";
     }

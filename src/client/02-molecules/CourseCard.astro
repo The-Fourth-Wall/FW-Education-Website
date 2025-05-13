@@ -2,16 +2,12 @@
 import type {Course} from "@models/course.model";
 import Badge from "@atoms/buttons/Badge.astro";
 import Text from "@atoms/text/Text.astro";
+import {get_difficulty_accent} from "@/app/03-colors/difficulty-colors";
 
 type Props = {course: Course};
 const {course} = Astro.props;
 
-const accent = {
-  fundamental: "color-mix(in srgb, var(--green) 90%, var(--white))",
-  beginner: "color-mix(in srgb, var(--blue) 80%, var(--white))",
-  intermediate: "var(--orange)",
-  advanced: "color-mix(in srgb, var(--crimson) 85%, var(--white))",
-}[course.difficulty];
+const accent = get_difficulty_accent(course.difficulty);
 ---
 
 <div class="card">

@@ -7,7 +7,9 @@ export type Difficulty =
   | "fundamental"
   | "beginner"
   | "intermediate"
-  | "advanced";
+  | "advanced"
+  | "expert"
+  | "master";
 
 export type Course = {
   code: string;

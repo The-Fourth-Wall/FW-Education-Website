@@ -1,43 +1,37 @@
 ---
 import Text from "@atoms/text/Text.astro";
+import type {Difficulty} from "@models/course.model";
+import {get_difficulty_background} from "@app/03-colors/difficulty-colors";
 
 type Props = {
   text: string;
-  variant: "fundamental" | "beginner" | "intermediate" | "advanced";
+  variant: Difficulty;
   size: number;
 };
 
 const {text, variant, size} = Astro.props;
+const background = get_difficulty_background(variant);
 ---
 
 <span
-  class={`badge badge-${variant}`}
+  class={`badge ${variant === "master" && "master"}`}
   style={`
     font-size: ${size}rem;
-    padding: ${size * 0.286}rem ${size * 0.857}rem;
+    padding: ${size * 0.226}rem ${size * 0.857}rem;
+    background: ${background};
   `}
-  ><Text label={text} size={size} type="secondary" color="var(--white)" /></span
->
+  ><Text label={text} size={size} type="secondary" color="var(--white)" />
+</span>
 
 <style>
   .badge {
     border-radius: 0.375rem;
     text-align: center;
+    border: 1px solid transparent;
   }
 
-  .badge-fundamental {
-    background-color: color-mix(in srgb, var(--green) 80%, var(--black));
-  }
-
-  .badge-beginner {
-    background-color: color-mix(in srgb, var(--blue) 85%, var(--black));
-  }
-
-  .badge-intermediate {
-    background-color: color-mix(in srgb, var(--orange) 78%, var(--black));
-  }
-
-  .badge-advanced {
-    background-color: color-mix(in srgb, var(--crimson) 85%, var(--black));
+  .master {
+    border: 1px solid color-mix(in srgb, var(--onyx) 90%, var(--white));
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.125);
   }
 </style>
