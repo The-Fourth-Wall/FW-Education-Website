@@ -5,121 +5,48 @@
   export let card_selector = ".card";
   export let title_selector = "[data-title]";
 
-  const is_browser = typeof window !== "undefined";
+  const align_titles = () => {
+    const grids = document.querySelectorAll(grid_selector);
 
-  let titles = new Map();
-  let raf = null;
-  let observer = null;
-  let media_queries = [];
+    grids.forEach(grid => {
+      const cards = grid.querySelectorAll(card_selector);
+      const columns =
+        getComputedStyle(grid).gridTemplateColumns.split(" ").length;
 
-  const get_column_count = grid =>
-    getComputedStyle(grid).gridTemplateColumns.split(" ").length;
+      for (let i = 0; i < cards.length; i += columns) {
+        const row = Array.from(cards).slice(i, i + columns);
+        const titles = row
+          .map(card => card.querySelector(title_selector))
+          .filter(Boolean);
 
-  const reset_heights = () =>
-    titles.forEach(title => (title.style.minHeight = ""));
-
-  const align_row = row_cards => {
-    const heights = row_cards.map(
-      card => titles.get(card)?.getBoundingClientRect().height || 0,
-    );
-    const max_height = Math.max(...heights);
-    row_cards.forEach(card => {
-      const title = titles.get(card);
-      if (title) {
-        title.style.minHeight = `${max_height}px`;
-      }
-    });
-  };
-
-  const align_cards = () => {
-    if (!is_browser) {
-      return;
-    }
-    if (raf) {
-      cancelAnimationFrame(raf);
-    }
-
-    raf = requestAnimationFrame(() => {
-      const grids = document.querySelectorAll(grid_selector);
-      if (!grids.length) {
-        return;
-      }
-
-      reset_heights();
-
-      grids.forEach(grid => {
-        const cards = Array.from(grid.querySelectorAll(card_selector));
-        if (!cards.length) {
-          return;
+        if (!titles.length) {
+          continue;
         }
 
-        const columns = get_column_count(grid);
-        for (let i = 0; i < cards.length; i += columns) {
-          align_row(cards.slice(i, i + columns));
-        }
-      });
+        const max_height = Math.max(
+          ...titles.map(t => t.getBoundingClientRect().height),
+        );
+        titles.forEach(t => (t.style.minHeight = `${max_height}px`));
+      }
     });
-  };
-
-  const create_debounced_align = () => {
-    let timer;
-    return () => {
-      clearTimeout(timer);
-      timer = setTimeout(align_cards, 100);
-    };
   };
 
   onMount(() => {
-    if (!is_browser) {
+    if (typeof window === "undefined") {
       return;
     }
 
-    const grids = document.querySelectorAll(grid_selector);
-    if (!grids.length) {
-      return;
-    }
+    const resize_observer = new ResizeObserver(align_titles);
+    const cards = document.querySelectorAll(card_selector);
+    cards.forEach(card => resize_observer.observe(card));
 
-    grids.forEach(grid => {
-      const cards = Array.from(grid.querySelectorAll(card_selector));
-      cards.forEach(card => {
-        const title = card.querySelector(title_selector);
-        if (title) {
-          titles.set(card, title);
-        }
-      });
-    });
+    window.addEventListener("resize", align_titles);
 
-    const debounced_align = create_debounced_align();
-
-    media_queries = [
-      window.matchMedia("(max-width: 832px)"),
-      window.matchMedia("(max-width: 1280px)"),
-    ];
-
-    media_queries.forEach(query => {
-      query.addEventListener("change", align_cards);
-    });
-
-    window.addEventListener("resize", debounced_align);
-
-    const all_cards = Array.from(document.querySelectorAll(card_selector));
-    observer = new ResizeObserver(debounced_align);
-    all_cards.forEach(card => observer.observe(card));
-
-    setTimeout(align_cards, 100);
+    align_titles();
 
     return () => {
-      if (raf) {
-        cancelAnimationFrame(raf);
-      }
-      if (observer) {
-        observer.disconnect();
-      }
-      media_queries.forEach(query => {
-        query.removeEventListener("change", align_cards);
-      });
-      window.removeEventListener("resize", debounced_align);
-      titles.clear();
+      resize_observer.disconnect();
+      window.removeEventListener("resize", align_titles);
     };
   });
 </script>
