@@ -14,9 +14,9 @@ Curriculum
   - Try bringing prominent people to talk about topics (Eli, Alan Kay, Bret Victor)
 
 - PROBLEMS
-- Add analog I, II, III (vlsi, transistors)
-- Add digital I, II, III (architecture, MIPS)
--
+
+  - Add analog I, II, III (vlsi, transistors)
+  - Add digital I, II, III (architecture, MIPS)
 
 - Course Designation System
 
@@ -157,7 +157,7 @@ Curriculum
   - time:
     - 25 hours
   - programming:
-    - using C language fundamentals without pointers
+    - using C language without pointers
   - references:
     - Effective C by Robert C. Seacord
     - The C Programming Language by Kernighan & Ritchie (K&R book)
@@ -264,7 +264,7 @@ Curriculum
   - time:
     - ?? hours
   - programming:
-    - fundamentals of OOP in Ruby without a lot of metaprogramming
+    - building blocks of OOP in Ruby without a lot of metaprogramming
   - references:
     - POODR by Sandi Metz
     - The Ruby Programming Language: Everything You Need to Know by matz
@@ -647,7 +647,7 @@ Curriculum
   - references:
     - ...
   - topics:
-    - ...
+    - port scanners, network scanners
 - FW-714 (Computer Systems Design II)
   - description:
     - Elevate your software engineering practices using the use case driven approach for long-term projects.
@@ -874,6 +874,7 @@ Curriculum
   - topics:
     - …
 - FW-936 (Internet of Bio-NanoThings)
+
   - description:
     - Explore the design of microscopic interconnected devices within biological systems.
   - time:

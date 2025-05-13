@@ -1,6 +1,6 @@
 ---
 import Layout from "@templates/Layout.astro";
-import {read_curriculum} from "@/app/02-read-curriculum/read_curriculum";
+import {read_curriculum} from "@app/02-read-curriculum/read_curriculum";
 import CourseList from "@organisms/CourseList.astro";
 import Spacer from "@atoms/text/Spacer.astro";
 import Header from "@organisms/Header.astro";
@@ -9,7 +9,7 @@ const courses = read_curriculum("curriculum.md");
 ---
 
 <Layout title="Fourth Wall Education">
-  <div class="main">
+  <div>
     <Header
       title="Fourth Wall Education"
       subtitle="Explore our comprehensive curriculum"
@@ -20,7 +20,7 @@ const courses = read_curriculum("curriculum.md");
 </Layout>
 
 <style>
-  .main {
+  div {
     max-width: 90%;
     margin: 0 auto;
     padding: 2rem;
