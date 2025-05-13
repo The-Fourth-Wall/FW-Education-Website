@@ -1,11 +1,12 @@
 ---
 import Layout from "@templates/Layout.astro";
-import {read_curriculum} from "@app/02-read-curriculum/read_curriculum";
+import {parse_curriculum} from "@app/01-curriculum-parser/parser";
+import {read_file} from "@app/02-read-file";
 import CourseList from "@organisms/CourseList.astro";
 import Spacer from "@atoms/text/Spacer.astro";
 import Header from "@organisms/Header.astro";
 
-const courses = read_curriculum("curriculum.md");
+const courses = parse_curriculum(read_file("curriculum.md"));
 ---
 
 <Layout title="Fourth Wall Education">
