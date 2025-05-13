@@ -5,6 +5,8 @@ import {read_file} from "@app/02-read-file";
 import CourseList from "@organisms/CourseList.astro";
 import Spacer from "@atoms/text/Spacer.astro";
 import Header from "@organisms/Header.astro";
+import Footer from "@organisms/Footer.astro";
+import Divider from "@atoms/text/Divider.astro";
 
 const courses = parse_curriculum(read_file("curriculum.md"));
 ---
@@ -17,6 +19,9 @@ const courses = parse_curriculum(read_file("curriculum.md"));
     />
     <Spacer size={2} />
     <CourseList courses={courses} />
+    <Divider size={2} faded />
+    <Footer copyright="Fourth Wall ⓒ" size={1.25} />
+    <Spacer size={2} />
   </div>
 </Layout>
 

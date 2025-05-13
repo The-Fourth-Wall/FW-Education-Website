@@ -1,0 +1,20 @@
+---
+import Text from "@atoms/text/Text.astro";
+
+type Props = {
+  copyright: string;
+  size: number;
+};
+
+const {copyright, size} = Astro.props;
+---
+
+<div>
+  <Text label={copyright} color="var(--white)" type="primary" size={size} />
+</div>
+
+<style>
+  div {
+    text-align: right;
+  }
+</style>
