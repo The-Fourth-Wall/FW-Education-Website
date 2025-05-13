@@ -18,8 +18,8 @@ export function parse_curriculum(content: string): Course[] {
   let topic_stack: {topic: Topic; indent: number}[] = [];
 
   const get_difficulty = (code: string): Difficulty => {
-    const level = code[4];
-    switch (level) {
+    const difficulty_digit = code.slice(-2, -1);
+    switch (difficulty_digit) {
       case "0":
         return "fundamental";
       case "1":
@@ -47,7 +47,7 @@ export function parse_curriculum(content: string): Course[] {
       if (current_course.code) {
         courses.push(current_course);
       }
-      const [_, code, name] = trimmed.match(/- (FW-\d{3})\s*\((.*?)\)/) as [
+      const [_, code, name] = trimmed.match(/- (FW-\d+)\s*\((.*?)\)/) as [
         string,
         string,
         string,
@@ -56,7 +56,7 @@ export function parse_curriculum(content: string): Course[] {
         code,
         name,
         description: "",
-        semester: code[3],
+        semester: code.replace("FW-", "").slice(0, -2),
         difficulty: get_difficulty(code),
         time: "0",
         programming: [],
