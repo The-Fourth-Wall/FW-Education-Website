@@ -10,7 +10,7 @@ export function parse_curriculum(content: string): Course[] {
     semester: "1",
     difficulty: "fundamental",
     time: "0",
-    programming: "",
+    programming: [],
     references: [],
     topics: [],
   };
@@ -55,7 +55,7 @@ export function parse_curriculum(content: string): Course[] {
         semester: code[3],
         difficulty: get_difficulty(code),
         time: "0",
-        programming: "",
+        programming: [],
         references: [],
         topics: [],
       };
@@ -80,7 +80,7 @@ export function parse_curriculum(content: string): Course[] {
       current_section = "programming";
       const inline_prog = trimmed.substring("- programming:".length).trim();
       if (inline_prog) {
-        current_course.programming = inline_prog;
+        current_course.programming.push(inline_prog);
       }
     } else if (trimmed.startsWith("- references:")) {
       current_section = "references";
@@ -95,7 +95,7 @@ export function parse_curriculum(content: string): Course[] {
           current_course.description = trimmed.substring(2);
           break;
         case "programming":
-          current_course.programming = trimmed.substring(2);
+          current_course.programming.push(trimmed.substring(2));
           break;
         case "references":
           current_course.references.push(trimmed.substring(2));

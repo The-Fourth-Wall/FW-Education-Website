@@ -16,7 +16,7 @@ export type Course = {
   semester: string;
   difficulty: Difficulty;
   time: string;
-  programming: string;
+  programming: string[];
   references: string[];
   topics: Topic[];
 };
