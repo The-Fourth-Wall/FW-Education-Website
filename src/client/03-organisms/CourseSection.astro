@@ -1,0 +1,49 @@
+---
+import Text from "@atoms/text/Text.astro";
+
+type Props = {
+  section_title: string;
+  items: string[];
+};
+
+const {section_title, items} = Astro.props;
+---
+
+{
+  items && items.length > 0 && (
+    <div>
+      <Text
+        label={section_title}
+        size={1.5}
+        type="primary"
+        color="var(--white)"
+      />
+      <ul>
+        {items.map(item => (
+          <li>
+            <Text label={item} size={1} type="secondary" color="var(--white)" />
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+<style>
+  div {
+    margin-bottom: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+</style>

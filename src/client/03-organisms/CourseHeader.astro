@@ -1,0 +1,68 @@
+---
+import {get_difficulty_accent} from "@app/03-colors";
+import Badge from "@atoms/buttons/Badge.astro";
+import Text from "@atoms/text/Text.astro";
+import type {Course} from "@models/course.model";
+import Header from "@molecules/Header.astro";
+
+type Props = {
+  course: Course;
+};
+
+const {course} = Astro.props;
+
+const accent = get_difficulty_accent(course.difficulty);
+---
+
+<div class="header">
+  <div class="title-section">
+    <Header title={course.name} subtitle={""} />
+
+    <div class="meta">
+      <Badge text={course.code} variant={course.difficulty} size={1} />
+      <Text
+        label={`Semester ${course.semester}`}
+        size={1}
+        type="accent"
+        color="var(--white)"
+      />
+      <Text
+        label={course.difficulty[0].toUpperCase() + course.difficulty.slice(1)}
+        size={1}
+        type="accent"
+        color={accent}
+      />
+      <Text
+        label={course.time}
+        size={1}
+        type="secondary"
+        color="var(--white)"
+      />
+    </div>
+  </div>
+</div>
+
+<style>
+  .header {
+    margin-bottom: 3rem;
+  }
+
+  .title-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .meta {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 768px) {
+    .meta {
+      gap: 0.5rem;
+    }
+  }
+</style>

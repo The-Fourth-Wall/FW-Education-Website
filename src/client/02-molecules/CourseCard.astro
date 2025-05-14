@@ -11,56 +11,58 @@ const {course} = Astro.props;
 const accent = get_difficulty_accent(course.difficulty);
 ---
 
-<div class="card">
-  <div class="border_bottom"></div>
-  <div class="border_left"></div>
-  <div class="header">
-    <div data-title>
-      <Text
-        label={course.name}
-        size={1.25}
-        type="primary"
-        color="var(--white)"
-      />
+<LinkButton href={`/course/${course.code}`}>
+  <div class="card">
+    <div class="border_bottom"></div>
+    <div class="border_left"></div>
+    <div class="header">
+      <div data-title>
+        <Text
+          label={course.name}
+          size={1.25}
+          type="primary"
+          color="var(--white)"
+        />
+      </div>
+
+      <div class="information">
+        <Badge text={course.code} variant={course.difficulty} size={0.875} />
+        <Text
+          label={`Semester ${course.semester}`}
+          size={0.875}
+          type="accent"
+          color="var(--white)"
+        />
+      </div>
     </div>
 
-    <div class="information">
-      <Badge text={course.code} variant={course.difficulty} size={0.875} />
+    <div class="description">
       <Text
-        label={`Semester ${course.semester}`}
+        label={course.description}
         size={0.875}
-        type="accent"
-        color="var(--white)"
-      />
-    </div>
-  </div>
-
-  <div class="description">
-    <Text
-      label={course.description}
-      size={0.875}
-      type="secondary"
-      color="var(--white)"
-    />
-  </div>
-
-  <div class="bottom_separator">
-    <Text
-      label={course.difficulty[0].toUpperCase() + course.difficulty.slice(1)}
-      size={0.75}
-      type="accent"
-      color={accent}
-    />
-    <div class="time">
-      <Text
-        label={course.time}
-        size={0.75}
         type="secondary"
         color="var(--white)"
       />
     </div>
+
+    <div class="bottom_separator">
+      <Text
+        label={course.difficulty[0].toUpperCase() + course.difficulty.slice(1)}
+        size={0.75}
+        type="accent"
+        color={accent}
+      />
+      <div class="time">
+        <Text
+          label={course.time}
+          size={0.75}
+          type="secondary"
+          color="var(--white)"
+        />
+      </div>
+    </div>
   </div>
-</div>
+</LinkButton>
 
 <script>
   const cards = document.querySelectorAll<HTMLDivElement>(".card");
@@ -145,6 +147,7 @@ const accent = get_difficulty_accent(course.difficulty);
     flex-direction: column;
     position: relative;
     overflow: hidden;
+    min-height: 100%;
   }
 
   .card::before {
