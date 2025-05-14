@@ -1,4 +1,5 @@
 ---
+import Spacer from "@atoms/text/Spacer.astro";
 import Text from "@atoms/text/Text.astro";
 import type {Course} from "@models/course.model";
 import CourseCard from "@molecules/CourseCard.astro";
@@ -34,6 +35,7 @@ const semesters = courses.reduce<Course[][]>((acc, course) => {
           type="primary"
           color="var(--white)"
         />
+        <Spacer size={1} />
         <div class="separator" />
       </div>
       <div class="grid">
@@ -55,7 +57,6 @@ const semesters = courses.reduce<Course[][]>((acc, course) => {
     display: flex;
     align-items: center;
     margin-bottom: 2.5rem;
-    gap: 1.5rem;
   }
 
   .separator {
@@ -86,10 +87,6 @@ const semesters = courses.reduce<Course[][]>((acc, course) => {
   @media (max-width: 864px) {
     .grid {
       grid-template-columns: 1fr;
-    }
-
-    .semester-title {
-      gap: 1rem;
     }
   }
 </style>

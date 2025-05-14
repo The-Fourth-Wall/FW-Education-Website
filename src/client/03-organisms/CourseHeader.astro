@@ -1,6 +1,7 @@
 ---
 import {get_difficulty_accent} from "@app/03-colors";
 import Badge from "@atoms/buttons/Badge.astro";
+import Spacer from "@atoms/text/Spacer.astro";
 import Text from "@atoms/text/Text.astro";
 import type {Course} from "@models/course.model";
 import Header from "@molecules/Header.astro";
@@ -17,6 +18,8 @@ const accent = get_difficulty_accent(course.difficulty);
 <div class="header">
   <div class="title-section">
     <Header title={course.name} subtitle={""} />
+
+    <Spacer size={0.25} />
 
     <div class="meta">
       <Badge text={course.code} variant={course.difficulty} size={1} />
@@ -50,7 +53,6 @@ const accent = get_difficulty_accent(course.difficulty);
   .title-section {
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
   }
 
   .meta {

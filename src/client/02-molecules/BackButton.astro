@@ -1,5 +1,6 @@
 ---
 import LinkButton from "@atoms/buttons/LinkButton.astro";
+import Spacer from "@atoms/text/Spacer.astro";
 import Text from "@atoms/text/Text.astro";
 
 type Props = {
@@ -22,6 +23,7 @@ const {href} = Astro.props;
         clip-rule="evenodd"></path>
     </svg>
     <Text label="Back" size={1} type="accent" color="var(--white)" />
+    <Spacer size={0.5} />
   </div>
 </LinkButton>
 
@@ -29,7 +31,6 @@ const {href} = Astro.props;
   div {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
     padding: 0.5rem;
     border: 1px solid transparent;
     border-radius: 0.25rem;
