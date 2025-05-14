@@ -1,12 +1,12 @@
 ---
-import Layout from "@templates/Layout.astro";
 import {parse_curriculum} from "@app/01-curriculum-parser/parser";
 import {read_file} from "@app/02-read-file";
-import CourseList from "@organisms/CourseList.astro";
-import Spacer from "@atoms/text/Spacer.astro";
-import Header from "@organisms/Header.astro";
-import Footer from "@organisms/Footer.astro";
 import Divider from "@atoms/text/Divider.astro";
+import Spacer from "@atoms/text/Spacer.astro";
+import CourseList from "@organisms/CourseList.astro";
+import Footer from "@organisms/Footer.astro";
+import Header from "@organisms/Header.astro";
+import Layout from "@templates/Layout.astro";
 
 const courses = parse_curriculum(read_file("curriculum.md"));
 ---

@@ -1,8 +1,9 @@
 ---
-import type {Course} from "@models/course.model";
-import Badge from "@atoms/buttons/Badge.astro";
-import Text from "@atoms/text/Text.astro";
 import {get_difficulty_accent} from "@/app/03-colors/difficulty-colors";
+import Badge from "@atoms/buttons/Badge.astro";
+import LinkButton from "@atoms/buttons/LinkButton.astro";
+import Text from "@atoms/text/Text.astro";
+import type {Course} from "@models/course.model";
 
 type Props = {course: Course};
 const {course} = Astro.props;
