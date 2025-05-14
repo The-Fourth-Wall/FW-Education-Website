@@ -26,8 +26,8 @@ const semesters = courses.reduce<Course[][]>((acc, course) => {
 <GridTitleAligner client:load />
 {
   semesters.map(semester_courses => (
-    <div class="semester_group">
-      <div class="semester_title">
+    <div class="semester-group">
+      <div class="semester-title">
         <Text
           label={`Semester ${semester_courses[0].semester}`}
           size={2}
@@ -46,12 +46,12 @@ const semesters = courses.reduce<Course[][]>((acc, course) => {
 }
 
 <style>
-  .semester_group {
+  .semester-group {
     margin-bottom: 5rem;
     margin-top: 2.5rem;
   }
 
-  .semester_title {
+  .semester-title {
     display: flex;
     align-items: center;
     margin-bottom: 2.5rem;
@@ -88,7 +88,7 @@ const semesters = courses.reduce<Course[][]>((acc, course) => {
       grid-template-columns: 1fr;
     }
 
-    .semester_title {
+    .semester-title {
       gap: 1rem;
     }
   }

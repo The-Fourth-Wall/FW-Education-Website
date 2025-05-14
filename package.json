@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "lint": "npx prettier --write .",
+    "lint": "pnpx prettier --write .",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",

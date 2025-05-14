@@ -65,6 +65,7 @@ Styling
 - Leverage global styles when necessary, importing them in layouts.
 - Utilize CSS preprocessing with PostCSS if required.
 - Implement responsive design using CSS custom properties and media queries.
+- Always name css rules with kebab-case.
 
 Performance Optimization
 
