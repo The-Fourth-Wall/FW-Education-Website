@@ -1,0 +1,23 @@
+---
+import Logo from "@molecules/Logo.astro";
+import SettingsButton from "@molecules/SettingsButton.astro";
+---
+
+<div class="menu-bar">
+  <Logo />
+
+  <div class="menu-items">
+    <SettingsButton href="/settings" />
+  </div>
+</div>
+
+<style>
+  .menu-bar {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .menu-items {
+    display: flex;
+  }
+</style>

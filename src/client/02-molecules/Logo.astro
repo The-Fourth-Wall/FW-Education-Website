@@ -1,0 +1,33 @@
+---
+import LinkButton from "@atoms/buttons/LinkButton.astro";
+import Text from "@atoms/text/Text.astro";
+---
+
+<LinkButton href="/">
+  <div class="logo">
+    <Text label="" size={1} type="primary" color="var(--white)" />
+  </div>
+</LinkButton>
+
+<style>
+  .logo {
+    display: inline-flex;
+    border-radius: 0.25rem;
+    padding: 0.25rem;
+    transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .logo:hover {
+    background-color: rgba(255, 255, 255, 0.125);
+  }
+
+  .logo :global(span)::before {
+    content: "/ Fourth Wall Education /";
+  }
+
+  @media (max-width: 464px) {
+    .logo :global(span)::before {
+      content: "/ FW /";
+    }
+  }
+</style>

@@ -4,8 +4,8 @@ import {read_file} from "@app/02-read-file";
 import Divider from "@atoms/text/Divider.astro";
 import Spacer from "@atoms/text/Spacer.astro";
 import Footer from "@molecules/Footer.astro";
-import Header from "@molecules/Header.astro";
 import CourseList from "@organisms/CourseList.astro";
+import MenuBar from "@organisms/MenuBar.astro";
 import Layout from "@templates/Layout.astro";
 
 const courses = parse_curriculum(read_file("curriculum.md"));
@@ -13,15 +13,14 @@ const courses = parse_curriculum(read_file("curriculum.md"));
 
 <Layout title="Fourth Wall Education">
   <div>
-    <Header
-      title="Fourth Wall Education"
-      subtitle="Explore our comprehensive curriculum"
-    />
     <Spacer size={2} />
     <CourseList courses={courses} />
     <Divider size={2} faded />
     <Footer copyright="Fourth Wall ⓒ" size={1.25} />
     <Spacer size={2} />
+  <MenuBar />
+
+  <Spacer size={1} />
   </div>
 </Layout>
 
