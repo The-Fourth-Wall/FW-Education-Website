@@ -13,11 +13,6 @@ Curriculum
     - Integrate ethics and history of all those.
   - Try bringing prominent people to talk about topics (Eli, Alan Kay, Bret Victor)
 
-- PROBLEMS
-
-  - Add analog I, II, III (vlsi, transistors)
-  - Add digital I, II, III (architecture, MIPS)
-
 - Course Designation System
 
   - 1st -> Semester
@@ -30,38 +25,27 @@ Curriculum
     - 5 -> Master
   - 3rd -> Course Number
 
-- FW-101 (Calculus I)
+- FW-101 (Programming Fundamentals in C)
   - description:
-    - An introduction to the foundations of Algebra for understanding of changing systems, a basic requirement for STEM.
+    - Your first contact with the language of computers and the ability to program them.
   - time:
     - 25 hours
   - programming:
-    - optional examples in C as extras lectures
+    - using C language without pointers
   - references:
-    - Calculus by Larson, Hostetler & Edwards
-    - Schaum's Advanced Calculus by Murray R. Spiegel
+    - Effective C by Robert C. Seacord
+    - The C Programming Language by Kernighan & Ritchie (K&R book)
+    - 21st Century C by Ben Klemens
   - topics:
-    - numbers, cartesian plane and functions
-    - limits
-    - differentiation
-    - newtons method, mean value theorem, rolle's
-    - integration, riemann sums
-- FW-102 (Linear Algebra I)
-  - description:
-    - A crucial mathematical basis for working with scalars, vectors and matrices, very important and essential for all modern areas of computing.
-  - time:
-    - 25 hours
-  - programming:
-    - optional examples in C as extras lectures (redo on APL later)
-  - references:
-    - Introduction to Linear Algebra by Gilbert Strang
-  - topics:
-    - vectors, matrices, gaussian elimination
-    - vector spaces
-    - orthogonality
-    - determinants
-    - eigenvalues, eigenvectors
-- FW-103 (Foundational Science for Computing)
+    - assignments, conditionals, iterations
+    - built-in types, operators
+    - if/switch, for/while/do
+    - goto, labels
+    - functions
+    - preprocessor (simple)
+    - arrays
+    - structs
+- FW-102 (Foundational Science for Computing)
   - description:
     - A high level foray into the fields of physics, chemistry, materials science and biology, enabling the connection of computing to the real world.
   - time:
@@ -135,7 +119,38 @@ Curriculum
       - evolutionary concepts
         - natural selection (variation, heritability, fitness, result)
         - adaptation as optimization processes. (newer iterations become better designed)
-- FW-104 (Analog Design I)
+- FW-103 (Calculus I)
+  - description:
+    - An introduction to the foundations of Algebra for understanding of changing systems, a basic requirement for STEM.
+  - time:
+    - 25 hours
+  - programming:
+    - optional examples in C as extras lectures
+  - references:
+    - Calculus by Larson, Hostetler & Edwards
+    - Schaum's Advanced Calculus by Murray R. Spiegel
+  - topics:
+    - numbers, cartesian plane and functions
+    - limits
+    - differentiation
+    - newtons method, mean value theorem, rolle's
+    - integration, riemann sums
+- FW-104 (Linear Algebra I)
+  - description:
+    - A crucial mathematical basis for working with scalars, vectors and matrices, very important and essential for all modern areas of computing.
+  - time:
+    - 25 hours
+  - programming:
+    - optional examples in C as extras lectures (redo on APL later)
+  - references:
+    - Introduction to Linear Algebra by Gilbert Strang
+  - topics:
+    - vectors, matrices, gaussian elimination
+    - vector spaces
+    - orthogonality
+    - determinants
+    - eigenvalues, eigenvectors
+- FW-105 (Analog Design I)
   - description:
     - An introduction to analog circuits and the basic building blocks of computation.
   - time:
@@ -153,26 +168,6 @@ Curriculum
     - RLC
     - bode diagrams
     - filters
-- FW-105 (Programming Fundamentals in C)
-  - description:
-    - Your first contact with the language of computers and the ability to program them.
-  - time:
-    - 25 hours
-  - programming:
-    - using C language without pointers
-  - references:
-    - Effective C by Robert C. Seacord
-    - The C Programming Language by Kernighan & Ritchie (K&R book)
-    - 21st Century C by Ben Klemens
-  - topics:
-    - assignments, conditionals, iterations
-    - built-in types, operators
-    - if/switch, for/while/do
-    - goto, labels
-    - functions
-    - preprocessor (simple)
-    - arrays
-    - structs
 - FW-106 (Computer Systems Design I)
 
   - description:
@@ -324,7 +319,20 @@ Curriculum
     - …
   - topics:
     - …
-- FW-323 (Digital Design II)
+- FW-323 (Analog Design III)
+  - description:
+    - Analog building blocks using semiconductor devices, amplification, feedback, noise, and distortion in circuit design.
+  - time:
+    - ?? hours
+  - programming:
+    - examples in simulation software
+      - https://www.tinkercad.com/learn/circuits
+      - https://everycircuit.com/app
+  - references:
+    - …
+  - topics:
+    - …
+- FW-324 (Digital Design II)
   - description:
     - Architect more complex digital systems, from sophisticated memory to FPGAs.
   - time:
@@ -339,7 +347,7 @@ Curriculum
     - memory, RAM
     - FPGAs
     - algorithmic state machines
-- FW-314 (Data Structures Algorithms I)
+- FW-315 (Data Structures Algorithms I)
   - description:
     - Master fundamental data structures and algorithms, achieving performance and true scalability.
   - time:
@@ -358,7 +366,7 @@ Curriculum
     - selection
     - sorting
     - matching
-- FW-315 (Class Based Development in Java)
+- FW-316 (Class Based Development in Java)
 
   - description:
     - Engineer interface-driven implementations, experience enterprise-grade application development.
@@ -396,7 +404,19 @@ Curriculum
     - …
   - topics:
     - …
-- FW-423 (Quantum Mechanics)
+- FW-433 (Digital Design III)
+  - description:
+    - Dive into programmable logic with FPGAs, implement complex digital designs with a high level overview into VLSI.
+  - time:
+    - ?? hours
+  - programming:
+    - examples in simulation software
+    - simple intro to SystemVerilog
+  - references:
+    - …
+  - topics:
+    - …
+- FW-424 (Quantum Mechanics)
   - description:
     - A first look into quantum phenomena, effects and behaviours.
   - time:
@@ -408,7 +428,7 @@ Curriculum
   - topics:
     - revision on eigenvalues/eigenvectors
     - …
-- FW-424 (Paradigms of Programming Languages)
+- FW-425 (Paradigms of Programming Languages)
   - description:
     - Understand the many different programming paradigms, their strengths and weaknesses.
   - time:
@@ -428,7 +448,7 @@ Curriculum
   - topics:
     - Procedural, Functional, OO, Logic
     - simple problem solved in 4 different languages and compare methodologies
-- FW-425 (Data Structures Algorithms II)
+- FW-426 (Data Structures Algorithms II)
   - description:
     - The second iteration of the DSA course teaching you more advanced algorithms with a focus on problem spaces.
   - time:
@@ -448,7 +468,7 @@ Curriculum
     - tries/digital trees
     - reductions
     - P, NP, NP-completeness
-- FW-426 (Database Management Systems)
+- FW-427 (Database Management Systems)
 
   - description:
     - A dedicated course on the different types of database management systems and their use in the real world.
@@ -489,25 +509,7 @@ Curriculum
     - …
   - topics:
     - …
-- FW-513 (Teaching of Informatics)
-  - description:
-    - A detailed overview of major theories of teaching with a focus on computing education.
-  - time:
-    - ?? hours
-  - programming:
-    - using Scratch as a tool for educators
-    - using Lua on computercraft extensions
-  - references:
-    - ...
-  - topics:
-    - guided education
-    - constructivist systems
-    - montessori
-    - creating teaching scripts
-    - history of logo/smalltalk
-    - cognitive theory
-    - failure of constructivism
-- FW-514 (Artificial Intelligence)
+- FW-513 (Artificial Intelligence)
   - description:
     - A course on the foundational techniques driving the field of AI.
   - time:
@@ -518,7 +520,7 @@ Curriculum
     - …
   - topics:
     - …
-- FW-525 (Computer Architecture)
+- FW-524 (Computer Architecture)
   - description:
     - Understand how hardware integrates with turing-complete assemblers and how to program them efficiently.
   - time:
@@ -529,8 +531,7 @@ Curriculum
     - ...
   - topics:
     - ...
-- FW-516 (Web Applications)
-
+- FW-515 (Web Applications)
   - description:
     - A knowledge packed course on the roadmap of a full stack developer for the modern era.
   - time:
@@ -548,6 +549,25 @@ Curriculum
     - GET/POST requests
     - async operations for servers
     - routing
+- FW-516 (Teaching of Informatics)
+
+  - description:
+    - A detailed overview of major theories of teaching with a focus on computing education.
+  - time:
+    - ?? hours
+  - programming:
+    - using Scratch as a tool for educators
+    - using Lua on computercraft extensions
+  - references:
+    - ...
+  - topics:
+    - guided education
+    - constructivist systems
+    - montessori
+    - creating teaching scripts
+    - history of logo/smalltalk
+    - cognitive theory
+    - failure of constructivism
 
 - FW-621 (Topology and Graphs)
   - description:
@@ -560,9 +580,9 @@ Curriculum
     - …
   - topics:
     - …
-- FW-622 (Computer Graphics)
+- FW-622 (Nanotechnology)
   - description:
-    - Learn the core algorithms used to create, represent and display visual content and interactive experiences.
+    - An explanation of atomically precise manufacturing and its transformative potential across computing and modern science.
   - time:
     - ?? hours
   - programming:
@@ -593,7 +613,19 @@ Curriculum
     - …
   - topics:
     - …
-- FW-615 (Ethics of Computing)
+- FW-625 (Computer Graphics)
+  - description:
+    - Learn the core algorithms used to create, represent and display visual content and interactive experiences.
+  - time:
+    - ?? hours
+  - programming:
+    - …
+  - references:
+    - …
+  - topics:
+    - …
+- FW-616 (Ethics of Computing)
+
   - description:
     - Navigate the complex moral landscape of the digital age, learn to recognize the biases, impacts and responsibilities of deploying systems for the benefit of humanity at large.
   - time:
@@ -602,18 +634,6 @@ Curriculum
     - …
   - references:
     - showcase software/hardware failures that resulted in death.
-  - topics:
-    - …
-- FW-626 (Nanotechnology)
-
-  - description:
-    - An explanation of atomically precise manufacturing and its transformative potential across computing and modern science.
-  - time:
-    - ?? hours
-  - programming:
-    - …
-  - references:
-    - …
   - topics:
     - …
 
@@ -871,6 +891,7 @@ Curriculum
     - ?? hours
   - programming:
     - using simulated programs or actual IBM language for quantum computers.
+    - Xanadu Aurora, Catalyst language
   - references:
     - Quantum Computing by Andrew Glassner (2025 release)
   - topics:
@@ -888,7 +909,7 @@ Curriculum
   - topics:
     - …
 
-- FW-4040 ()
+- FW-4240 ()
   - description:
     - …
   - time:
@@ -899,7 +920,7 @@ Curriculum
     - …
   - topics:
     - …
-- FW-4051 ()
+- FW-4251 ()
   - description:
     - …
   - time:
