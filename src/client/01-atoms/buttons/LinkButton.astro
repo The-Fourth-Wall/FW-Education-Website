@@ -6,12 +6,12 @@ type Props = {
 const {href} = Astro.props;
 ---
 
-<a href={href} draggable="false">
+<a class="link-button" href={href} draggable="false">
   <slot />
 </a>
 
 <script>
-  const links = document.querySelectorAll<HTMLAnchorElement>("a");
+  const links = document.querySelectorAll<HTMLAnchorElement>(".link-button");
 
   links.forEach(link => {
     link.addEventListener("mousedown", (e: MouseEvent) => {
