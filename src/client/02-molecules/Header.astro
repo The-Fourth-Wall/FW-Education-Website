@@ -1,21 +1,49 @@
 ---
-import Title from "@atoms/text/Title.astro";
+import Spacer from "@atoms/text/Spacer.astro";
+import Text from "@atoms/text/Text.astro";
+import BackButton from "@molecules/BackButton.astro";
+import SettingsButton from "./SettingsButton.astro";
 
 type Props = {
   title: string;
   subtitle: string;
+  with_buttons?: boolean;
 };
 
-const {title, subtitle} = Astro.props;
+const {title, subtitle, with_buttons = false} = Astro.props;
 ---
 
-<div>
-  <Title text={title} level={1} />
-  <Title text={subtitle} level={5} />
+<div class="header">
+  <div class="title">
+    <Text label={title} size={1.5} type="primary" color="var(--white)" />
+    <Spacer size={0.5} />
+    <Text label={subtitle} size={1} type="primary" color="var(--white)" />
+  </div>
+
+  {
+    with_buttons && (
+      <div class="buttons">
+        <BackButton href="/" />
+        <SettingsButton href="/settings" />
+      </div>
+    )
+  }
 </div>
 
 <style>
-  div {
-    text_align: center;
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .title {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: row;
   }
 </style>
