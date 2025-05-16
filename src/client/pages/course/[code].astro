@@ -1,9 +1,7 @@
 ---
 import {parse_curriculum} from "@app/01-curriculum-parser";
 import {read_file} from "@app/02-read-file";
-import Spacer from "@atoms/text/Spacer.astro";
 import type {Course} from "@models/course.model";
-import BackButton from "@molecules/BackButton.astro";
 import CourseHeader from "@organisms/CourseHeader.astro";
 import CourseSection from "@organisms/CourseSection.astro";
 import Layout from "@templates/Layout.astro";
@@ -21,33 +19,15 @@ const {course} = Astro.props;
 ---
 
 <Layout title={`${course.name} - Fourth Wall Education`}>
-  <div class="container">
-    <BackButton href="/" />
-    <Spacer size={2} />
-    <CourseHeader course={course} />
+  <CourseHeader course={course} />
 
-    <CourseSection section_title="Technical Focus" items={course.programming} />
-    <CourseSection
-      section_title="What You'll Learn"
-      items={course.topics.map(topic => topic.name)}
-    />
-    <CourseSection
-      section_title="Further Reading & Resources"
-      items={course.references}
-    />
-  </div>
+  <CourseSection section_title="Technical Focus" items={course.programming} />
+  <CourseSection
+    section_title="What You'll Learn"
+    items={course.topics.map(topic => topic.name)}
+  />
+  <CourseSection
+    section_title="Further Reading & Resources"
+    items={course.references}
+  />
 </Layout>
-
-<style>
-  .container {
-    max-width: 90%;
-    margin: 0 auto;
-    padding: 2rem;
-  }
-
-  @media (max-width: 768px) {
-    .container {
-      padding: 1rem;
-    }
-  }
-</style>
