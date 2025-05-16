@@ -19,17 +19,17 @@ const accent = get_difficulty_accent(course.difficulty);
       <div data-title>
         <Text
           label={course.name}
-          size={1.25}
+          size={1.125}
           type="primary"
           color="var(--white)"
         />
       </div>
 
       <div class="information">
-        <Badge text={course.code} variant={course.difficulty} size={0.875} />
+        <Badge text={course.code} variant={course.difficulty} size={0.8125} />
         <Text
           label={`Semester ${course.semester}`}
-          size={0.875}
+          size={0.8125}
           type="accent"
           color="var(--white)"
         />
@@ -39,7 +39,7 @@ const accent = get_difficulty_accent(course.difficulty);
     <div class="description">
       <Text
         label={course.description}
-        size={0.875}
+        size={0.8125}
         type="secondary"
         color="var(--white)"
       />

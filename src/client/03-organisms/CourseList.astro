@@ -31,7 +31,7 @@ const semesters = courses.reduce<Course[][]>((acc, course) => {
       <div class="semester-title">
         <Text
           label={`Semester ${semester_courses[0].semester}`}
-          size={2}
+          size={1.5625}
           type="primary"
           color="var(--white)"
         />
@@ -50,7 +50,6 @@ const semesters = courses.reduce<Course[][]>((acc, course) => {
 <style>
   .semester-group {
     margin-bottom: 5rem;
-    margin-top: 2.5rem;
   }
 
   .semester-title {
