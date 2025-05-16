@@ -36,6 +36,12 @@ const {title} = Astro.props;
         -webkit-text-size-adjust: 100%;
       }
 
+      html,
+      body {
+        overscroll-behavior: none;
+        height: 100%;
+      }
+
       body {
         background: linear-gradient(
           90deg,
