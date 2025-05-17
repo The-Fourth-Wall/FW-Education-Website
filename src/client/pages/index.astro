@@ -6,12 +6,12 @@ import Spacer from "@atoms/text/Spacer.astro";
 import Footer from "@molecules/Footer.astro";
 import CourseList from "@organisms/CourseList.astro";
 import MenuBar from "@organisms/MenuBar.astro";
-import Layout from "@templates/Layout.astro";
+import Main from "@templates/Main.astro";
 
 const courses = parse_curriculum(read_file("curriculum.md"));
 ---
 
-<Layout title="Fourth Wall Education">
+<Main title="Fourth Wall Education">
   <MenuBar />
 
   <Spacer size={1} />
@@ -25,7 +25,7 @@ const courses = parse_curriculum(read_file("curriculum.md"));
       <Spacer size={2} />
     </div>
   </div>
-</Layout>
+</Main>
 
 <style>
   .content {

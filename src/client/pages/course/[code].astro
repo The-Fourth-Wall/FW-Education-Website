@@ -4,7 +4,7 @@ import {read_file} from "@app/02-read-file";
 import type {Course} from "@models/course.model";
 import CourseHeader from "@organisms/CourseHeader.astro";
 import CourseSection from "@organisms/CourseSection.astro";
-import Layout from "@templates/Layout.astro";
+import Main from "@templates/Main.astro";
 
 export function getStaticPaths() {
   const courses = parse_curriculum(read_file("curriculum.md"));
@@ -18,7 +18,7 @@ type Props = {course: Course};
 const {course} = Astro.props;
 ---
 
-<Layout title={`${course.name} - Fourth Wall Education`}>
+<Main title={`${course.name} - Fourth Wall Education`}>
   <CourseHeader course={course} />
 
   <CourseSection section_title="Technical Focus" items={course.programming} />
@@ -30,4 +30,4 @@ const {course} = Astro.props;
     section_title="Further Reading & Resources"
     items={course.references}
   />
-</Layout>
+</Main>
