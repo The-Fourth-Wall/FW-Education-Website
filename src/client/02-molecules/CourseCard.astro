@@ -11,7 +11,9 @@ const {course} = Astro.props;
 const accent = get_difficulty_accent(course.difficulty);
 ---
 
-<LinkButton href={`/course/${course.code}`}>
+<LinkButton
+  href={`/course/${course.code}`}
+  accessibility=`enter course ${course.code}, ${course.name}`>
   <div class="card">
     <div class="border_bottom"></div>
     <div class="border_left"></div>

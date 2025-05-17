@@ -1,12 +1,13 @@
 ---
 type Props = {
   href: string;
+  accessibility: string;
 };
 
-const {href} = Astro.props;
+const {href, accessibility} = Astro.props;
 ---
 
-<a class="link-button" href={href} draggable="false">
+<a href={href} draggable="false" aria-label={accessibility}>
   <slot />
 </a>
 
