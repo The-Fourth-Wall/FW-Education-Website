@@ -79,46 +79,49 @@ const {title} = Astro.props;
   });
 </script>
 
-<Head title={title} />
+<html lang="en">
+  <Head title={title} />
 
-<main id="swup">
-  <slot />
-</main>
+  <body>
+    <main id="swup">
+      <slot />
+    </main>
+    <style is:global>
+      :root {
+        font-family: Space Mono;
+        font-weight: 400;
+        font-feature-settings: "lnum";
+        color-scheme: dark;
 
-<style is:global>
-  :root {
-    font-family: Space Mono;
-    font-weight: 400;
-    font-feature-settings: "lnum";
-    color-scheme: dark;
+        /* Font smoothing */
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-text-size-adjust: 100%;
+      }
 
-    /* Font smoothing */
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-text-size-adjust: 100%;
-  }
+      body {
+        background: linear-gradient(
+          90deg,
+          var(--amethyst) 0%,
+          color-mix(in srgb, var(--amethyst) 97%, var(--white))
+        );
+        color: var(--white);
+        overscroll-behavior-y: none;
+        height: 100%;
+      }
 
-  body {
-    background: linear-gradient(
-      90deg,
-      var(--amethyst) 0%,
-      color-mix(in srgb, var(--amethyst) 97%, var(--white))
-    );
-    color: var(--white);
-    overscroll-behavior-y: none;
-    height: 100%;
-  }
+      main {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem;
+      }
 
-  main {
-    display: flex;
-    flex-direction: column;
-    margin: 1rem;
-  }
-
-  ::selection {
-    background-color: var(--almond);
-    color: var(--amethyst);
-  }
-</style>
+      ::selection {
+        background-color: var(--almond);
+        color: var(--amethyst);
+      }
+    </style>
+  </body>
+</html>
