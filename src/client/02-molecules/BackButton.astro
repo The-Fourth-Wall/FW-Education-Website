@@ -1,17 +1,17 @@
 ---
-import LinkButton from "@atoms/buttons/LinkButton.astro";
 import Spacer from "@atoms/text/Spacer.astro";
 import Text from "@atoms/text/Text.astro";
-
-type Props = {
-  href: string;
-};
-
-const {href} = Astro.props;
+import BackButtonNavigation from "@molecules/BackButtonNavigation.svelte";
 ---
 
-<LinkButton href={href} accessibility="back to courses">
-  <div>
+<BackButtonNavigation client:load />
+
+<div
+  id="02-molecules/BackButton.astro"
+  class="container"
+  aria-label="back to courses"
+  tabindex="0">
+  <div class="items">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 20 20"
@@ -30,10 +30,18 @@ const {href} = Astro.props;
       color="var(--white)"
     />
   </div>
-</LinkButton>
+</div>
 
 <style>
-  div {
+  .container {
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+
+  .items {
     display: inline-flex;
     align-items: center;
     padding: 0.5rem;
@@ -43,7 +51,7 @@ const {href} = Astro.props;
     color: var(--white);
   }
 
-  div:hover {
+  .items:hover {
     border: 1px solid rgba(255, 255, 255, 0.5);
     background-color: rgba(255, 255, 255, 0.075);
   }
