@@ -15,6 +15,7 @@
     "@astrojs/svelte": "^7.0.13",
     "@swup/head-plugin": "^2.3.1",
     "@swup/js-plugin": "^3.2.0",
+    "@swup/scroll-plugin": "^3.3.2",
     "astro": "^4.0.0",
     "gsap": "^3.13.0",
     "svelte": "^5.28.2",
