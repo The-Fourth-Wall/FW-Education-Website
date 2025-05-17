@@ -10,16 +10,3 @@ const {href, accessibility} = Astro.props;
 <a href={href} draggable="false" aria-label={accessibility}>
   <slot />
 </a>
-
-<script>
-  const links = document.querySelectorAll<HTMLAnchorElement>(".link-button");
-
-  links.forEach(link => {
-    link.addEventListener("mousedown", (e: MouseEvent) => {
-      e.preventDefault();
-      if (e.button === 0) {
-        window.location.assign(link.href);
-      }
-    });
-  });
-</script>

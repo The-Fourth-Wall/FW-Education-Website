@@ -11,55 +11,114 @@ type Props = {
 const {title} = Astro.props;
 ---
 
-<!doctype html>
-<html lang="en">
-  <Head title={title} />
+<script>
+  import SwupHeadPlugin from "@swup/head-plugin";
+  import SwupJsPlugin from "@swup/js-plugin";
+  import gsap from "gsap";
+  import Swup from "swup";
 
-  <body>
-    <main>
-      <slot />
-    </main>
+  const back_out = async () => {
+    await gsap.to("#swup", {
+      opacity: 0,
+      x: 200,
+      duration: 0.2,
+      ease: "power2.in",
+    });
+  };
+  const back_in = async () => {
+    await gsap.fromTo(
+      "#swup",
+      {opacity: 0, x: -200},
+      {opacity: 1, x: 0, duration: 0.2, ease: "power2.out"},
+    );
+  };
 
-    <style is:global>
-      :root {
-        font-family: Space Mono;
-        font-weight: 400;
-        font-feature-settings: "lnum";
-        color-scheme: dark;
+  const forward_out = async () => {
+    await gsap.to("#swup", {
+      opacity: 0,
+      x: -200,
+      duration: 0.2,
+      ease: "power2.in",
+    });
+  };
+  const forward_in = async () => {
+    await gsap.fromTo(
+      "#swup",
+      {opacity: 0, x: 200},
+      {opacity: 1, x: 0, duration: 0.2, ease: "power2.out"},
+    );
+  };
 
-        /* Font smoothing */
-        font-synthesis: none;
-        text-rendering: optimizeLegibility;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        -webkit-text-size-adjust: 100%;
-      }
+  new Swup({
+    animateHistoryBrowsing: true,
+    plugins: [
+      new SwupHeadPlugin(),
+      new SwupJsPlugin({
+        animations: [
+          {
+            from: "/course/(.*)",
+            to: "/",
+            out: back_out,
+            in: back_in,
+          },
+          {
+            from: "/settings",
+            to: "(.*)",
+            out: back_out,
+            in: back_in,
+          },
+          {
+            from: "(.*)",
+            to: "(.*)",
+            out: forward_out,
+            in: forward_in,
+          },
+        ],
+      }),
+    ],
+  });
+</script>
 
-      html,
-      body {
-        overscroll-behavior: none;
-        height: 100%;
-      }
+<Head title={title} />
 
-      body {
-        background: linear-gradient(
-          90deg,
-          var(--amethyst) 0%,
-          color-mix(in srgb, var(--amethyst) 97%, var(--white))
-        );
-        color: var(--white);
-      }
+<main id="swup">
+  <slot />
+</main>
 
-      main {
-        display: flex;
-        flex-direction: column;
-        margin: 1rem;
-      }
+<style is:global>
+  :root {
+    font-family: Space Mono;
+    font-weight: 400;
+    font-feature-settings: "lnum";
+    color-scheme: dark;
 
-      ::selection {
-        background-color: var(--almond);
-        color: var(--amethyst);
-      }
-    </style>
-  </body>
-</html>
+    /* Font smoothing */
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background: linear-gradient(
+      90deg,
+      var(--amethyst) 0%,
+      color-mix(in srgb, var(--amethyst) 97%, var(--white))
+    );
+    color: var(--white);
+    overscroll-behavior-y: none;
+    height: 100%;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+  }
+
+  ::selection {
+    background-color: var(--almond);
+    color: var(--amethyst);
+  }
+</style>
