@@ -12,9 +12,8 @@
   let observer = null;
   let media_queries = [];
 
-  function get_column_count(grid) {
+  const get_column_count = grid =>
     getComputedStyle(grid).gridTemplateColumns.split(" ").length;
-  }
 
   function reset_heights() {
     titles.forEach(title => (title.style.minHeight = ""));
