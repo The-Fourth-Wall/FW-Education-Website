@@ -12,13 +12,15 @@
   let observer = null;
   let media_queries = [];
 
-  const get_column_count = grid =>
+  function get_column_count(grid) {
     getComputedStyle(grid).gridTemplateColumns.split(" ").length;
+  }
 
-  const reset_heights = () =>
+  function reset_heights() {
     titles.forEach(title => (title.style.minHeight = ""));
+  }
 
-  const align_row = row_cards => {
+  function align_row(row_cards) {
     const heights = row_cards.map(
       card => titles.get(card)?.getBoundingClientRect().height || 0,
     );
@@ -29,7 +31,7 @@
         title.style.minHeight = `${max_height}px`;
       }
     });
-  };
+  }
 
   const align_cards = () => {
     if (!is_browser) {
@@ -61,13 +63,13 @@
     });
   };
 
-  const create_debounced_align = () => {
+  function create_debounced_align() {
     let timer;
     return () => {
       clearTimeout(timer);
       timer = setTimeout(align_cards, 10);
     };
-  };
+  }
 
   onMount(() => {
     if (!is_browser) {

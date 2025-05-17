@@ -1,6 +1,6 @@
 import type {Difficulty} from "@models/course.model";
 
-export const get_difficulty_accent = (difficulty: Difficulty) => {
+export function get_difficulty_accent(difficulty: Difficulty) {
   return {
     fundamental: "color-mix(in srgb, var(--green) 90%, var(--white))",
     beginner: "color-mix(in srgb, var(--blue) 80%, var(--white))",
@@ -9,9 +9,9 @@ export const get_difficulty_accent = (difficulty: Difficulty) => {
     expert: "color-mix(in srgb, var(--indigo) 75%, var(--white))",
     master: "color-mix(in srgb, var(--onyx) 60%, var(--white))",
   }[difficulty];
-};
+}
 
-export const get_difficulty_background = (difficulty: Difficulty) => {
+export function get_difficulty_background(difficulty: Difficulty) {
   return {
     fundamental: "color-mix(in srgb, var(--green) 80%, var(--black))",
     beginner: "color-mix(in srgb, var(--blue) 85%, var(--black))",
@@ -24,4 +24,4 @@ export const get_difficulty_background = (difficulty: Difficulty) => {
       var(--onyx) 90%
     )`,
   }[difficulty];
-};
+}

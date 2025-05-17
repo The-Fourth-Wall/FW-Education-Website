@@ -17,7 +17,7 @@ export function parse_curriculum(content: string): Course[] {
   let current_section = "";
   let topic_stack: {topic: Topic; indent: number}[] = [];
 
-  const get_difficulty = (code: string): Difficulty => {
+  function get_difficulty(code: string) {
     const difficulty_digit = code.slice(-2, -1);
     switch (difficulty_digit) {
       case "0":
@@ -35,7 +35,7 @@ export function parse_curriculum(content: string): Course[] {
       default:
         return "advanced";
     }
-  };
+  }
 
   for (const line of lines) {
     const trimmed = line.trim();
