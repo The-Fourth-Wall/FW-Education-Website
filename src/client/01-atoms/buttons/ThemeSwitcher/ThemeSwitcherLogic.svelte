@@ -2,7 +2,7 @@
   import {onMount} from "svelte";
 
   const themes = ["light", "dark", "system"];
-  let current_theme_index = 0;
+  let current_theme_index = 2;
 
   const handle_theme_click = (event: Event) => {
     const button = (event.target as HTMLElement).closest(".theme-toggle");
