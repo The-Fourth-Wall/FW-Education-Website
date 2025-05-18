@@ -1,4 +1,5 @@
 ---
+import ThemeSwitcher from "@atoms/buttons/ThemeSwitcher";
 import Logo from "@molecules/Logo.astro";
 import SettingsButton from "@molecules/SettingsButton.astro";
 ---
@@ -7,6 +8,7 @@ import SettingsButton from "@molecules/SettingsButton.astro";
   <Logo />
 
   <div class="menu-items">
+    <ThemeSwitcher />
     <SettingsButton href="/settings" />
   </div>
 </div>
