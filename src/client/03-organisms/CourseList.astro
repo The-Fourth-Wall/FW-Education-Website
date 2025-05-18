@@ -65,8 +65,8 @@ const semesters = courses.reduce<Course[][]>((acc, course) => {
     background: linear-gradient(
       to right,
       var(--white) 0%,
-      rgba(255, 255, 255, 0.5) 50%,
-      rgba(255, 255, 255, 0) 100%
+      color-mix(in srgb, var(--white) 50%, transparent) 50%,
+      color-mix(in srgb, var(--white) 0%, transparent) 100%
     );
   }
 
