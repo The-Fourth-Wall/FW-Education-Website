@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import {onMount} from "svelte";
 
   onMount(() => {
@@ -8,7 +8,7 @@
       history.back();
     });
 
-    button?.addEventListener("keydown", event => {
+    button?.addEventListener("keydown", (event: KeyboardEvent) => {
       if (event.key === "Enter") {
         history.back();
       }

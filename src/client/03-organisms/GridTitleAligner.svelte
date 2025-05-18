@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import {onMount} from "svelte";
 
   export let grid_selector = ".grid";
@@ -8,18 +8,16 @@
   const is_browser = typeof window !== "undefined";
 
   let titles = new Map();
-  let raf = null;
-  let observer = null;
-  let media_queries = [];
+  let raf: number | null = null;
 
-  const get_column_count = grid =>
+  const get_column_count = (grid: Element) =>
     getComputedStyle(grid).gridTemplateColumns.split(" ").length;
 
   function reset_heights() {
     titles.forEach(title => (title.style.minHeight = ""));
   }
 
-  function align_row(row_cards) {
+  function align_row(row_cards: Element[]) {
     const heights = row_cards.map(
       card => titles.get(card)?.getBoundingClientRect().height || 0,
     );
@@ -63,7 +61,7 @@
   };
 
   function create_debounced_align() {
-    let timer;
+    let timer: any;
     return () => {
       clearTimeout(timer);
       timer = setTimeout(align_cards, 10);
@@ -92,7 +90,7 @@
 
     const debounced_align = create_debounced_align();
 
-    media_queries = [
+    let media_queries = [
       window.matchMedia("(max-width: 832px)"),
       window.matchMedia("(max-width: 1280px)"),
     ];
@@ -104,8 +102,8 @@
     window.addEventListener("resize", debounced_align);
 
     const all_cards = Array.from(document.querySelectorAll(card_selector));
-    observer = new ResizeObserver(debounced_align);
-    all_cards.forEach(card => observer.observe(card));
+    let observer = new ResizeObserver(debounced_align);
+    all_cards.forEach(card => observer?.observe(card));
 
     setTimeout(align_cards, 10);
 

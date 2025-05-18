@@ -22,7 +22,7 @@ const accent = get_difficulty_accent(course.difficulty);
       '[id="02-molecules/CourseCard.astro"]',
     );
 
-    cards.forEach((card: HTMLDivElement) => {
+    cards.forEach(card => {
       const rect = card.getBoundingClientRect();
 
       const is_hovering =
