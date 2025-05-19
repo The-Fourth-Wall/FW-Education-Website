@@ -5,7 +5,7 @@ import Text from "@atoms/text/Text.astro";
 
 <LinkButton href="/" accessibility="fourth wall education homescreen">
   <div class="logo">
-    <Text label="" size={1} type="primary" color="var(--white)" />
+    <Text label="" size={1} type="primary" color="var(--fg-color)" />
   </div>
 </LinkButton>
 
@@ -18,7 +18,7 @@ import Text from "@atoms/text/Text.astro";
   }
 
   .logo:hover {
-    background-color: color-mix(in srgb, var(--white) 12.5%, transparent);
+    background-color: color-mix(in srgb, var(--fg-color) 12.5%, transparent);
   }
 
   .logo :global(span)::before {

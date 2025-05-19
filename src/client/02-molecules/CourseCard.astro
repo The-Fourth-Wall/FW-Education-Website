@@ -1,5 +1,4 @@
 ---
-import {get_difficulty_accent} from "@app/03-colors";
 import Badge from "@atoms/buttons/Badge.astro";
 import LinkButton from "@atoms/buttons/LinkButton.astro";
 import Text from "@atoms/text/Text.astro";
@@ -7,8 +6,6 @@ import type {Course} from "@models/course.model";
 
 type Props = {course: Course};
 const {course} = Astro.props;
-
-const accent = get_difficulty_accent(course.difficulty);
 ---
 
 <script>
@@ -38,9 +35,9 @@ const accent = get_difficulty_accent(course.difficulty);
         card.style.backgroundImage = `
           radial-gradient(
             1000px circle at ${x}px ${y}px,
-            color-mix(in srgb, var(--white) 9%, transparent),
-            color-mix(in srgb, var(--white) 3%, transparent) 10%,
-            color-mix(in srgb, var(--white) 1%, transparent) 15%
+            color-mix(in srgb, var(--fg-color) 9%, transparent),
+            color-mix(in srgb, var(--fg-color) 3%, transparent) 10%,
+            color-mix(in srgb, var(--fg-color) 1%, transparent) 15%
           )
         `;
       } else {
@@ -65,9 +62,9 @@ const accent = get_difficulty_accent(course.difficulty);
           card.style.backgroundImage = `
             radial-gradient(
               1000px circle at ${x}px ${y}px,
-              color-mix(in srgb, var(--white) ${9 * intensity}%, transparent),
-              color-mix(in srgb, var(--white) ${3 * intensity}%, transparent) 10%,
-              color-mix(in srgb, var(--white) 0%, transparent) 16%
+              color-mix(in srgb, var(--fg-color) ${9 * intensity}%, transparent),
+              color-mix(in srgb, var(--fg-color) ${3 * intensity}%, transparent) 10%,
+              color-mix(in srgb, var(--fg-color) 0%, transparent) 16%
             )
           `;
         } else {
@@ -92,7 +89,7 @@ const accent = get_difficulty_accent(course.difficulty);
           label={course.name}
           size={1.125}
           type="primary"
-          color="var(--white)"
+          color="var(--fg-color)"
         />
       </div>
 
@@ -102,7 +99,7 @@ const accent = get_difficulty_accent(course.difficulty);
           label={`Semester ${course.semester}`}
           size={0.8125}
           type="accent"
-          color="var(--white)"
+          color="var(--fg-color)"
         />
       </div>
     </div>
@@ -112,7 +109,7 @@ const accent = get_difficulty_accent(course.difficulty);
         label={course.description}
         size={0.8125}
         type="secondary"
-        color="var(--white)"
+        color="var(--fg-color)"
       />
     </div>
 
@@ -121,14 +118,14 @@ const accent = get_difficulty_accent(course.difficulty);
         label={course.difficulty[0].toUpperCase() + course.difficulty.slice(1)}
         size={0.75}
         type="accent"
-        color={accent}
+        color={`var(--${course.difficulty}-accent)`}
       />
       <div class="time">
         <Text
           label={course.time}
           size={0.75}
           type="secondary"
-          color="var(--white)"
+          color="var(--fg-color)"
         />
       </div>
     </div>
@@ -137,18 +134,16 @@ const accent = get_difficulty_accent(course.difficulty);
 
 <style>
   .card {
-    --dark-border: color-mix(in srgb, var(--white) 10%, transparent);
-    --hover-border: color-mix(in srgb, var(--white) 50%, transparent);
+    --dark-border: color-mix(in srgb, var(--fg-color) 10%, transparent);
+    --hover-border: color-mix(in srgb, var(--fg-color) 50%, transparent);
     --dark-shadow: color-mix(in srgb, var(--black) 20%, transparent);
     --animation-time: 50ms;
 
     border: 1px solid var(--dark-border);
     border-radius: 0.25rem;
     padding: 0.75rem 1rem;
-    background-color: color-mix(in srgb, var(--white) 2.5%, transparent);
-    box-shadow:
-      0 4px 24px -1px var(--dark-shadow),
-      0 1px 2px 0 color-mix(in srgb, var(--white) 5%, transparent);
+    background-color: color-mix(in srgb, var(--fg-color) 2.5%, transparent);
+    box-shadow: 0 4px 24px -1px var(--dark-shadow);
     transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     flex-direction: column;
@@ -202,6 +197,7 @@ const accent = get_difficulty_accent(course.difficulty);
   .card:hover::before {
     width: calc(100% + 2px);
     transition-delay: 0;
+    color: blue;
   }
 
   .card:hover::after {
@@ -262,7 +258,7 @@ const accent = get_difficulty_accent(course.difficulty);
     border-left: 1px solid var(--dark-border);
     border-bottom: 1px solid var(--dark-border);
     border-bottom-left-radius: 0.25rem;
-    background: color-mix(in srgb, var(--black) 10%, transparent);
+    background: color-mix(in srgb, var(--bg-color) 10%, transparent);
     position: relative;
     overflow: hidden;
   }
@@ -331,8 +327,8 @@ const accent = get_difficulty_accent(course.difficulty);
     justify-content: space-between;
     background: linear-gradient(
       to left,
-      color-mix(in srgb, var(--black) 15%, transparent),
-      color-mix(in srgb, var(--black) 0%, transparent)
+      color-mix(in srgb, var(--bg-color) 15%, transparent),
+      color-mix(in srgb, var(--bg-color) 0%, transparent)
     );
   }
 

@@ -32,12 +32,12 @@ const {href} = Astro.props;
     border: 1px solid transparent;
     border-radius: 0.25rem;
     transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
-    color: var(--white);
+    color: var(--fg-color);
   }
 
   div:hover {
-    border: 1px solid color-mix(in srgb, var(--white) 50%, transparent);
-    background-color: color-mix(in srgb, var(--white) 7.5%, transparent);
+    border: 1px solid color-mix(in srgb, var(--fg-color) 50%, transparent);
+    background-color: color-mix(in srgb, var(--fg-color) 7.5%, transparent);
   }
 
   svg {

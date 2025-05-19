@@ -87,7 +87,7 @@ const {title} = Astro.props;
   });
 </script>
 
-<html lang="en">
+<html lang="en" class="system-theme">
   <Head title={title} />
 
   <body>
@@ -112,10 +112,10 @@ const {title} = Astro.props;
       body {
         background: linear-gradient(
           90deg,
-          var(--amethyst) 0%,
-          color-mix(in srgb, var(--amethyst) 97%, var(--white))
+          var(--bg-color) 0%,
+          color-mix(in srgb, var(--bg-color) 97%, var(--white))
         );
-        color: var(--white);
+        color: var(--fg-color);
         overscroll-behavior-y: none;
         height: 100%;
       }
@@ -124,11 +124,6 @@ const {title} = Astro.props;
         display: flex;
         flex-direction: column;
         margin: 1rem;
-      }
-
-      ::selection {
-        background-color: var(--almond);
-        color: var(--amethyst);
       }
     </style>
   </body>

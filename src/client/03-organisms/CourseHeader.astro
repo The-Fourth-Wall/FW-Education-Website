@@ -1,5 +1,4 @@
 ---
-import {get_difficulty_accent} from "@app/03-colors";
 import Badge from "@atoms/buttons/Badge.astro";
 import Spacer from "@atoms/text/Spacer.astro";
 import Text from "@atoms/text/Text.astro";
@@ -11,8 +10,6 @@ type Props = {
 };
 
 const {course} = Astro.props;
-
-const accent = get_difficulty_accent(course.difficulty);
 ---
 
 <div class="header">
@@ -27,19 +24,19 @@ const accent = get_difficulty_accent(course.difficulty);
         label={`Semester ${course.semester}`}
         size={1}
         type="accent"
-        color="var(--white)"
+        color="var(--fg-color)"
       />
       <Text
         label={course.difficulty[0].toUpperCase() + course.difficulty.slice(1)}
         size={1}
         type="accent"
-        color={accent}
+        color={`var(--${course.difficulty}-accent)`}
       />
       <Text
         label={course.time}
         size={1}
         type="secondary"
-        color="var(--white)"
+        color="var(--fg-color)"
       />
     </div>
   </div>

@@ -20,12 +20,12 @@ const {faded = false, size} = Astro.props;
     background: linear-gradient(
       to left,
       var(--fg-color) 0%,
-      color-mix(in srgb, var(--white) 50%, transparent) 50%,
-      color-mix(in srgb, var(--white) 0%, transparent) 100%
+      color-mix(in srgb, var(--fg-color) 50%, transparent) 50%,
+      color-mix(in srgb, var(--fg-color) 0%, transparent) 100%
     );
   }
 
   .non-faded {
-    background: var(--white);
+    background: var(--fg-color);
   }
 </style>

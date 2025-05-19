@@ -1,5 +1,4 @@
 ---
-import {get_difficulty_background} from "@app/03-colors/difficulty-colors";
 import Text from "@atoms/text/Text.astro";
 import type {Difficulty} from "@models/course.model";
 
@@ -10,7 +9,6 @@ type Props = {
 };
 
 const {text, variant, size} = Astro.props;
-const background = get_difficulty_background(variant);
 ---
 
 <span
@@ -18,7 +16,7 @@ const background = get_difficulty_background(variant);
   style={`
     font-size: ${size}rem;
     padding: ${size * 0.226}rem ${size * 0.857}rem;
-    background: ${background};
+    background: var(--${variant}-background);
   `}
   ><Text label={text} size={size} type="secondary" color="var(--white)" />
 </span>

@@ -10,8 +10,17 @@
     button?.setAttribute("data-theme", themes[current_theme_index]);
   };
 
+  const toggle_theme = () => {
+    const html = document.querySelector("html");
+    html?.classList.remove("dark-theme", "light-theme", "system-theme");
+    html?.classList.add(`${themes[current_theme_index]}-theme`);
+  };
+
   onMount(() => {
     const button = document.querySelector(".theme-toggle");
-    button?.addEventListener("click", handle_theme_click);
+    button?.addEventListener("click", event => {
+      handle_theme_click(event);
+      toggle_theme();
+    });
   });
 </script>

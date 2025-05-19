@@ -33,7 +33,7 @@ const semesters = courses.reduce<Course[][]>((acc, course) => {
           label={`Semester ${semester_courses[0].semester}`}
           size={1.5625}
           type="primary"
-          color="var(--white)"
+          color="var(--fg-color)"
         />
         <Spacer size={1} />
         <div class="separator" />
@@ -64,9 +64,9 @@ const semesters = courses.reduce<Course[][]>((acc, course) => {
     height: 1px;
     background: linear-gradient(
       to right,
-      var(--white) 0%,
-      color-mix(in srgb, var(--white) 50%, transparent) 50%,
-      color-mix(in srgb, var(--white) 0%, transparent) 100%
+      var(--fg-color) 0%,
+      color-mix(in srgb, var(--fg-color) 50%, transparent) 50%,
+      color-mix(in srgb, var(--fg-color) 0%, transparent) 100%
     );
   }
 

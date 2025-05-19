@@ -12,4 +12,50 @@
   --snow: #fffafa;        --white: #f7f7f7;    --smoke: #f5f5f5;      --bone: #e3dac9;      --graphite: #1a1a1a;
   --silver: #c0c0c0;      --gray: #848482;     --dim: #555555;        --metal: #2a3439;     --obsidian: #0c0c0c;
   --onyx: #353839;        --black: #1b1b1b;    --raisin: #242124;     --night: #111111;     --void: #050505;
+
+  color: var(--fg-color);
+  background-color: var(--bg-color);
+
+  --fundamental-background: color-mix(in srgb, var(--green) 55%, var(--black));
+  --beginner-background: color-mix(in srgb, var(--blue) 85%, var(--black));
+  --intermediate-background: color-mix(in srgb, var(--orange) 70%, var(--black));
+  --advanced-background: color-mix(in srgb, var(--crimson) 70%, var(--black));
+  --expert-background: color-mix(in srgb, var(--indigo) 95%, var(--white));
+  --master-background: linear-gradient(0deg, color-mix(in srgb, var(--onyx) 80%, var(--white)) 0%, var(--onyx) 90%);
+
+  --fundamental-accent: color-mix(in srgb, var(--green) 90%, var(--white));
+  --beginner-accent: color-mix(in srgb, var(--blue) 80%, var(--white));
+  --intermediate-accent: color-mix(in srgb, var(--orange) 90%, var(--black));
+  --advanced-accent: color-mix(in srgb, var(--crimson) 85%, var(--white));
+  --expert-accent: color-mix(in srgb, var(--indigo) 70%, var(--white));
+  --master-accent: color-mix(in srgb, var(--onyx) 65%, var(--white));
+}
+
+::selection {
+  background-color: color-mix(in srgb, var(--lilac) 90%, var(--white));
+  color: var(--amethyst);
+}
+
+.light-theme {
+  --fg-color: var(--onyx);
+  --bg-color: color-mix(in srgb, var(--lilac) 25%, var(--white));
+}
+
+.dark-theme {
+  --fg-color: var(--white);
+  --bg-color: var(--amethyst);
+}
+
+@media (prefers-color-scheme: dark) {
+  .system-theme {
+    --fg-color: var(--white);
+    --bg-color: var(--amethyst);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .system-theme {
+    --fg-color: var(--onyx);
+    --bg-color: color-mix(in srgb, var(--lilac) 25%, var(--white));
+  }
 }

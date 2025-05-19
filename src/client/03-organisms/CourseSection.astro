@@ -17,13 +17,13 @@ const {section_title, items} = Astro.props;
         label={section_title}
         size={1.5}
         type="primary"
-        color="var(--white)"
+        color="var(--fg-color)"
       />
       <Spacer size={0.75} />
       <ul>
         {items.map(item => (
           <li>
-            <Text label={item} size={1} type="secondary" color="var(--white)" />
+            <Text label={item} size={1} type="secondary" color="var(--fg-color)" />
           </li>
         ))}
       </ul>

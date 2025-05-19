@@ -15,7 +15,7 @@ import BackButtonNavigation from "./BackButtonNavigation.svelte";
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 20 20"
-      fill="currentColor"
+      fill="var(--fg-color)"
       class="size-5">
       <path
         fill-rule="evenodd"
@@ -27,7 +27,7 @@ import BackButtonNavigation from "./BackButtonNavigation.svelte";
       label="Back to Courses"
       size={0.75}
       type="accent"
-      color="var(--white)"
+      color="var(--fg-color)"
     />
   </div>
 </div>
@@ -48,12 +48,12 @@ import BackButtonNavigation from "./BackButtonNavigation.svelte";
     border: 1px solid transparent;
     border-radius: 0.25rem;
     transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
-    color: var(--white);
+    color: var(--fg-color);
   }
 
   .items:hover {
-    border: 1px solid color-mix(in srgb, var(--white) 50%, transparent);
-    background-color: color-mix(in srgb, var(--white) 7.5%, transparent);
+    border: 1px solid color-mix(in srgb, var(--fg-color) 50%, transparent);
+    background-color: color-mix(in srgb, var(--fg-color) 7.5%, transparent);
   }
 
   svg {

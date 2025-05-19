@@ -12,7 +12,7 @@ import ThemeSwitcherLogic from "./ThemeSwitcherLogic.svelte";
       fill="none"
       viewBox="0 0 24 24"
       stroke-width="1.5"
-      stroke="var(--amethyst)">
+      stroke="var(--fg-color)">
       <path
         stroke-linecap="round"
         stroke-linejoin="round"
@@ -26,7 +26,7 @@ import ThemeSwitcherLogic from "./ThemeSwitcherLogic.svelte";
       fill="none"
       viewBox="0 0 24 24"
       stroke-width="1.5"
-      stroke="var(--white)">
+      stroke="var(--fg-color)">
       <path
         stroke-linecap="round"
         stroke-linejoin="round"
@@ -40,7 +40,7 @@ import ThemeSwitcherLogic from "./ThemeSwitcherLogic.svelte";
       fill="none"
       viewBox="0 0 24 24"
       stroke-width="1.5"
-      stroke="var(--white)">
+      stroke="var(--fg-color)">
       <path
         stroke-linecap="round"
         stroke-linejoin="round"
@@ -73,8 +73,8 @@ import ThemeSwitcherLogic from "./ThemeSwitcherLogic.svelte";
   }
 
   div:hover {
-    border: 1px solid color-mix(in srgb, var(--white) 50%, transparent);
-    background-color: color-mix(in srgb, var(--white) 7.5%, transparent);
+    border: 1px solid color-mix(in srgb, var(--fg-color) 50%, transparent);
+    background-color: color-mix(in srgb, var(--fg-color) 7.5%, transparent);
   }
 
   svg {
@@ -103,11 +103,5 @@ import ThemeSwitcherLogic from "./ThemeSwitcherLogic.svelte";
   .theme-toggle[data-theme="system"] .computer {
     opacity: 1;
     transform: scale(1) rotate(0);
-  }
-
-  @media (prefers-color-scheme: light) {
-    .theme-toggle[data-theme="system"] .computer {
-      stroke: var(--amethyst);
-    }
   }
 </style>
