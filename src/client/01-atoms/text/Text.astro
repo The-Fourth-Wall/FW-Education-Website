@@ -14,6 +14,10 @@ const {label, size, type, color} = Astro.props;
 </span>
 
 <style>
+  span {
+    transition: color var(--theme-animation-time) ease;
+  }
+
   .primary {
     font-weight: 700;
   }

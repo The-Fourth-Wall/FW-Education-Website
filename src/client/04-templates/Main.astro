@@ -1,5 +1,6 @@
 ---
 import "@styles/colors.css";
+import "@styles/options.css";
 import "@styles/resets.css";
 
 import Head from "@organisms/Head.astro";
@@ -112,6 +113,7 @@ const {title} = Astro.props;
       html {
         color: var(--fg-color);
         background-color: color-mix(in srgb, var(--bg-color) 97%, var(--white));
+        transition: background-color var(--theme-animation-time) ease;
       }
 
       body {

@@ -137,14 +137,13 @@ const {course} = Astro.props;
     --dark-border: color-mix(in srgb, var(--fg-color) 10%, transparent);
     --hover-border: color-mix(in srgb, var(--fg-color) 50%, transparent);
     --dark-shadow: color-mix(in srgb, var(--black) 20%, transparent);
-    --animation-time: 50ms;
+    --hover-step: 50ms;
 
     border: 1px solid var(--dark-border);
     border-radius: 0.25rem;
     padding: 0.75rem 1rem;
     background-color: color-mix(in srgb, var(--fg-color) 2.5%, transparent);
     box-shadow: 0 4px 24px -1px var(--dark-shadow);
-    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     flex-direction: column;
     position: relative;
@@ -160,7 +159,7 @@ const {course} = Astro.props;
     width: 0;
     height: 1px;
     background: var(--hover-border);
-    transition: width var(--animation-time) ease-out;
+    transition: width var(--hover-step) ease-out;
   }
 
   .card::after {
@@ -171,7 +170,7 @@ const {course} = Astro.props;
     width: 1px;
     height: 0;
     background: var(--hover-border);
-    transition: height var(--animation-time) ease-out;
+    transition: height var(--hover-step) ease-out;
   }
 
   .card .border_bottom {
@@ -181,7 +180,7 @@ const {course} = Astro.props;
     width: 0;
     height: 1px;
     background: var(--hover-border);
-    transition: width var(--animation-time) ease-out;
+    transition: width var(--hover-step) ease-out;
   }
 
   .card .border_left {
@@ -191,7 +190,7 @@ const {course} = Astro.props;
     width: 1px;
     height: 0;
     background: var(--hover-border);
-    transition: height var(--animation-time) ease-out;
+    transition: height var(--hover-step) ease-out;
   }
 
   .card:hover::before {
@@ -202,32 +201,32 @@ const {course} = Astro.props;
 
   .card:hover::after {
     height: calc(100% + 2px);
-    transition-delay: var(--animation-time);
+    transition-delay: var(--hover-step);
   }
 
   .card:hover .border_bottom {
     width: calc(100% + 2px);
-    transition-delay: calc(var(--animation-time) * 2);
+    transition-delay: calc(var(--hover-step) * 2);
   }
 
   .card:hover .border_left {
     height: calc(100% + 2px);
-    transition-delay: calc(var(--animation-time) * 3);
+    transition-delay: calc(var(--hover-step) * 3);
   }
 
   .card:not(:hover)::before {
     width: 0;
-    transition-delay: calc(var(--animation-time) * 3);
+    transition-delay: calc(var(--hover-step) * 3);
   }
 
   .card:not(:hover)::after {
     height: 0;
-    transition-delay: calc(var(--animation-time) * 2);
+    transition-delay: calc(var(--hover-step) * 2);
   }
 
   .card:not(:hover) .border_bottom {
     width: 0;
-    transition-delay: var(--animation-time);
+    transition-delay: var(--hover-step);
   }
 
   .card:not(:hover) .border_left {
@@ -271,7 +270,7 @@ const {course} = Astro.props;
     width: 1px;
     height: 0;
     background: var(--hover-border);
-    transition: height var(--animation-time) ease-out;
+    transition: height var(--hover-step) ease-out;
   }
 
   .information::after {
@@ -282,30 +281,30 @@ const {course} = Astro.props;
     width: 0;
     height: 1px;
     background: var(--hover-border);
-    transition: width var(--animation-time) ease-out;
+    transition: width var(--hover-step) ease-out;
   }
 
   .card:hover .information {
     border-left: 1px solid transparent;
     border-bottom: 1px solid transparent;
     transition:
-      border-left calc(var(--animation-time) * 5) step-end,
-      border-bottom calc(var(--animation-time) * 6) step-end;
+      border-left calc(var(--hover-step) * 5) step-end,
+      border-bottom calc(var(--hover-step) * 6) step-end;
   }
 
   .card:hover .information::before {
     height: 100%;
-    transition-delay: calc(var(--animation-time) * 4);
+    transition-delay: calc(var(--hover-step) * 4);
   }
 
   .card:hover .information::after {
     width: 100%;
-    transition-delay: calc(var(--animation-time) * 5);
+    transition-delay: calc(var(--hover-step) * 5);
   }
 
   .card:not(:hover) .information::before {
     height: 0;
-    transition-delay: var(--animation-time);
+    transition-delay: var(--hover-step);
   }
 
   .card:not(:hover) .information::after {
@@ -340,23 +339,23 @@ const {course} = Astro.props;
     width: 0;
     height: 1px;
     background: var(--hover-border);
-    transition: width var(--animation-time) ease-out;
+    transition: width var(--hover-step) ease-out;
     transform-origin: right;
   }
 
   .card:hover .bottom_separator::before {
     width: 100%;
-    transition-delay: calc(var(--animation-time) * 6);
+    transition-delay: calc(var(--hover-step) * 6);
   }
 
   .card:not(:hover) .bottom_separator::before {
     width: 0;
-    transition-delay: calc(var(--animation-time) * 2);
+    transition-delay: calc(var(--hover-step) * 2);
   }
 
   .card:hover .bottom_separator {
     border-top: 1px solid transparent;
-    transition: border-top calc(var(--animation-time) * 7) step-end;
+    transition: border-top calc(var(--hover-step) * 7) step-end;
   }
 
   .time {
