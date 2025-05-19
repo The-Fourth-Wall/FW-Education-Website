@@ -90,17 +90,9 @@ import ThemeSwitcherLogic from "./ThemeSwitcherLogic.svelte";
     transform: scale(0) rotate(-360deg);
   }
 
-  .theme-toggle[data-theme="light"] .sun {
-    opacity: 1;
-    transform: scale(1) rotate(0);
-  }
-
-  .theme-toggle[data-theme="dark"] .moon {
-    opacity: 1;
-    transform: scale(1) rotate(0);
-  }
-
-  .theme-toggle[data-theme="system"] .computer {
+  :root.light-theme .sun,
+  :root.dark-theme .moon,
+  :root.system-theme .computer {
     opacity: 1;
     transform: scale(1) rotate(0);
   }

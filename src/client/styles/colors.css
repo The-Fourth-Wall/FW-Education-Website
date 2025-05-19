@@ -13,9 +13,6 @@
   --silver: #c0c0c0;      --gray: #848482;     --dim: #555555;        --metal: #2a3439;     --obsidian: #0c0c0c;
   --onyx: #353839;        --black: #1b1b1b;    --raisin: #242124;     --night: #111111;     --void: #050505;
 
-  color: var(--fg-color);
-  background-color: var(--bg-color);
-
   --fundamental-background: color-mix(in srgb, var(--green) 55%, var(--black));
   --beginner-background: color-mix(in srgb, var(--blue) 85%, var(--black));
   --intermediate-background: color-mix(in srgb, var(--orange) 70%, var(--black));

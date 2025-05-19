@@ -1,26 +1,19 @@
 <script lang="ts">
+  import {theme} from "@app/03-user-preferences";
   import {onMount} from "svelte";
 
   const themes = ["light", "dark", "system"];
-  let current_theme_index = 2;
+  let current_theme_index = themes.indexOf(theme.get());
 
-  const handle_theme_click = (event: Event) => {
-    const button = (event.target as HTMLElement).closest(".theme-toggle");
+  const theme_switch = () => {
     current_theme_index = (current_theme_index + 1) % themes.length;
-    button?.setAttribute("data-theme", themes[current_theme_index]);
-  };
-
-  const toggle_theme = () => {
-    const html = document.querySelector("html");
-    html?.classList.remove("dark-theme", "light-theme", "system-theme");
-    html?.classList.add(`${themes[current_theme_index]}-theme`);
+    const new_theme = themes[current_theme_index];
+    theme.set(new_theme);
+    document.documentElement.className = `${new_theme}-theme`;
   };
 
   onMount(() => {
-    const button = document.querySelector(".theme-toggle");
-    button?.addEventListener("click", event => {
-      handle_theme_click(event);
-      toggle_theme();
-    });
+    const theme_toggle = document.querySelector(".theme-toggle");
+    theme_toggle?.addEventListener("click", theme_switch);
   });
 </script>

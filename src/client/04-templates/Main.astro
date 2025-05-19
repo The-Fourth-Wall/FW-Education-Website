@@ -110,15 +110,11 @@ const {title} = Astro.props;
       }
 
       html {
-        background: linear-gradient(
-          90deg,
-          var(--bg-color) 0%,
-          color-mix(in srgb, var(--bg-color) 97%, var(--white))
-        );
+        color: var(--fg-color);
+        background-color: color-mix(in srgb, var(--bg-color) 97%, var(--white));
       }
 
       body {
-        color: var(--fg-color);
         overscroll-behavior-y: none;
         height: 100%;
       }
