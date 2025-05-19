@@ -23,7 +23,12 @@ const {section_title, items} = Astro.props;
       <ul>
         {items.map(item => (
           <li>
-            <Text label={item} size={1} type="secondary" color="var(--fg-color)" />
+            <Text
+              label={item}
+              size={1}
+              type="secondary"
+              color="var(--fg-color)"
+            />
           </li>
         ))}
       </ul>
