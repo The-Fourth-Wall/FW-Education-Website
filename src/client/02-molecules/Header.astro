@@ -1,4 +1,5 @@
 ---
+import ThemeSwitcher from "@atoms/buttons/ThemeSwitcher";
 import Spacer from "@atoms/text/Spacer.astro";
 import Text from "@atoms/text/Text.astro";
 import BackButton from "@molecules/BackButton";
@@ -24,6 +25,7 @@ const {title, subtitle, with_buttons = false} = Astro.props;
     with_buttons && (
       <div class="buttons">
         <BackButton />
+        <ThemeSwitcher />
         <SettingsButton href="/settings" />
       </div>
     )
