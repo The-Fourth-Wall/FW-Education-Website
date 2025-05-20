@@ -6,3 +6,7 @@
   🟩 add a 3-way slider for light/dark/system theme.
   🟩 store user preferences using nanostores.
   🟥 add completion percentages to course cards.
+  🟥 add course card availability overlays for non-completed courses.
+     in-progress
+     planned
+  🟥 implement page prefetching.
