@@ -10,3 +10,14 @@ const {href, accessibility} = Astro.props;
 <a href={href} draggable="false" aria-label={accessibility}>
   <slot />
 </a>
+
+<script>
+  document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", (event: MouseEvent) => {
+      if (history.state?.url.includes("/course")) {
+        event.preventDefault();
+        history.back();
+      }
+    });
+  });
+</script>
