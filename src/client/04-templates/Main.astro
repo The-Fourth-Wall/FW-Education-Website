@@ -3,7 +3,9 @@ import "@styles/colors.css";
 import "@styles/options.css";
 import "@styles/resets.css";
 
+import Spacer from "@atoms/text/Spacer.astro";
 import Head from "@organisms/Head.astro";
+import MenuBar from "@organisms/MenuBar.astro";
 
 type Props = {
   title: string;
@@ -92,6 +94,8 @@ const {title} = Astro.props;
   <Head title={title} />
 
   <body>
+    <MenuBar />
+
     <main id="swup">
       <slot />
     </main>

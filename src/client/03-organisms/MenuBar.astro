@@ -17,6 +17,12 @@ import SettingsButton from "@molecules/SettingsButton.astro";
   .menu-bar {
     display: flex;
     justify-content: space-between;
+    position: sticky;
+    padding: 0.5rem;
+    top: 0;
+    z-index: 100;
+    background-color: color-mix(in srgb, var(--bg-color) 97%, var(--white));
+    box-shadow: var(--menu-bar-shadow);
   }
 
   .menu-items {

@@ -3,7 +3,7 @@ import Badge from "@atoms/buttons/Badge.astro";
 import Spacer from "@atoms/text/Spacer.astro";
 import Text from "@atoms/text/Text.astro";
 import type {Course} from "@models/course.model";
-import Header from "@molecules/Header.astro";
+import BackButton from "@molecules/BackButton";
 
 type Props = {
   course: Course;
@@ -13,8 +13,17 @@ const {course} = Astro.props;
 ---
 
 <div class="header">
-  <div class="title-section">
-    <Header title={course.name} subtitle={""} with_buttons />
+  <div class="intro">
+    <div class="title">
+      <Text
+        label={course.name}
+        size={1.5}
+        type="primary"
+        color="var(--fg-color)"
+      />
+      <Spacer size={2.5} />
+      <BackButton />
+    </div>
 
     <Spacer size={0.25} />
 
@@ -47,9 +56,14 @@ const {course} = Astro.props;
     margin-bottom: 3rem;
   }
 
-  .title-section {
+  .intro {
     display: flex;
     flex-direction: column;
+  }
+
+  .title {
+    display: flex;
+    justify-content: space-between;
   }
 
   .meta {

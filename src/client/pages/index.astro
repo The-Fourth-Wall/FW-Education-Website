@@ -5,17 +5,12 @@ import Divider from "@atoms/text/Divider.astro";
 import Spacer from "@atoms/text/Spacer.astro";
 import Footer from "@molecules/Footer.astro";
 import CourseList from "@organisms/CourseList";
-import MenuBar from "@organisms/MenuBar.astro";
 import Main from "@templates/Main.astro";
 
 const courses = parse_curriculum(read_file("curriculum.md"));
 ---
 
 <Main title="Fourth Wall Education">
-  <MenuBar />
-
-  <Spacer size={1} />
-
   <div class="content">
     <div class="sidebar"></div>
     <div class="course-list">

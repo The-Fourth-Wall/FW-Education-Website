@@ -36,23 +36,27 @@
 .light-theme {
   --fg-color: var(--onyx);
   --bg-color: color-mix(in srgb, var(--lilac) 25%, var(--white));
+  --menu-bar-shadow: 0 2px 8px color-mix(in srgb, var(--void) 12%, transparent);
 }
 
 .dark-theme {
   --fg-color: var(--white);
   --bg-color: var(--amethyst);
-}
-
-@media (prefers-color-scheme: dark) {
-  .system-theme {
-    --fg-color: var(--white);
-    --bg-color: var(--amethyst);
-  }
+  --menu-bar-shadow: 0 2px 8px color-mix(in srgb, var(--void) 100%, transparent);
 }
 
 @media (prefers-color-scheme: light) {
   .system-theme {
     --fg-color: var(--onyx);
     --bg-color: color-mix(in srgb, var(--lilac) 25%, var(--white));
+    --menu-bar-shadow: 0 2px 8px color-mix(in srgb, var(--void) 12%, transparent);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .system-theme {
+    --fg-color: var(--white);
+    --bg-color: var(--amethyst);
+    --menu-bar-shadow: 0 2px 8px color-mix(in srgb, var(--void) 100%, transparent);
   }
 }
