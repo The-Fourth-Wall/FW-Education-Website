@@ -82,11 +82,19 @@ const semesters = courses.reduce<Course[][]>((acc, course) => {
     .grid {
       grid-template-columns: repeat(2, 1fr);
     }
+
+    .semester-group {
+      padding-right: 0;
+    }
   }
 
   @media (max-width: 864px) {
     .grid {
       grid-template-columns: 1fr;
+    }
+
+    .semester-group {
+      padding-right: 0;
     }
   }
 </style>
