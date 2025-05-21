@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {theme} from "@app/03-user-preferences";
+  import {theme} from "@models";
   import {onMount} from "svelte";
 
   const themes = ["light", "dark", "system"];

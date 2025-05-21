@@ -6,17 +6,10 @@
       "@app": ["src/app"],
       "@app/*": ["src/app/*"],
       "@models": ["src/models"],
-      "@models/*": ["src/models/*"],
       "@atoms": ["src/client/01-atoms"],
-      "@atoms/*": ["src/client/01-atoms/*"],
       "@molecules": ["src/client/02-molecules"],
-      "@molecules/*": ["src/client/02-molecules/*"],
       "@organisms": ["src/client/03-organisms"],
-      "@organisms/*": ["src/client/03-organisms/*"],
       "@templates": ["src/client/04-templates"],
-      "@templates/*": ["src/client/04-templates/*"],
-      "@pages": ["src/client/pages"],
-      "@pages/*": ["src/client/pages/*"],
       "@styles": ["src/client/styles"],
       "@styles/*": ["src/client/styles/*"]
     }

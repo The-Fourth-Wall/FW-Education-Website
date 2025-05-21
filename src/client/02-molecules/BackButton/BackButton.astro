@@ -1,6 +1,5 @@
 ---
-import Spacer from "@atoms/text/Spacer.astro";
-import Text from "@atoms/text/Text.astro";
+import {Spacer, Text} from "@atoms";
 import BackButtonNavigation from "./BackButtonNavigation.svelte";
 ---
 
@@ -23,12 +22,7 @@ import BackButtonNavigation from "./BackButtonNavigation.svelte";
         clip-rule="evenodd"></path>
     </svg>
     <Spacer size={0.5} />
-    <Text
-      label="Back"
-      size={0.75}
-      type="accent"
-      color="var(--fg-color)"
-    />
+    <Text label="Back" size={0.75} type="accent" color="var(--fg-color)" />
   </div>
 </div>
 

@@ -1,8 +1,6 @@
 ---
-import Badge from "@atoms/buttons/Badge.astro";
-import LinkButton from "@atoms/buttons/LinkButton.astro";
-import Text from "@atoms/text/Text.astro";
-import type {Course} from "@models/course.model";
+import {Badge, LinkButton, Text} from "@atoms";
+import type {Course} from "@models";
 
 type Props = {course: Course};
 const {course} = Astro.props;

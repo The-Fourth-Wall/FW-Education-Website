@@ -1,4 +1,4 @@
-import type {Course, Topic, Availability} from "@models/course.model";
+import type {Course, Topic, Availability} from "@models";
 
 export function parse_curriculum(content: string): Course[] {
   const courses: Course[] = [];
