@@ -11,6 +11,8 @@ export type Difficulty =
   | "expert"
   | "master";
 
+export type Availability = "available" | "in-progress" | "planned";
+
 export type Course = {
   code: string;
   name: string;
@@ -21,4 +23,5 @@ export type Course = {
   programming: string[];
   references: string[];
   topics: Topic[];
+  availability: Availability;
 };

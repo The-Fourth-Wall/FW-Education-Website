@@ -1,4 +1,4 @@
-import type {Course, Topic} from "@models/course.model";
+import type {Course, Topic, Availability} from "@models/course.model";
 
 export function parse_curriculum(content: string): Course[] {
   const courses: Course[] = [];
@@ -13,6 +13,7 @@ export function parse_curriculum(content: string): Course[] {
     programming: [],
     references: [],
     topics: [],
+    availability: "planned",
   };
   let current_section = "";
   let topic_stack: {topic: Topic; indent: number}[] = [];
@@ -47,11 +48,9 @@ export function parse_curriculum(content: string): Course[] {
       if (current_course.code) {
         courses.push(current_course);
       }
-      const [_, code, name] = trimmed.match(/- (FW-\d+)\s*\((.*?)\)/) as [
-        string,
-        string,
-        string,
-      ];
+      const [_, code, name, availability] = trimmed.match(
+        /- (FW-\d+)\s*\((.*?)\)(?:\[(.*?)\])?/,
+      ) as [string, string, string, Availability];
       current_course = {
         code,
         name,
@@ -62,6 +61,7 @@ export function parse_curriculum(content: string): Course[] {
         programming: [],
         references: [],
         topics: [],
+        availability: availability,
       };
       continue;
     }

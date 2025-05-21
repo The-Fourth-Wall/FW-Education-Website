@@ -25,7 +25,7 @@ Curriculum
     - 5 -> Master
   - 3rd -> Course Number
 
-- FW-101 (Programming Fundamentals in C)
+- FW-101 (Programming Fundamentals in C)[available]
   - description:
     - Your first contact with the language of computers and the ability to program them.
   - time:
@@ -45,7 +45,7 @@ Curriculum
     - preprocessor (simple)
     - arrays
     - structs
-- FW-102 (Foundational Science for Computing)
+- FW-102 (Foundational Science for Computing)[in-progress]
   - description:
     - A high level foray into the fields of physics, chemistry, materials science and biology, enabling the connection of computing to the real world.
   - time:
@@ -119,7 +119,7 @@ Curriculum
       - evolutionary concepts
         - natural selection (variation, heritability, fitness, result)
         - adaptation as optimization processes. (newer iterations become better designed)
-- FW-103 (Calculus I)
+- FW-103 (Calculus I)[planned]
   - description:
     - An introduction to the foundations of Algebra for understanding of changing systems, a basic requirement for STEM.
   - time:
@@ -135,7 +135,7 @@ Curriculum
     - differentiation
     - newtons method, mean value theorem, rolle's
     - integration, riemann sums
-- FW-104 (Linear Algebra I)
+- FW-104 (Linear Algebra I)[planned]
   - description:
     - A crucial mathematical basis for working with scalars, vectors and matrices, very important and essential for all modern areas of computing.
   - time:
@@ -150,7 +150,7 @@ Curriculum
     - orthogonality
     - determinants
     - eigenvalues, eigenvectors
-- FW-105 (Analog Design I)
+- FW-105 (Analog Design I)[planned]
   - description:
     - An introduction to analog circuits and the basic building blocks of computation.
   - time:
@@ -168,7 +168,7 @@ Curriculum
     - RLC
     - bode diagrams
     - filters
-- FW-106 (Computer Systems Design I)
+- FW-106 (Computer Systems Design I)[planned]
 
   - description:
     - Learning to think in terms of systems, understanding the connection between hardware, software and application.
@@ -186,7 +186,7 @@ Curriculum
     - git/hub
     - …
 
-- FW-211 (Calculus II)
+- FW-211 (Calculus II)[planned]
   - description:
     - A deeper understanding of Algebra for complicated functions.
   - time:
@@ -204,7 +204,7 @@ Curriculum
     - multi-variable functions
     - multiple integration
     - differential equations
-- FW-202 (Discrete Math)
+- FW-202 (Discrete Math)[planned]
   - description:
     - Explore essential structures, proofs and reasoning to build algorithmic intuition.
   - time:
@@ -220,7 +220,7 @@ Curriculum
     - set theory
     - number theory
     - discrete probability
-- FW-213 (Analog Design II)
+- FW-213 (Analog Design II)[planned]
   - description:
     - Delve into semiconductors, transistors and the more advanced building blocks of electronic circuits.
   - time:
@@ -239,7 +239,7 @@ Curriculum
     - bipolar transistors
     - differential amplifiers
     - frequency response
-- FW-214 (Digital Design I)
+- FW-214 (Digital Design I)[planned]
   - description:
     - Get familiar with how logic gates behave, gain foundational knowledge of digital circuit construction and design.
   - time:
@@ -255,7 +255,7 @@ Curriculum
     - encoders, decoders
     - flip-flops
     - registers
-- FW-205 (Object Oriented Programming with Ruby)
+- FW-205 (Object Oriented Programming with Ruby)[planned]
   - description:
     - Master objects and messages, build extensible software and scale your understanding using OOP.
   - time:
@@ -275,7 +275,7 @@ Curriculum
     - inheritance, advanced classes
     - advanced arrays
     - object model
-- FW-206 (Command Line Basics)
+- FW-206 (Command Line Basics)[planned]
 
   - description:
     - Wield command line interfaces and script automations on Linux.
@@ -297,7 +297,7 @@ Curriculum
     - archiving and compression (tar, gzip, bzip2)
     - basic scripts
 
-- FW-311 (Numerical Analysis)
+- FW-311 (Numerical Analysis)[planned]
   - description:
     - A robust analysis of linear systems, approximations of functions, derivatives and integrals.
   - time:
@@ -308,7 +308,7 @@ Curriculum
     - …
   - topics:
     - …
-- FW-312 (Data and Probability)
+- FW-312 (Data and Probability)[planned]
   - description:
     - Explore statistics, probability and data, understand uncertainty and make data-driven decisions.
   - time:
@@ -319,7 +319,7 @@ Curriculum
     - …
   - topics:
     - …
-- FW-323 (Analog Design III)
+- FW-323 (Analog Design III)[planned]
   - description:
     - Analog building blocks using semiconductor devices, amplification, feedback, noise, and distortion in circuit design.
   - time:
@@ -332,7 +332,7 @@ Curriculum
     - …
   - topics:
     - …
-- FW-324 (Digital Design II)
+- FW-324 (Digital Design II)[planned]
   - description:
     - Architect more complex digital systems, from sophisticated memory to FPGAs.
   - time:
@@ -347,7 +347,7 @@ Curriculum
     - memory, RAM
     - FPGAs
     - algorithmic state machines
-- FW-315 (Data Structures Algorithms I)
+- FW-315 (Data Structures Algorithms I)[planned]
   - description:
     - Master fundamental data structures and algorithms, achieving performance and true scalability.
   - time:
@@ -366,7 +366,7 @@ Curriculum
     - selection
     - sorting
     - matching
-- FW-316 (Class Based Development in Java)
+- FW-316 (Class Based Development in Java)[planned]
 
   - description:
     - Engineer interface-driven implementations, experience enterprise-grade application development.
@@ -382,7 +382,7 @@ Curriculum
     - interfaces
     - model driven development
 
-- FW-421 (Theory of Computation)
+- FW-421 (Theory of Computation)[planned]
   - description:
     - Discover formal languages, automata, computability and the fundamental nature of computation itself.
   - time:
@@ -393,7 +393,7 @@ Curriculum
     - …
   - topics:
     - …
-- FW-412 (Digital Signal Processing)
+- FW-412 (Digital Signal Processing)[planned]
   - description:
     - Analyze and transform digital signals and unlock applications from audio processing to medical imaging.
   - time:
@@ -404,7 +404,7 @@ Curriculum
     - …
   - topics:
     - …
-- FW-433 (Digital Design III)
+- FW-433 (Digital Design III)[planned]
   - description:
     - Dive into programmable logic with FPGAs, implement complex digital designs with a high level overview into VLSI.
   - time:
@@ -416,7 +416,7 @@ Curriculum
     - …
   - topics:
     - …
-- FW-424 (Quantum Mechanics)
+- FW-424 (Quantum Mechanics)[planned]
   - description:
     - A first look into quantum phenomena, effects and behaviours.
   - time:
@@ -428,7 +428,7 @@ Curriculum
   - topics:
     - revision on eigenvalues/eigenvectors
     - …
-- FW-425 (Paradigms of Programming Languages)
+- FW-425 (Paradigms of Programming Languages)[planned]
   - description:
     - Understand the many different programming paradigms, their strengths and weaknesses.
   - time:
@@ -448,7 +448,7 @@ Curriculum
   - topics:
     - Procedural, Functional, OO, Logic
     - simple problem solved in 4 different languages and compare methodologies
-- FW-426 (Data Structures Algorithms II)
+- FW-426 (Data Structures Algorithms II)[planned]
   - description:
     - The second iteration of the DSA course teaching you more advanced algorithms with a focus on problem spaces.
   - time:
@@ -468,7 +468,7 @@ Curriculum
     - tries/digital trees
     - reductions
     - P, NP, NP-completeness
-- FW-427 (Database Management Systems)
+- FW-427 (Database Management Systems)[planned]
 
   - description:
     - A dedicated course on the different types of database management systems and their use in the real world.
@@ -483,7 +483,7 @@ Curriculum
     - 7 types of databases (not all of them potentially)
     - …
 
-- FW-521 (Linear Algebra II)
+- FW-521 (Linear Algebra II)[planned]
   - description:
     - A course on the more advanced applications of linear algebra, from vector norms to game theory.
   - time:
@@ -498,7 +498,7 @@ Curriculum
     - linear programming, game theory
     - vector norms
     - chomsky analysis
-- FW-522 (Tele-Communication Systems)
+- FW-522 (Tele-Communication Systems)[planned]
   - description:
     - Discover the underlying theoretical and practical structure of technologies that enable telecommunications.
   - time:
@@ -509,7 +509,7 @@ Curriculum
     - …
   - topics:
     - …
-- FW-513 (Artificial Intelligence)
+- FW-513 (Artificial Intelligence)[planned]
   - description:
     - A course on the foundational techniques driving the field of AI.
   - time:
@@ -520,7 +520,7 @@ Curriculum
     - …
   - topics:
     - …
-- FW-524 (Computer Architecture)
+- FW-524 (Computer Architecture)[planned]
   - description:
     - Understand how hardware integrates with turing-complete assemblers and how to program them efficiently.
   - time:
@@ -531,7 +531,7 @@ Curriculum
     - ...
   - topics:
     - ...
-- FW-515 (Web Applications)
+- FW-515 (Web Applications)[planned]
   - description:
     - A knowledge packed course on the roadmap of a full stack developer for the modern era.
   - time:
@@ -549,7 +549,7 @@ Curriculum
     - GET/POST requests
     - async operations for servers
     - routing
-- FW-516 (Teaching of Informatics)
+- FW-516 (Teaching of Informatics)[planned]
 
   - description:
     - A detailed overview of major theories of teaching with a focus on computing education.
@@ -569,7 +569,7 @@ Curriculum
     - cognitive theory
     - failure of constructivism
 
-- FW-621 (Topology and Graphs)
+- FW-621 (Topology and Graphs)[planned]
   - description:
     - Understand graph theory, delve into the mathematical foundations of topology and apply that knowledge to the real world of computing.
   - time:
@@ -580,7 +580,7 @@ Curriculum
     - …
   - topics:
     - …
-- FW-622 (Nanotechnology)
+- FW-622 (Nanotechnology)[planned]
   - description:
     - An explanation of atomically precise manufacturing and its transformative potential across computing and modern science.
   - time:
@@ -591,7 +591,7 @@ Curriculum
     - …
   - topics:
     - …
-- FW-623 (Machine Learning)
+- FW-623 (Machine Learning)[planned]
   - description:
     - Supervised, unsupervised or reinforcement learning and the addition of intelligent capabilities to the computer.
   - time:
@@ -602,7 +602,7 @@ Curriculum
     - …
   - topics:
     - …
-- FW-624 (Networks I)
+- FW-624 (Networks I)[planned]
   - description:
     - An exploration of the multi-layered architecture of computer networks from cable to application.
   - time:
@@ -613,7 +613,7 @@ Curriculum
     - …
   - topics:
     - …
-- FW-625 (Computer Graphics)
+- FW-625 (Computer Graphics)[planned]
   - description:
     - Learn the core algorithms used to create, represent and display visual content and interactive experiences.
   - time:
@@ -624,7 +624,7 @@ Curriculum
     - …
   - topics:
     - …
-- FW-616 (Ethics of Computing)
+- FW-616 (Ethics of Computing)[planned]
 
   - description:
     - Navigate the complex moral landscape of the digital age, learn to recognize the biases, impacts and responsibilities of deploying systems for the benefit of humanity at large.
@@ -637,7 +637,7 @@ Curriculum
   - topics:
     - …
 
-- FW-731 (Neural Networks)
+- FW-731 (Neural Networks)[planned]
   - description:
     - Unlock the power of deep learning, convolutional, recurrent neural networks and transformers, the very tools and technologies that enable modern large language models.
   - time:
@@ -648,7 +648,7 @@ Curriculum
     - …
   - topics:
     - …
-- FW-722 (Synthetic Biology)
+- FW-722 (Synthetic Biology)[planned]
   - description:
     - A deep dive into the construction of novel biological systems and the realigning of existing ones to human goals.
   - time:
@@ -659,7 +659,7 @@ Curriculum
     - …
   - topics:
     - …
-- FW-733 (Networks II)
+- FW-733 (Networks II)[planned]
   - description:
     - A more advanced program on modern networked systems, network programming, routing and architectures for scalable apps.
   - time:
@@ -670,7 +670,7 @@ Curriculum
     - ...
   - topics:
     - port scanners, network scanners
-- FW-714 (Computer Systems Design II)
+- FW-714 (Computer Systems Design II)[planned]
   - description:
     - Elevate your software engineering practices using the use case driven approach for long-term projects.
   - time:
@@ -685,7 +685,7 @@ Curriculum
     - reference to waterfall, scrum
     - data flow diagrams, structured analysis
     - testing (code first)
-- FW-725 (Parallel Computing)
+- FW-725 (Parallel Computing)[planned]
   - description:
     - A course on harnessing the power of multi-core environments and accelerators from a theoretical to a practical level.
   - time:
@@ -701,7 +701,7 @@ Curriculum
     - openmp
     - mpi
     - cuda
-- FW-716 (History of Computing)
+- FW-716 (History of Computing)[planned]
 
   - description:
     - A journey through the historical log of pivotal breakthroughs, visionary thinkers, and landmark systems that shaped the modern world of computation.
@@ -725,7 +725,7 @@ Curriculum
     - SmallTalk
     - …
 
-- FW-821 (Cryptography)
+- FW-821 (Cryptography)[planned]
   - description:
     - A comprehensive set of maths, algorithms, practical applications, and the systems of modern cryptography that secure the authenticity and privacy of information.
   - time:
@@ -744,7 +744,7 @@ Curriculum
     - elliptic curves
     - post-quantum cryptography
     - merkle trees, blockchain ideas
-- FW-832 (Distributed Tolerant Systems)
+- FW-832 (Distributed Tolerant Systems)[planned]
   - description:
     - A course on the inner workings of fault tolerant systems with a high degree of distribution for availability, performance and consistency of information.
   - time:
@@ -755,7 +755,7 @@ Curriculum
     - ...
   - topics:
     - ...
-- FW-833 (Interpreters)
+- FW-833 (Interpreters)[planned]
   - description:
     - Create your own programming languages gaining a profound understanding of how interpreters turn code into execution.
   - time:
@@ -777,7 +777,7 @@ Curriculum
     - hashing
     - closures
     - analysis of Lua source code
-- FW-824 (Computer Systems Design III)
+- FW-824 (Computer Systems Design III)[planned]
   - description:
     - Study how real critical safety and very high performant systems can be created, how to scale development and how to deploy automatically.
   - time:
@@ -796,7 +796,7 @@ Curriculum
     - devops, deployment, pipelines
     - CI/CD
     - cloud computing, services
-- FW-835 (Data Structures Algorithms III)
+- FW-835 (Data Structures Algorithms III)[planned]
   - description:
     - Explore the most advanced algorithms and data structures tackling the most demanding computational problems.
   - time:
@@ -820,7 +820,7 @@ Curriculum
     - particle swarm optimization
     - deflection and stretching
     - gradient-descent, Newton method, AdaGrad and Adam method
-- FW-826 (Internet of Things)
+- FW-826 (Internet of Things)[planned]
 
   - description:
     - Architect interconnected mini systems, design the protocols and deploy vast networks of smart devices.
@@ -833,7 +833,7 @@ Curriculum
   - topics:
     - …
 
-- FW-931 (Human-Computer Interaction)
+- FW-931 (Human-Computer Interaction)[planned]
   - description:
     - A redefinition of the interaction between individuals and machines, the humane representation of thought, and the intuitive, immersive platforms that extend intellectual reach.
   - time:
@@ -844,7 +844,7 @@ Curriculum
     - BRET VICTOR stuff
   - topics:
     - …
-- FW-932 (Computer Systems Design IV)
+- FW-932 (Computer Systems Design IV)[planned]
   - description:
     - Deploy end-to-end systems connecting multiple languages, services and methodologies, a culmination of all knowledge paths of computing.
   - time:
@@ -856,7 +856,7 @@ Curriculum
   - topics:
     - probably full end-to-end system with multiple languages, services, ideas.
     - viewers can submit new assignments that would be 932-worthy and I display them.
-- FW-933 (Cryptocurrency and Blockchain Technologies)
+- FW-933 (Cryptocurrency and Blockchain Technologies)[planned]
   - description:
     - A detailed foray to the world of cryptocurrency, decentralized applications and blockchain systems.
   - time:
@@ -872,7 +872,7 @@ Curriculum
     - zero knowledge proofs and monero.
     - smart contracts and ethereum.
     - efficient execution and solana.
-- FW-934 (Penetration Testing and Offensive Security)
+- FW-934 (Penetration Testing and Offensive Security)[planned]
   - description:
     - Learning to think like an attacker in an end-to-end penetration testing roadmap for securing systems against real-world threats.
   - time:
@@ -884,7 +884,7 @@ Curriculum
   - topics:
     - pipeline of pentesting
     - PIG, AIG, ENUM, VA, EX, PEX, REP
-- FW-935 (Quantum Computing)
+- FW-935 (Quantum Computing)[planned]
   - description:
     - Leverage quantum mechanics and harness the power of qubits to solve non-classical computing problems.
   - time:
@@ -896,7 +896,7 @@ Curriculum
     - Quantum Computing by Andrew Glassner (2025 release)
   - topics:
     - …
-- FW-936 (Internet of Bio-NanoThings)
+- FW-936 (Internet of Bio-NanoThings)[planned]
 
   - description:
     - Explore the design of microscopic interconnected devices within biological systems.
@@ -909,7 +909,7 @@ Curriculum
   - topics:
     - …
 
-- FW-4240 ()
+- FW-4240 ()[planned]
   - description:
     - …
   - time:
@@ -920,7 +920,7 @@ Curriculum
     - …
   - topics:
     - …
-- FW-4251 ()
+- FW-4251 ()[planned]
   - description:
     - …
   - time:
