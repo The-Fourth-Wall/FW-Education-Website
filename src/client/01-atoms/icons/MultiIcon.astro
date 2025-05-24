@@ -1,0 +1,56 @@
+---
+import type {Icon} from "@models";
+import IconSelector from "./IconSelector.astro";
+
+type Props = {
+  icons: Icon[];
+  size: number;
+};
+
+const {icons, size} = Astro.props;
+---
+
+<div class="icons" style={`--icon-size: ${size}rem`}>
+  {
+    icons.map((icon, index) => (
+      <div
+        class:list={[icon, "icon"]}
+        data-theme-index={index}
+        data-icon={icon}>
+        <IconSelector icon={icon} />
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  .icons {
+    padding: 1.0625rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    transition: all var(--hover-animation-time) ease;
+  }
+
+  .icons:hover {
+    border: 1px solid color-mix(in srgb, var(--fg-color) 50%, transparent);
+    background-color: color-mix(in srgb, var(--fg-color) 7.5%, transparent);
+  }
+
+  .icon {
+    width: 1.125rem;
+    height: 1.125rem;
+    position: absolute;
+    top: 0.55rem;
+    left: 0.55rem;
+    opacity: 0;
+    transform: scale(0) rotate(-360deg);
+    transition: var(--theme-animation-time) ease;
+  }
+
+  :root.light-theme .icon[data-theme-index="0"],
+  :root.dark-theme .icon[data-theme-index="1"],
+  :root.system-theme .icon[data-theme-index="2"] {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+</style>

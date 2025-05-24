@@ -1,5 +1,5 @@
 ---
-import {Spacer, Text} from "@atoms";
+import {Icon} from "@atoms";
 import BackButtonNavigation from "./BackButtonNavigation.svelte";
 ---
 
@@ -10,20 +10,7 @@ import BackButtonNavigation from "./BackButtonNavigation.svelte";
   class="container"
   aria-label="go back"
   tabindex="0">
-  <div class="items">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 20 20"
-      fill="var(--fg-color)"
-      class="size-5">
-      <path
-        fill-rule="evenodd"
-        d="M17 10a.75.75 0 0 1-.75.75H5.612l4.158 3.96a.75.75 0 1 1-1.04 1.08l-5.5-5.25a.75.75 0 0 1 0-1.08l5.5-5.25a.75.75 0 1 1 1.04 1.08L5.612 9.25H16.25A.75.75 0 0 1 17 10Z"
-        clip-rule="evenodd"></path>
-    </svg>
-    <Spacer size={0.5} />
-    <Text label="Back" size={0.75} type="accent" color="var(--fg-color)" />
-  </div>
+  <Icon icon="left-arrow" label="Back" size={0.875} />
 </div>
 
 <style>
@@ -33,23 +20,5 @@ import BackButtonNavigation from "./BackButtonNavigation.svelte";
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-  }
-
-  .items {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.5rem;
-    border: 1px solid transparent;
-    border-radius: 0.25rem;
-    transition: all var(--hover-animation-time) ease-in-out;
-  }
-
-  .items:hover {
-    border: 1px solid color-mix(in srgb, var(--fg-color) 50%, transparent);
-    background-color: color-mix(in srgb, var(--fg-color) 7.5%, transparent);
-  }
-
-  svg {
-    width: 1rem;
   }
 </style>

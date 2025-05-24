@@ -1,0 +1,41 @@
+---
+import {Spacer, Text} from "@atoms";
+import type {Icon} from "@models";
+import IconSelector from "./IconSelector.astro";
+
+type Props = {
+  icon: Icon;
+  size: number;
+  label?: string;
+};
+
+const {icon, size, label} = Astro.props;
+---
+
+<div style={`--icon-size: ${size}rem`}>
+  <IconSelector icon={icon} />
+  {
+    label && (
+      <>
+        <Spacer size={0.375} />
+        <Text label={label} size={0.75} type="accent" color="var(--fg-color)" />
+      </>
+    )
+  }
+</div>
+
+<style>
+  div {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    transition: all var(--hover-animation-time) ease-in-out;
+  }
+
+  div:hover {
+    border: 1px solid color-mix(in srgb, var(--fg-color) 50%, transparent);
+    background-color: color-mix(in srgb, var(--fg-color) 7.5%, transparent);
+  }
+</style>

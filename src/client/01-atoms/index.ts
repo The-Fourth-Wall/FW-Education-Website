@@ -5,6 +5,9 @@ export {default as ThemeSwitcher} from "./buttons/ThemeSwitcher/ThemeSwitcher.as
 export {default as Border} from "./debug/Border.astro";
 export {default as Center} from "./debug/Center.astro";
 
+export {default as Icon} from "./icons/Icon.astro";
+export {default as MultiIcon} from "./icons/MultiIcon.astro";
+
 export {default as Divider} from "./text/Divider.astro";
 export {default as Spacer} from "./text/Spacer.astro";
 export {default as Text} from "./text/Text.astro";
