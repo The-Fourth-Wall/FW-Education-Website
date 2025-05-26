@@ -4,6 +4,8 @@ import type {Course} from "@models";
 import {CourseHeader, CourseSection} from "@organisms";
 import {Main} from "@templates";
 
+export const prerender = true;
+
 export function getStaticPaths() {
   const courses = parse_curriculum(read_file("curriculum.md"));
   return courses.map(course => ({

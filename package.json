@@ -12,18 +12,22 @@
     "test": "vitest"
   },
   "dependencies": {
-    "@astrojs/svelte": "^7.0.13",
+    "@astrojs/svelte": "^7.1.0",
+    "@astrojs/vercel": "^8.1.4",
+    "@supabase/supabase-js": "^2.49.7",
     "@swup/head-plugin": "^2.3.1",
     "@swup/js-plugin": "^3.2.0",
     "@swup/scroll-plugin": "^3.3.2",
-    "astro": "^4.0.0",
+    "astro": "^5.8.0",
     "gsap": "^3.13.0",
+    "micromatch": "^4.0.8",
     "nanostores": "^1.0.1",
     "svelte": "^5.28.2",
     "swup": "^4.8.2",
     "typescript": "^5.8.3"
   },
   "devDependencies": {
+    "@types/micromatch": "^4.0.9",
     "@types/node": "^20.0.0",
     "autoprefixer": "^10.4.21",
     "cssnano": "^7.0.7",
