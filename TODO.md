@@ -5,6 +5,7 @@
   🟩 store user preferences using nanostores.
   🟩 add user authentication.
   🟥 refactor course parser and file reader to markdown content collections.
+  🟥 fix safari excessive caching for navigations.
   🟥 add a semester and difficulty filter to the course list.
   🟥 add user and preferences storing in supabase db.
   🟥 add course card availability overlays for non-completed courses.
