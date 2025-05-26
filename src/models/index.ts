@@ -1,2 +1,3 @@
 export * from "./course.model";
-export * from "./theme";
+export * from "./icon.model";
+export * from "./theme.store";

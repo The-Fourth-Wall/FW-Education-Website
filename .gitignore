@@ -133,3 +133,6 @@ dist/
 
 # Windows thumbnail cache files
 Thumbs.db
+
+# Vercel deployments
+.vercel
