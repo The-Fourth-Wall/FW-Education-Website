@@ -7,6 +7,11 @@ import vercel from "@astrojs/vercel";
 export default defineConfig({
   output: "server",
   integrations: [svelte()],
-  adapter: vercel(),
+  adapter: vercel({
+    analytics: true,
+    webAnalytics: {
+      enabled: true,
+    },
+  }),
   srcDir: "./src/client",
 });
