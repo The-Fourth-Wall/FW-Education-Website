@@ -1,4 +1,5 @@
 export {default as Badge} from "./buttons/Badge.astro";
+export {default as Form} from "./buttons/Form.astro";
 export {default as LinkButton} from "./buttons/LinkButton.astro";
 export {default as ThemeSwitcher} from "./buttons/ThemeSwitcher/ThemeSwitcher.astro";
 

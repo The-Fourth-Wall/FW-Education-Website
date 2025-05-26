@@ -1,25 +1,130 @@
 ---
-import {Text} from "@atoms";
+import {Form, Spacer, Text} from "@atoms";
+import {user} from "@models";
 import {BackButton} from "@molecules";
 import {Main} from "@templates";
 ---
 
-<Main title="Settings Page">
-  <dev>
-    <Text
-      label="Settings Page"
-      size={1.5}
-      type="primary"
-      color="var(--fg-color)"
-    />
+<script is:inline>
+  if (
+    !document.cookie.includes("sb-access-token=") ||
+    !document.cookie.includes("sb-refresh-token=")
+  ) {
+    history.pushState(null, "", "/login");
+    history.pushState(null, "", "/login");
+    history.back();
+    window.location.replace("/login");
+  }
+</script>
 
+<Main title="Fourth Wall | Profile">
+  <div class="first-row">
+    <div></div>
     <BackButton />
-  </dev>
+  </div>
+
+  <Spacer size={1} />
+
+  <div class="settings">
+    <div class="settings-section">
+      <Text
+        label="Information"
+        size={1.125}
+        type="primary"
+        color="var(--fg-color)"
+      />
+      <form class="info-form">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          class="disabled"
+          disabled
+          name="email"
+          type="email"
+          value={user.get()?.email ?? ""}
+          autocomplete="off"
+        />
+      </form>
+    </div>
+
+    <div class="settings-section">
+      <Text
+        label="Sign out"
+        size={1.125}
+        type="primary"
+        color="var(--fg-color)"
+      />
+      <Form action="/auth/logout">
+        <button type="submit">
+          <Text
+            label="Sign out"
+            size={0.875}
+            type="secondary"
+            color="var(--white)"
+          />
+        </button>
+      </Form>
+    </div>
+  </div>
 </Main>
 
 <style>
-  dev {
+  .settings {
     display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    max-width: 50%;
+    margin: 0 auto;
+  }
+
+  .first-row {
+    display: flex;
+    align-items: center;
     justify-content: space-between;
+  }
+
+  .settings-section {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--fg-color);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    gap: 1.25rem;
+    box-shadow: none;
+    background: none;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  input {
+    border: 1px solid var(--fg-color);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    background: transparent;
+    color: var(--fg-color);
+    outline: none;
+    margin-bottom: 0.5rem;
+  }
+
+  input.disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+
+  button {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background: var(--accent-color);
+    transition: all var(--hover-animation-time) ease-in-out;
+  }
+
+  button:hover {
+    background: color-mix(in srgb, var(--accent-color) 75%, transparent);
   }
 </style>

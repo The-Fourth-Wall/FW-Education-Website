@@ -1,0 +1,201 @@
+---
+import {Spacer, Text} from "@atoms";
+import {BackButton} from "@molecules";
+import {Main} from "@templates";
+---
+
+<script is:inline>
+  if (
+    document.cookie.includes("sb-access-token=") &&
+    document.cookie.includes("sb-refresh-token=")
+  ) {
+    history.pushState(null, "", "/");
+    history.pushState(null, "", "/");
+    history.back();
+    window.location.replace("/");
+  }
+</script>
+
+<Main title="Fourth Wall | Register">
+  <div class="first-row">
+    <div></div>
+    <BackButton />
+  </div>
+
+  <Spacer size={1} />
+
+  <div class="auth-container">
+    <div class="auth-section">
+      <Text
+        label="Register"
+        size={1.125}
+        type="primary"
+        color="var(--fg-color)"
+      />
+
+      <Spacer size={2} />
+
+      <form action="/auth/register" method="post" id="register-form">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <Spacer size={0.5} />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            autocomplete="off"
+            required
+          />
+        </div>
+
+        <Spacer size={1} />
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <Spacer size={0.5} />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            required
+            minlength="8"
+          />
+        </div>
+
+        <Spacer size={1} />
+
+        <div class="form-group">
+          <label for="password_verify">Verify Password</label>
+          <Spacer size={0.5} />
+          <input
+            type="password"
+            name="password_verify"
+            id="password_verify"
+            required
+          />
+          <p class="error-message" id="password-error"></p>
+        </div>
+
+        <Spacer size={1.5} />
+
+        <button type="submit">
+          <Text
+            label="Register"
+            size={0.875}
+            type="secondary"
+            color="var(--white)"
+          />
+        </button>
+      </form>
+      <p class="auth-link">
+        Already have an account? <a href="/login">Log in</a>
+      </p>
+    </div>
+  </div>
+</Main>
+
+<script>
+  const form = document.getElementById("register-form");
+  const password = document.getElementById("password") as HTMLInputElement;
+  const password_verify = document.getElementById(
+    "password_verify",
+  ) as HTMLInputElement;
+  const error_message = document.getElementById("password-error");
+
+  form?.addEventListener("submit", e => {
+    if (password.value !== password_verify.value) {
+      e.preventDefault();
+      error_message!.textContent = "Passwords do not match";
+      error_message!.style.display = "block";
+    } else {
+      error_message!.style.display = "none";
+    }
+  });
+
+  password_verify?.addEventListener("input", () => {
+    if (password.value !== password_verify.value) {
+      error_message!.textContent = "Passwords do not match";
+      error_message!.style.display = "block";
+    } else {
+      error_message!.style.display = "none";
+    }
+  });
+</script>
+
+<style>
+  .auth-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 50%;
+    margin: 0 auto;
+  }
+
+  .first-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .auth-section {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--fg-color);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    box-shadow: none;
+    background: none;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input {
+    border: 1px solid var(--fg-color);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    background: transparent;
+    color: var(--fg-color);
+    outline: none;
+  }
+
+  input:invalid {
+    border-color: var(--error-color);
+  }
+
+  .error-message {
+    color: var(--error-color);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: none;
+  }
+
+  button {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background: var(--accent-color);
+    transition: all var(--hover-animation-time) ease-in-out;
+    border: none;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: color-mix(in srgb, var(--accent-color) 75%, transparent);
+  }
+
+  .auth-link {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .auth-link a {
+    color: var(--accent-color);
+  }
+
+  .auth-link a:hover {
+    text-decoration: underline;
+  }
+</style>
