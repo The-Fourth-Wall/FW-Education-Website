@@ -7,7 +7,8 @@ import {Main} from "@templates";
 type Props = {course: Course};
 
 const {code} = Astro.params;
-const courses = parse_curriculum(read_file("curriculum.md"));
+const curriculum_data = await read_file("curriculum.md");
+const courses = parse_curriculum(curriculum_data);
 const course = courses.find(c => c.code === code);
 
 if (!course) {

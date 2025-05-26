@@ -6,7 +6,8 @@ import {Footer} from "@molecules";
 import {CourseList} from "@organisms";
 import {Main} from "@templates";
 
-const courses = parse_curriculum(read_file("curriculum.md"));
+const curriculum_data = await read_file("curriculum.md");
+const courses = parse_curriculum(curriculum_data);
 ---
 
 <Main title="Fourth Wall Education">
