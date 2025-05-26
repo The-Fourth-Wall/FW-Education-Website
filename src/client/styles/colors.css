@@ -26,6 +26,8 @@
   --advanced-accent: color-mix(in srgb, var(--crimson) 85%, var(--white));
   --expert-accent: color-mix(in srgb, var(--indigo) 70%, var(--white));
   --master-accent: color-mix(in srgb, var(--onyx) 65%, var(--white));
+
+  --accent-color: color-mix(in srgb, var(--lilac) 60%, var(--black));
 }
 
 ::selection {

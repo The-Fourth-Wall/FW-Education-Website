@@ -14,7 +14,10 @@ const {href, accessibility} = Astro.props;
 <script>
   document.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", (event: MouseEvent) => {
-      if (history.state?.url.includes("/course")) {
+      if (
+        history.state?.url.includes("/course") &&
+        link.getAttribute("href") === "/"
+      ) {
         event.preventDefault();
         history.back();
       }

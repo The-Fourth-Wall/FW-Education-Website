@@ -1,0 +1,132 @@
+---
+import {Spacer, Text} from "@atoms";
+import {BackButton} from "@molecules";
+import {Main} from "@templates";
+---
+
+<script is:inline>
+  if (
+    document.cookie.includes("sb-access-token=") &&
+    document.cookie.includes("sb-refresh-token=")
+  ) {
+    history.pushState(null, "", "/");
+    history.pushState(null, "", "/");
+    history.back();
+    window.location.replace("/");
+  }
+</script>
+
+<Main title="Fourth Wall | Login">
+  <div class="first-row">
+    <div></div>
+    <BackButton />
+  </div>
+
+  <Spacer size={1} />
+
+  <div class="auth-container">
+    <div class="auth-section">
+      <Text label="Login" size={1.125} type="primary" color="var(--fg-color)" />
+
+      <Spacer size={2} />
+
+      <form action="/auth/login" method="post">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <Spacer size={0.5} />
+          <input type="email" name="email" id="email" autocomplete="off" />
+        </div>
+
+        <Spacer size={1} />
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <Spacer size={0.5} />
+          <input type="password" name="password" id="password" />
+        </div>
+
+        <Spacer size={1.5} />
+
+        <button type="submit" data-astro-history="replace">
+          <Text
+            label="Login"
+            size={0.875}
+            type="secondary"
+            color="var(--white)"
+          />
+        </button>
+      </form>
+      <p class="auth-link">
+        New here? <a href="/register">Create an account</a>
+      </p>
+    </div>
+  </div>
+</Main>
+
+<style>
+  .auth-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 50%;
+    margin: 0 auto;
+  }
+
+  .first-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .auth-section {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--fg-color);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    box-shadow: none;
+    background: none;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input {
+    border: 1px solid var(--fg-color);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    background: transparent;
+    color: var(--fg-color);
+    outline: none;
+  }
+
+  button {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background: var(--accent-color);
+    transition: all var(--hover-animation-time) ease-in-out;
+    border: none;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: color-mix(in srgb, var(--accent-color) 75%, transparent);
+  }
+
+  .auth-link {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .auth-link a {
+    color: var(--accent-color);
+    text-decoration: none;
+  }
+
+  .auth-link a:hover {
+    text-decoration: underline;
+  }
+</style>

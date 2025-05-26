@@ -1,6 +1,7 @@
 ---
 import {parse_curriculum, read_file} from "@app/FT-01-curriculum-parser";
-import {Divider, Spacer} from "@atoms";
+import {Divider, Spacer, Text} from "@atoms";
+import {user} from "@models";
 import {Footer} from "@molecules";
 import {CourseList} from "@organisms";
 import {Main} from "@templates";
@@ -10,7 +11,18 @@ const courses = parse_curriculum(read_file("curriculum.md"));
 
 <Main title="Fourth Wall Education">
   <div class="content">
-    <div class="sidebar"></div>
+    <div class="sidebar">
+      {
+        user.get().email && (
+          <Text
+            label={`Welcome ${user.get().email}`}
+            type="primary"
+            size={1}
+            color="var(--fg-color)"
+          />
+        )
+      }
+    </div>
     <div class="course-list">
       <CourseList courses={courses} />
       <Divider size={2} faded />

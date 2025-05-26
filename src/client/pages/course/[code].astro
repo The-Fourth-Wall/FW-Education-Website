@@ -4,16 +4,15 @@ import type {Course} from "@models";
 import {CourseHeader, CourseSection} from "@organisms";
 import {Main} from "@templates";
 
-export function getStaticPaths() {
-  const courses = parse_curriculum(read_file("curriculum.md"));
-  return courses.map(course => ({
-    params: {code: course.code},
-    props: {course},
-  }));
-}
-
 type Props = {course: Course};
-const {course} = Astro.props;
+
+const {code} = Astro.params;
+const courses = parse_curriculum(read_file("curriculum.md"));
+const course = courses.find(c => c.code === code);
+
+if (!course) {
+  return Astro.redirect("/404");
+}
 ---
 
 <Main title={`${course.name} - Fourth Wall Education`}>
