@@ -1,17 +1,11 @@
 ---
-import type {Course} from "@models";
+import {get_course} from "@app/FT-01-curriculum/courses";
 import {CourseHeader, CourseSection} from "@organisms";
 import {Main} from "@templates";
-import {getCollection} from "astro:content";
-
-type Props = {course: Course};
 
 const {code} = Astro.params;
-const courses = await getCollection("curriculum");
-const course = courses
-  .map(c => c.data)
-  .find(c => c.code.split("-")[1] === code);
 
+const course = await get_course(code);
 if (!course) {
   return Astro.redirect("/404");
 }

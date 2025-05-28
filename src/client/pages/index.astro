@@ -1,12 +1,12 @@
 ---
+import {get_semesters} from "@app/FT-01-curriculum/courses";
 import {Divider, Spacer, Text} from "@atoms";
 import {user} from "@models";
 import {Footer} from "@molecules";
 import {CourseList} from "@organisms";
 import {Main} from "@templates";
-import {getCollection} from "astro:content";
 
-const courses = await getCollection("curriculum");
+const courses = await get_semesters();
 ---
 
 <Main title="Fourth Wall Education">
@@ -24,7 +24,7 @@ const courses = await getCollection("curriculum");
       }
     </div>
     <div class="course-list">
-      <CourseList courses={courses.map(c => c.data)} />
+      <CourseList courses={courses} />
       <Divider size={2} faded />
       <Footer copyright="Fourth Wall ⓒ" size={1.25} />
       <Spacer size={2} />

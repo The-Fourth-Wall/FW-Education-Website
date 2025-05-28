@@ -5,27 +5,15 @@ import {CourseCard} from "@molecules";
 import GridTitleAligner from "./GridTitleAligner.svelte";
 
 type Props = {
-  courses: Course[];
+  courses: Course[][];
 };
 
 const {courses} = Astro.props;
-
-const semesters = courses.reduce<Course[][]>((acc, course) => {
-  const newest = acc[acc.length - 1];
-
-  if (!newest || newest[0].semester !== course.semester) {
-    acc.push([course]);
-  } else {
-    newest.push(course);
-  }
-
-  return acc;
-}, []);
 ---
 
 <GridTitleAligner client:load />
 {
-  semesters.map(semester_courses => (
+  courses.map(semester_courses => (
     <div class="semester-group">
       <div class="semester-title">
         <Text
