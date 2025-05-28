@@ -8,7 +8,7 @@ export async function logout(
 ) {
   cookies.delete("sb-access-token", {path: "/"});
   cookies.delete("sb-refresh-token", {path: "/"});
-  user.set({});
+  user.set({theme: "system"});
 
   const {error} = await supabase.auth.signOut();
   if (error) {
