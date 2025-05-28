@@ -2,8 +2,6 @@
 code: FW-102
 name: Foundational Science for Computing
 description: A high level foray into the fields of physics, chemistry, materials science and biology, enabling the connection of computing to the real world.
-semester: 1
-difficulty: fundamental
 availability: in-progress
 time: 25 hours
 

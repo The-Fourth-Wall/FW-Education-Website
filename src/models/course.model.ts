@@ -14,9 +14,9 @@ export type Course = {
   description: string;
   semester: number;
   difficulty: Difficulty;
+  availability: Availability;
   time: string;
   programming: string[];
   references: string[];
   topics: string[];
-  availability: Availability;
 };
