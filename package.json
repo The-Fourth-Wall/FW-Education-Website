@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "lint": "pnpx prettier --write .",
-    "start": "astro dev",
+    "purge": "rm -rf node_modules/.astro/ .astro/ && astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
