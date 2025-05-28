@@ -1,3 +1,3 @@
 export * from "./course.model";
 export * from "./icon.model";
-export * from "./user";
+export * from "./user.model";
