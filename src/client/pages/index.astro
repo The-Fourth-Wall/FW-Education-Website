@@ -1,13 +1,12 @@
 ---
-import {parse_curriculum, read_file} from "@app/FT-01-curriculum-parser";
+import {get_semesters} from "@app/FT-01-curriculum/courses";
 import {Divider, Spacer, Text} from "@atoms";
 import {user} from "@models";
 import {Footer} from "@molecules";
 import {CourseList} from "@organisms";
 import {Main} from "@templates";
 
-const curriculum_data = await read_file("curriculum.md");
-const courses = parse_curriculum(curriculum_data);
+const courses = await get_semesters();
 ---
 
 <Main title="Fourth Wall Education">

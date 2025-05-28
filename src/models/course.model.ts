@@ -1,8 +1,3 @@
-export type Topic = {
-  name: string;
-  subtopics: Topic[];
-};
-
 export type Difficulty =
   | "fundamental"
   | "beginner"
@@ -17,11 +12,11 @@ export type Course = {
   code: string;
   name: string;
   description: string;
-  semester: string;
+  semester: number;
   difficulty: Difficulty;
+  availability: Availability;
   time: string;
   programming: string[];
   references: string[];
-  topics: Topic[];
-  availability: Availability;
+  topics: string[];
 };

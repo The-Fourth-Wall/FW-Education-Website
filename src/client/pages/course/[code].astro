@@ -1,16 +1,11 @@
 ---
-import {parse_curriculum, read_file} from "@app/FT-01-curriculum-parser";
-import type {Course} from "@models";
+import {get_course} from "@app/FT-01-curriculum/courses";
 import {CourseHeader, CourseSection} from "@organisms";
 import {Main} from "@templates";
 
-type Props = {course: Course};
-
 const {code} = Astro.params;
-const curriculum_data = await read_file("curriculum.md");
-const courses = parse_curriculum(curriculum_data);
-const course = courses.find(c => c.code === code);
 
+const course = await get_course(code);
 if (!course) {
   return Astro.redirect("/404");
 }
@@ -20,10 +15,7 @@ if (!course) {
   <CourseHeader course={course} />
 
   <CourseSection section_title="Technical Focus" items={course.programming} />
-  <CourseSection
-    section_title="What You'll Learn"
-    items={course.topics.map(topic => topic.name)}
-  />
+  <CourseSection section_title="What You'll Learn" items={course.topics} />
   <CourseSection
     section_title="Further Reading & Resources"
     items={course.references}
