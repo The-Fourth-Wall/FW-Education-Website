@@ -76,7 +76,7 @@ const {course} = Astro.props;
 </script>
 
 <LinkButton
-  href={`/course/${course.code}`}
+  href={`/course/${course.code.split("-")[1]}`}
   accessibility=`enter course ${course.code}, ${course.name}`>
   <div id="02-molecules/CourseCard.astro" class="card">
     <div class="border_bottom"></div>

@@ -1,13 +1,12 @@
 ---
-import {parse_curriculum, read_file} from "@app/FT-01-curriculum-parser";
 import {Divider, Spacer, Text} from "@atoms";
 import {user} from "@models";
 import {Footer} from "@molecules";
 import {CourseList} from "@organisms";
 import {Main} from "@templates";
+import {getCollection} from "astro:content";
 
-const curriculum_data = await read_file("curriculum.md");
-const courses = parse_curriculum(curriculum_data);
+const courses = await getCollection("curriculum");
 ---
 
 <Main title="Fourth Wall Education">
@@ -25,7 +24,7 @@ const courses = parse_curriculum(curriculum_data);
       }
     </div>
     <div class="course-list">
-      <CourseList courses={courses} />
+      <CourseList courses={courses.map(c => c.data)} />
       <Divider size={2} faded />
       <Footer copyright="Fourth Wall ⓒ" size={1.25} />
       <Spacer size={2} />
