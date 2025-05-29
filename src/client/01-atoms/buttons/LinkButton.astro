@@ -7,20 +7,20 @@ type Props = {
 const {href, accessibility} = Astro.props;
 ---
 
-<a href={href} draggable="false" aria-label={accessibility}>
+<a href={href} draggable="false" aria-label={accessibility} class="link-button">
   <slot />
 </a>
 
 <script>
-  document.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", (event: MouseEvent) => {
-      if (
-        history.state?.url.includes("/course") &&
-        link.getAttribute("href") === "/"
-      ) {
-        event.preventDefault();
-        history.back();
-      }
-    });
+  const button = document.querySelector<HTMLAnchorElement>(".link-button");
+  button?.addEventListener("click", (event: MouseEvent) => {
+    if (
+      history.state?.url.includes("/course") &&
+      button.getAttribute("href") === "/"
+    ) {
+      event.preventDefault();
+      event.stopPropagation();
+      history.back();
+    }
   });
 </script>
