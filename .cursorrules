@@ -41,14 +41,14 @@ Astro Project Structure
 Component Development
 
 - Create .astro files for Astro components.
-- Use framework-specific components using only Svelte or Solid when necessary.
+- Use framework-specific components using only Svelte when necessary.
 - Implement proper component composition and reusability.
 - Use Astro's component props for data passing.
 - Leverage Astro's built-in components like <Markdown /> when appropriate.
 
 Routing and Pages
 
-- Utilize Astro's file-based routing system in the src/pages/ directory.
+- Utilize Astro's file-based routing system in the src/client/pages/ directory.
 - Implement dynamic routes using [...slug].astro syntax.
 - Use getStaticPaths() for generating static pages with dynamic routes.
 - Implement proper 404 handling with a 404.astro page.

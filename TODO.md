@@ -15,6 +15,7 @@
 
   🟥 BUG-01 - fix prettier auto-import formatting (prettier-plugin-organize-imports).
   🟥 BUG-02 - fix safari excessive caching for navigations.
+  🟥 BUG-03 - make sure non-dynamic pages are prerendered
 
   🟩 QOL-01 - refactor course parser and file reader to markdown content collections.
   🟥 QOL-02 - make light theme neobrutalist, while dark theme remains flat.
