@@ -1,4 +1,4 @@
-import {handle_session} from "@app/FT-02-authentication/session";
+import {handle_session} from "@app/02-authentication/session";
 import {defineMiddleware} from "astro:middleware";
 import micromatch from "micromatch";
 

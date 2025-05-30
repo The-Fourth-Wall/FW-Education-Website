@@ -1,4 +1,4 @@
-import {register} from "@app/FT-02-authentication/register";
+import {register} from "@app/02-authentication/register";
 import type {APIRoute} from "astro";
 
 export const POST: APIRoute = async ({request, cookies, redirect}) => {
