@@ -8,7 +8,7 @@
     planned
   🟩 FT-01 - store user preferences using nanostores.
   🟩 FT-02 - add user authentication.
-  🟥 FT-03 - set up beta and stage environments with dev banners on UI.
+  🟩 FT-03 - set up beta and stage environments with dev banners on UI.
   🟥 FT-04 - add a semester and difficulty filter to the course list.
   🟥 FT-05 - add user and preferences storing in supabase db.
   🟥 FT-06 - add course card availability overlays for non-completed courses.
