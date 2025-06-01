@@ -12,6 +12,7 @@
   🟥 FT-04 - add a semester and difficulty filter to the course list.
   🟥 FT-05 - add user and preferences storing in supabase db.
   🟥 FT-06 - add course card availability overlays for non-completed courses.
+  🟥 FT-07 - add oath.
 
   🟥 BUG-01 - fix prettier auto-import formatting (prettier-plugin-organize-imports).
   🟥 BUG-02 - fix safari excessive caching for navigations.
@@ -20,3 +21,4 @@
   🟩 QOL-01 - refactor course parser and file reader to markdown content collections.
   🟥 QOL-02 - make light theme neobrutalist, while dark theme remains flat.
   🟥 QOL-03 - implement page prefetching.
+  🟥 QOL-04 - use magic links instead of username/password.
