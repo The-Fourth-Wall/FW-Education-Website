@@ -1,0 +1,28 @@
+---
+import {Ribbon} from "@atoms";
+import {env} from "@models";
+
+const environment =
+  Astro.url.hostname.includes("stage") && env.ENV === "stage"
+    ? "stage"
+    : Astro.url.hostname.includes("beta") && env.ENV === "beta"
+      ? "beta"
+      : Astro.url.hostname.includes("localhost") && env.ENV === "prod"
+        ? "dev"
+        : "prod";
+
+const ribbon_color =
+  environment === "stage"
+    ? "var(--intermediate-background)"
+    : environment === "beta"
+      ? "var(--advanced-background)"
+      : environment === "dev"
+        ? "var(--expert-background)"
+        : "transparent";
+---
+
+{
+  environment !== "prod" && (
+    <Ribbon text={environment.toUpperCase()} color={ribbon_color} />
+  )
+}
