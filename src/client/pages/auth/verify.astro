@@ -1,0 +1,94 @@
+---
+import {Spacer, Text} from "@atoms";
+import {Main} from "@templates";
+---
+
+<script>
+  const hash = window.location.hash.substring(1);
+  const params = new URLSearchParams(hash);
+
+  const access_token = params.get("access_token");
+  const refresh_token = params.get("refresh_token");
+  const error = params.get("error");
+  const error_description = params.get("error_description");
+
+  if (error) {
+    window.location.href = `/signin?error=${error}&error_description=${error_description}`;
+  } else if (access_token && refresh_token) {
+    document.cookie = `sb-access-token=${access_token}; path=/`;
+    document.cookie = `sb-refresh-token=${refresh_token}; path=/`;
+    window.location.href = "/";
+  }
+
+  let timeout_id: ReturnType<typeof setTimeout>;
+
+  const check_cookies = () => {
+    const has_access_token = document.cookie.includes("sb-access-token=");
+    const has_refresh_token = document.cookie.includes("sb-refresh-token=");
+
+    if (has_access_token && has_refresh_token) {
+      window.location.href = "/";
+    } else {
+      clearTimeout(timeout_id);
+      timeout_id = setTimeout(check_cookies, 500);
+    }
+  };
+
+  check_cookies();
+</script>
+
+<Main title="Fourth Wall | Authenticating">
+  <div class="loading">
+    <Text
+      label="You have been sent a sign-in link."
+      size={2}
+      type="primary"
+      color="var(--fg-color)"
+    />
+    <Spacer size={0.5} />
+    <Text
+      label="Please click the link in the email to sign in."
+      size={1.5}
+      type="primary"
+      color="var(--fg-color)"
+    />
+
+    <Spacer size={2} />
+    <div class="spinner"></div>
+    <Spacer size={0.5} />
+    <Text
+      label="Waiting for authentication..."
+      size={1.5}
+      type="primary"
+      color="var(--fg-color)"
+    />
+  </div>
+</Main>
+
+<style>
+  .loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+  }
+
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--fg-color);
+    border-top: 4px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+</style>
