@@ -10,10 +10,10 @@ import {Main} from "@templates";
     !document.cookie.includes("sb-access-token=") ||
     !document.cookie.includes("sb-refresh-token=")
   ) {
-    history.pushState(null, "", "/login");
-    history.pushState(null, "", "/login");
+    history.pushState(null, "", "/signin");
+    history.pushState(null, "", "/signin");
     history.back();
-    window.location.replace("/login");
+    window.location.replace("/signin");
   }
 </script>
 
