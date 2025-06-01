@@ -1,38 +1,19 @@
 ---
 import {Text} from "@atoms";
 
-const environment = Astro.url.hostname.includes("stage")
-  ? "stage"
-  : Astro.url.hostname.includes("beta")
-    ? "beta"
-    : Astro.url.hostname.includes("localhost")
-      ? "dev"
-      : "prod";
+type Props = {
+  text: string;
+  color: string;
+};
 
-const ribbon_color =
-  environment === "stage"
-    ? "var(--intermediate-background)"
-    : environment === "beta"
-      ? "var(--advanced-background)"
-      : environment === "dev"
-        ? "var(--expert-background)"
-        : "transparent";
+const {text, color} = Astro.props;
 ---
 
-{
-  environment !== "prod" && (
-    <div class="ribbon">
-      <Text
-        label={environment.toUpperCase()}
-        size={0.875}
-        type="primary"
-        color="var(--white)"
-      />
-    </div>
-  )
-}
+<div class="ribbon">
+  <Text label={text} size={0.875} type="primary" color="var(--white)" />
+</div>
 
-<style define:vars={{ribbon_color}}>
+<style define:vars={{color}}>
   .ribbon {
     z-index: 101;
     position: absolute;
@@ -40,7 +21,7 @@ const ribbon_color =
     top: 1rem;
     left: -3.1rem;
     transform: rotate(-45deg);
-    background-color: var(--ribbon_color);
+    background-color: var(--color);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     color: var(--white);
     text-align: center;
