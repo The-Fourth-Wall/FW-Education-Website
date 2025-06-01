@@ -7,7 +7,9 @@ const environment =
     ? "stage"
     : Astro.url.hostname.includes("beta") && env.ENV === "beta"
       ? "beta"
-      : Astro.url.hostname.includes("localhost") && env.ENV === "prod"
+      : (Astro.url.hostname.includes("localhost") ||
+            Astro.url.hostname.includes("vercel.app")) &&
+          env.ENV === "prod"
         ? "dev"
         : "prod";
 
