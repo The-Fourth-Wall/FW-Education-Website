@@ -77,26 +77,8 @@ const {title} = Astro.props;
             in: back_in,
           },
           {
-            from: "/login",
-            to: "/register",
-            out: forward_out,
-            in: forward_in,
-          },
-          {
-            from: "/login",
+            from: "/signin",
             to: "(.*)",
-            out: back_out,
-            in: back_in,
-          },
-          {
-            from: "/register",
-            to: "/",
-            out: back_out,
-            in: back_in,
-          },
-          {
-            from: "/register",
-            to: "/login",
             out: back_out,
             in: back_in,
           },
