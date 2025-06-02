@@ -1,17 +1,16 @@
 ...TODO...
 ----------
   🟩 FT-00 - add a sidebar next to course list.
-  🟩 FT-00 - add a 3-way slider for light/dark/system theme.
-  🟩 FT-00 - add completion percentages to course cards.
-    available
-    in-progress
-    planned
+  🟩 FT-00 - add a 3-way toggle for light/dark/system theme.
   🟩 FT-01 - store user preferences using nanostores.
   🟩 FT-02 - add user authentication.
   🟩 FT-03 - set up beta and stage environments with dev banners on UI.
   🟥 FT-04 - add a semester and difficulty filter to the course list.
   🟥 FT-05 - add user and preferences storing in supabase db.
   🟥 FT-06 - add course card availability overlays for non-completed courses.
+    available
+    in-progress
+    planned
   🟥 FT-07 - add oauth.
   🟥 FT-08 - add course completion progress tracking.
 
