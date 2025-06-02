@@ -12,7 +12,7 @@
   🟥 FT-04 - add a semester and difficulty filter to the course list.
   🟥 FT-05 - add user and preferences storing in supabase db.
   🟥 FT-06 - add course card availability overlays for non-completed courses.
-  🟥 FT-07 - add oauth.
+  🟦 FT-07 - add oauth.
   🟥 FT-08 - add course completion progress tracking.
 
   🟥 BUG-01 - fix prettier auto-import formatting (prettier-plugin-organize-imports).
@@ -27,3 +27,4 @@
   🟩 QOL-04 - use magic links instead of username/password.
   🟥 QOL-05 - formalize SEO potentially using astro-seo.
   🟥 QOL-06 - remove GridAligner finally removing svelte from this project.
+  🟥 QOL-07 - generic improvments: refactor names, labels, colors etc.
