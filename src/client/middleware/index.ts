@@ -2,7 +2,7 @@ import {handle_session} from "@app/02-authentication/session";
 import {defineMiddleware} from "astro:middleware";
 import micromatch from "micromatch";
 
-const redirect_routes = ["/login(|/)", "/register(|/)"];
+const redirect_routes = ["/signin(|/)"];
 const protected_routes = ["/settings(|/)"];
 const hybrid_routes = ["/"];
 
@@ -17,14 +17,14 @@ export const onRequest = defineMiddleware(
       }
     } else if (micromatch.isMatch(url.pathname, protected_routes)) {
       if (!access_token || !refresh_token) {
-        return redirect("/login");
+        return redirect("/signin");
       } else {
         const {error} = await handle_session(cookies, {
           access_token,
           refresh_token,
         });
         if (error) {
-          return redirect("/login");
+          return redirect("/signin");
         }
       }
     } else if (micromatch.isMatch(url.pathname, hybrid_routes)) {
