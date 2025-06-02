@@ -12,14 +12,14 @@
   🟥 FT-04 - add a semester and difficulty filter to the course list.
   🟥 FT-05 - add user and preferences storing in supabase db.
   🟥 FT-06 - add course card availability overlays for non-completed courses.
-  🟦 FT-07 - add oauth.
+  🟥 FT-07 - add oauth.
   🟥 FT-08 - add course completion progress tracking.
 
   🟥 BUG-01 - fix prettier auto-import formatting (prettier-plugin-organize-imports).
   🟥 BUG-02 - fix safari excessive caching for navigations.
   🟥 BUG-03 - make sure non-dynamic pages are prerendered
   🟥 BUG-04 - block settings button navigation while on signin by redirection.
-  🟥 BUG-04 - fix bug where linking directly to a course blocks history.back().
+  🟥 BUG-05 - fix bug where linking directly to a course blocks history.back().
 
   🟩 QOL-01 - refactor course parser and file reader to markdown content collections.
   🟥 QOL-02 - make light theme neobrutalist, while dark theme remains flat.
