@@ -10,10 +10,10 @@ import {Main} from "@templates";
     !document.cookie.includes("sb-access-token=") ||
     !document.cookie.includes("sb-refresh-token=")
   ) {
-    history.pushState(null, "", "/login");
-    history.pushState(null, "", "/login");
+    history.pushState(null, "", "/signin");
+    history.pushState(null, "", "/signin");
     history.back();
-    window.location.replace("/login");
+    window.location.replace("/signin");
   }
 </script>
 
@@ -55,7 +55,7 @@ import {Main} from "@templates";
         color="var(--fg-color)"
       />
       <Form action="/auth/logout">
-        <button type="submit">
+        <button type="submit" onclick="this.disabled = true; form.submit();">
           <Text
             label="Sign out"
             size={0.875}
@@ -126,5 +126,35 @@ import {Main} from "@templates";
 
   button:hover {
     background: color-mix(in srgb, var(--accent-color) 75%, transparent);
+  }
+
+  @media (max-width: 1280px) {
+    .settings {
+      max-width: 60%;
+    }
+  }
+
+  @media (max-width: 1072px) {
+    .settings {
+      max-width: 70%;
+    }
+  }
+
+  @media (max-width: 864px) {
+    .settings {
+      max-width: 80%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .settings {
+      max-width: 90%;
+    }
+  }
+
+  @media (max-width: 464px) {
+    .settings {
+      max-width: 100%;
+    }
   }
 </style>
