@@ -74,7 +74,7 @@ const error_description = Astro.url.searchParams.get("error_description");
         <button
           type="submit"
           data-astro-history="replace"
-          onclick="disabled=true;form.submit();">
+          onclick="this.disabled = true; form.submit();">
           <Text
             label="Send One-Time Password"
             size={0.875}

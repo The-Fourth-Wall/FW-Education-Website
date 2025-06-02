@@ -55,7 +55,7 @@ import {Main} from "@templates";
         color="var(--fg-color)"
       />
       <Form action="/auth/logout">
-        <button type="submit">
+        <button type="submit" onclick="this.disabled = true; form.submit();">
           <Text
             label="Sign out"
             size={0.875}
