@@ -7,5 +7,5 @@ export {default as MultiIcon} from "./Icon/MultiIcon.astro";
 export {default as LinkButton} from "./LinkButton/LinkButton.astro";
 export {default as Ribbon} from "./Ribbon/Ribbon.astro";
 export {default as Spacer} from "./Spacer/Spacer.astro";
-export {default as Text} from "./Textt/Text.astro";
+export {default as Text} from "./Text/Text.astro";
 export {default as ThemeSwitcher} from "./ThemeSwitcher/ThemeSwitcher.astro";
