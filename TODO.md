@@ -13,6 +13,7 @@
     planned
   🟥 FT-07 - add oauth.
   🟥 FT-08 - add course completion progress tracking.
+  🟥 FT-09 - add react and svelte components for all atoms.
 
   🟥 BUG-01 - fix prettier auto-import formatting (prettier-plugin-organize-imports).
   🟥 BUG-02 - fix safari excessive caching for navigations.
@@ -27,3 +28,7 @@
   🟥 QOL-05 - formalize SEO potentially using astro-seo.
   🟥 QOL-06 - remove GridAligner finally removing svelte from this project.
   🟥 QOL-07 - generic improvments: refactor names, labels, colors etc.
+  🟥 QOL-08 - redesign the atomic design system to follow rules more closely.
+    atoms all have style properties.
+    molecules connect atoms, no need for extra divs (all divs are extracted as atoms).
+    organisms describe distinct sections of a page 
