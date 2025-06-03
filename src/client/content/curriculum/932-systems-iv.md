@@ -12,4 +12,11 @@ references:
 topics:
   - probably full end-to-end system with multiple languages, services, ideas.
   - viewers can submit new assignments that would be 932-worthy and I display them.
+  - explain stakeholder, designer, developer interactions.
+  - -> ideas
+    -> user story
+    -> user flow
+    -> design
+    -> development
+    -> documentation
 ---
