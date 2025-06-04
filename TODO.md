@@ -15,7 +15,7 @@
   🟥 FT-08 - add course completion progress tracking.
   🟩 FT-09 - add react and svelte components for all atoms.
 
-  🟥 BUG-01 - fix prettier auto-import formatting (prettier-plugin-organize-imports).
+  🟩 BUG-01 - fix prettier auto-import formatting (prettier-plugin-organize-imports).
   🟥 BUG-02 - fix safari excessive caching for navigations.
   🟥 BUG-03 - make sure non-dynamic pages are prerendered
   🟥 BUG-04 - block profile button navigation while on signin by redirection.
