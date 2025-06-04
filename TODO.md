@@ -1,25 +1,25 @@
 ...TODO...
 ----------
   🟩 FT-00 - add a sidebar next to course list.
-  🟩 FT-00 - add a 3-way slider for light/dark/system theme.
-  🟩 FT-00 - add completion percentages to course cards.
-    available
-    in-progress
-    planned
+  🟩 FT-00 - add a 3-way toggle for light/dark/system theme.
   🟩 FT-01 - store user preferences using nanostores.
   🟩 FT-02 - add user authentication.
   🟩 FT-03 - set up beta and stage environments with dev banners on UI.
   🟥 FT-04 - add a semester and difficulty filter to the course list.
   🟥 FT-05 - add user and preferences storing in supabase db.
   🟥 FT-06 - add course card availability overlays for non-completed courses.
+    available
+    in-progress
+    planned
   🟥 FT-07 - add oauth.
   🟥 FT-08 - add course completion progress tracking.
+  🟥 FT-09 - add react and svelte components for all atoms.
 
   🟥 BUG-01 - fix prettier auto-import formatting (prettier-plugin-organize-imports).
   🟥 BUG-02 - fix safari excessive caching for navigations.
   🟥 BUG-03 - make sure non-dynamic pages are prerendered
-  🟥 BUG-04 - block settings button navigation while on signin by redirection.
-  🟥 BUG-04 - fix bug where linking directly to a course blocks history.back().
+  🟥 BUG-04 - block profile button navigation while on signin by redirection.
+  🟥 BUG-05 - fix bug where linking directly to a course blocks history.back().
 
   🟩 QOL-01 - refactor course parser and file reader to markdown content collections.
   🟥 QOL-02 - make light theme neobrutalist, while dark theme remains flat.
@@ -27,3 +27,10 @@
   🟩 QOL-04 - use magic links instead of username/password.
   🟥 QOL-05 - formalize SEO potentially using astro-seo.
   🟥 QOL-06 - remove GridAligner finally removing svelte from this project.
+  🟥 QOL-07 - generic improvments: refactor names, labels, colors etc.
+    rename logout to signout.
+    rename settings to profile.
+  🟩 QOL-08 - redesign the atomic design system to follow rules more closely.
+    atoms all have style properties.
+    molecules connect atoms, no need for extra divs (all divs are extracted as atoms).
+    organisms describe distinct sections of a page 

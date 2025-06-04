@@ -1,7 +1,27 @@
 ---
-import {Icon} from "@atoms";
+import {Icon, Spacer, Text} from "@atoms";
 ---
 
 <button aria-label="go back" onclick="history.back()">
-  <Icon icon="left-arrow" label="Back" size={0.875} />
+  <div>
+    <Icon icon="left-arrow" size={0.875} />
+    <Spacer size={0.375} />
+    <Text label="Back" size={0.75} type="accent" color="var(--fg-color)" />
+  </div>
 </button>
+
+<style>
+  div {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    transition: all var(--hover-animation-time) ease-in-out;
+  }
+
+  div:hover {
+    border: 1px solid color-mix(in srgb, var(--fg-color) 50%, transparent);
+    background-color: color-mix(in srgb, var(--fg-color) 7.5%, transparent);
+  }
+</style>

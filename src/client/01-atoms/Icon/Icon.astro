@@ -1,11 +1,14 @@
 ---
-import type {Icon} from "@models";
+import type {IconName} from "@models";
 
 type Props = {
-  icon: Icon;
+  icon: IconName;
+  size: number;
 };
 
-const {icon} = Astro.props;
+const {icon, size} = Astro.props;
+
+const icon_size = `${size}rem`;
 ---
 
 {
@@ -97,9 +100,9 @@ const {icon} = Astro.props;
   ) : null
 }
 
-<style>
+<style define:vars={{icon_size}}>
   svg {
-    width: var(--icon-size);
-    height: var(--icon-size);
+    width: var(--icon_size);
+    height: var(--icon_size);
   }
 </style>

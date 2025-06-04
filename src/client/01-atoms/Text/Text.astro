@@ -7,14 +7,18 @@ type Props = {
 };
 
 const {label, size, type, color} = Astro.props;
+
+const font_size = `${size}rem`;
 ---
 
-<span class={type} style={`font-size: ${size}rem; color: ${color};`}>
+<span class={type}>
   {label}
 </span>
 
-<style>
+<style define:vars={{font_size, color}}>
   span {
+    font-size: var(--font_size);
+    color: var(--color);
     transition: color var(--theme-animation-time) ease;
   }
 
