@@ -3,7 +3,6 @@ export {default as Border} from "./Border/Border.astro";
 export {default as Divider} from "./Divider/Divider.astro";
 export {default as Form} from "./Form/Form.astro";
 export {default as Icon} from "./Icon/Icon.astro";
-export {default as MultiIcon} from "./Icon/MultiIcon.astro";
 export {default as LinkButton} from "./LinkButton/LinkButton.astro";
 export {default as Ribbon} from "./Ribbon/Ribbon.astro";
 export {default as Spacer} from "./Spacer/Spacer.astro";
