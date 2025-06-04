@@ -1,5 +1,4 @@
 ---
-import {Text} from "@atoms";
 import type {Difficulty} from "@models";
 
 type Props = {
@@ -15,18 +14,20 @@ const padding = `${size * 0.226}rem ${size * 0.857}rem`;
 const background_color = `var(--${variant}-background)`;
 ---
 
-<span class={`badge ${variant === "master" && "master"}`}
-  ><Text label={text} size={size} type="secondary" color="var(--white)" />
+<span class={`badge ${variant === "master" && "master"}`}>
+  {text}
 </span>
 
 <style define:vars={{font_size, padding, background_color}}>
   .badge {
-    border-radius: 0.375rem;
-    text-align: center;
-    border: 1px solid transparent;
     font-size: var(--font_size);
+    font-weight: 400;
+    text-align: center;
     padding: var(--padding);
+    color: var(--white);
     background: var(--background_color);
+    border: 1px solid transparent;
+    border-radius: 0.375rem;
   }
 
   .master {

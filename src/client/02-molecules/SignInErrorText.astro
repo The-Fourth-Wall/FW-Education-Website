@@ -1,0 +1,31 @@
+---
+import {Spacer, Text} from "@atoms";
+
+const error = Astro.url.searchParams.get("error");
+const error_description = Astro.url.searchParams.get("error_description");
+---
+
+{
+  error && (
+    <>
+      <Spacer size={1} />
+      <div>
+        <Text
+          label={error_description || "An error occurred during sign in."}
+          size={0.875}
+          type="secondary"
+          color="var(--coral)"
+        />
+      </div>
+    </>
+  )
+}
+
+<style>
+  div {
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    background: color-mix(in srgb, var(--coral) 10%, transparent);
+  }
+</style>

@@ -1,6 +1,4 @@
 ---
-import {Text} from "@atoms";
-
 type Props = {
   text: string;
   color: string;
@@ -10,7 +8,7 @@ const {text, color} = Astro.props;
 ---
 
 <div class="ribbon">
-  <Text label={text} size={0.875} type="primary" color="var(--white)" />
+  <span>{text}</span>
 </div>
 
 <style define:vars={{color}}>
@@ -36,5 +34,11 @@ const {text, color} = Astro.props;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     color: var(--white);
     text-align: center;
+  }
+
+  span {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--white);
   }
 </style>
