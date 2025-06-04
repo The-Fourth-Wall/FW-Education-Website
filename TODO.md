@@ -18,7 +18,7 @@
   🟥 BUG-01 - fix prettier auto-import formatting (prettier-plugin-organize-imports).
   🟥 BUG-02 - fix safari excessive caching for navigations.
   🟥 BUG-03 - make sure non-dynamic pages are prerendered
-  🟥 BUG-04 - block settings button navigation while on signin by redirection.
+  🟥 BUG-04 - block profile button navigation while on signin by redirection.
   🟥 BUG-05 - fix bug where linking directly to a course blocks history.back().
 
   🟩 QOL-01 - refactor course parser and file reader to markdown content collections.
@@ -28,7 +28,9 @@
   🟥 QOL-05 - formalize SEO potentially using astro-seo.
   🟥 QOL-06 - remove GridAligner finally removing svelte from this project.
   🟥 QOL-07 - generic improvments: refactor names, labels, colors etc.
-  🟥 QOL-08 - redesign the atomic design system to follow rules more closely.
+    rename logout to signout.
+    rename settings to profile.
+  🟩 QOL-08 - redesign the atomic design system to follow rules more closely.
     atoms all have style properties.
     molecules connect atoms, no need for extra divs (all divs are extracted as atoms).
     organisms describe distinct sections of a page 
