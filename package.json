@@ -30,6 +30,7 @@
     "typescript": "^5.8.3"
   },
   "devDependencies": {
+    "@prettier/plugin-xml": "^3.4.1",
     "@types/micromatch": "^4.0.9",
     "@types/node": "^20.0.0",
     "@types/react": "^19.1.6",

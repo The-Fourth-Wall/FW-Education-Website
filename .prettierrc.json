@@ -7,7 +7,7 @@
   "bracketSameLine": true,
   "bracketSpacing": false,
   "tabWidth": 2,
-  "plugins": ["prettier-plugin-astro"],
+  "plugins": ["prettier-plugin-astro", "@prettier/plugin-xml"],
   "overrides": [
     {
       "files": "*.astro",
