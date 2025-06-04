@@ -3,17 +3,9 @@ import type {AstroCookies} from "astro";
 import {supabase} from "./supabase";
 
 export async function signin(
-  request: Request,
+  {email, url}: {email: string; url: URL},
   redirect: (url: string) => Response,
 ) {
-  const form_data = await request.formData();
-  const email = form_data.get("email")?.toString();
-
-  if (!email) {
-    return new Response("Email is required", {status: 400});
-  }
-
-  const url = new URL(request.url);
   const {error} = await supabase.auth.signInWithOtp({
     email,
     options: {
