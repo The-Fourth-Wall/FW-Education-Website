@@ -7,12 +7,16 @@
       "@app": ["src/app"],
       "@app/*": ["src/app/*"],
       "@models": ["src/models"],
-      "@atoms": ["src/client/01-atoms"],
+      "@atoms": ["src/client/01-atoms/astro"],
+      "@atoms-svelte": ["src/client/01-atoms/svelte"],
+      "@atoms-react": ["src/client/01-atoms/react"],
       "@molecules": ["src/client/02-molecules"],
       "@organisms": ["src/client/03-organisms"],
       "@templates": ["src/client/04-templates"],
       "@styles": ["src/client/styles"],
       "@styles/*": ["src/client/styles/*"]
-    }
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }

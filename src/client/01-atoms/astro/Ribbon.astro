@@ -1,0 +1,14 @@
+---
+import "../styles/Ribbon.css";
+
+type Props = {
+  text: string;
+  color: string;
+};
+
+const {text, color} = Astro.props;
+---
+
+<div class="ribbon" style={`--ribbon-color: ${color};`}>
+  <span class="ribbon-text">{text}</span>
+</div>

@@ -1,0 +1,13 @@
+---
+import type {IconName} from "@models";
+
+type Props = {
+  icon: IconName;
+  size: number;
+};
+
+const {icon, size} = Astro.props;
+const IconComponent = await import(`../../icons/${icon}.svg`);
+---
+
+<IconComponent.default width={`${size}rem`} height={`${size}rem`} />
