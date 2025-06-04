@@ -1,5 +1,4 @@
 export {default as Badge} from "./Badge.astro";
-export {default as Border} from "./Border.astro";
 export {default as Divider} from "./Divider.astro";
 export {default as Icon} from "./Icon.astro";
 export {default as LinkButton} from "./LinkButton.astro";
