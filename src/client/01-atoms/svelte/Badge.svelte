@@ -1,16 +1,14 @@
----
-import "../styles/Badge.css";
+<script lang="ts">
+  import "../styles/Badge.css";
 
-import type {Difficulty} from "@models";
+  import type {Difficulty} from "@models";
 
-type Props = {
-  text: string;
-  variant: Difficulty;
-  size: number;
-};
-
-const {text, variant, size} = Astro.props;
----
+  const {text, variant, size} = $props<{
+    text: string;
+    variant: Difficulty;
+    size: number;
+  }>();
+</script>
 
 <span
   class={`badge ${variant === "master" && "master"}`}

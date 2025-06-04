@@ -1,4 +1,6 @@
 ---
+import "../styles/Text.css";
+
 type Props = {
   label: string;
   size: number;
@@ -7,31 +9,10 @@ type Props = {
 };
 
 const {label, size, type, color} = Astro.props;
-
-const font_size = `${size}rem`;
 ---
 
-<span class={type}>
+<span
+  class={`text ${type}`}
+  style={`--text-font-size: ${size}rem; --text-color: ${color};`}>
   {label}
 </span>
-
-<style define:vars={{font_size, color}}>
-  span {
-    font-size: var(--font_size);
-    color: var(--color);
-    transition: color var(--theme-animation-time) ease;
-  }
-
-  .primary {
-    font-weight: 700;
-  }
-
-  .secondary {
-    font-weight: 400;
-    opacity: 0.9;
-  }
-
-  .accent {
-    font-weight: 700;
-  }
-</style>

@@ -1,0 +1,18 @@
+.text {
+  font-size: var(--text-font-size);
+  color: var(--text-color);
+  transition: color var(--theme-animation-time) ease;
+}
+
+.primary {
+  font-weight: 700;
+}
+
+.secondary {
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.accent {
+  font-weight: 700;
+}

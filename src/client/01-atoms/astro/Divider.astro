@@ -1,4 +1,6 @@
 ---
+import "../styles/Divider.css";
+
 type Props = {
   faded?: boolean;
   size: number;
@@ -7,25 +9,7 @@ type Props = {
 const {faded = false, size} = Astro.props;
 ---
 
-<div class={faded ? "faded" : "non-faded"} style={`margin: ${size}rem 0;`}>
+<div
+  class={`divider ${faded ? "faded" : "non-faded"}`}
+  style={`--divider-size: ${size}rem;`}>
 </div>
-
-<style>
-  div {
-    width: 100%;
-    height: 1px;
-  }
-
-  .faded {
-    background: linear-gradient(
-      to left,
-      var(--fg-color) 0%,
-      color-mix(in srgb, var(--fg-color) 50%, transparent) 50%,
-      color-mix(in srgb, var(--fg-color) 0%, transparent) 100%
-    );
-  }
-
-  .non-faded {
-    background: var(--fg-color);
-  }
-</style>
