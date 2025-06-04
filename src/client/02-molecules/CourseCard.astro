@@ -79,8 +79,8 @@ const {course} = Astro.props;
   href={`/course/${course.code.split("-")[1]}`}
   accessibility=`enter course ${course.code}, ${course.name}`>
   <div id="02-molecules/CourseCard.astro" class="card">
-    <div class="border_bottom"></div>
-    <div class="border_left"></div>
+    <div class="border-bottom"></div>
+    <div class="border-left"></div>
     <div class="header">
       <div data-title>
         <Text
@@ -111,7 +111,7 @@ const {course} = Astro.props;
       />
     </div>
 
-    <div class="bottom_separator">
+    <div class="bottom-separator">
       <Text
         label={course.difficulty[0].toUpperCase() + course.difficulty.slice(1)}
         size={0.75}
@@ -132,16 +132,28 @@ const {course} = Astro.props;
 
 <style>
   .card {
-    --dark-border: color-mix(in srgb, var(--fg-color) 10%, transparent);
-    --hover-border: color-mix(in srgb, var(--fg-color) 50%, transparent);
-    --dark-shadow: color-mix(in srgb, var(--black) 20%, transparent);
-    --hover-step: 50ms;
+    --course-card-dark-border: color-mix(
+      in srgb,
+      var(--fg-color) 10%,
+      transparent
+    );
+    --course-card-hover-border: color-mix(
+      in srgb,
+      var(--fg-color) 50%,
+      transparent
+    );
+    --course-card-dark-shadow: color-mix(
+      in srgb,
+      var(--black) 20%,
+      transparent
+    );
+    --course-card-hover-step: 50ms;
 
-    border: 1px solid var(--dark-border);
+    border: 1px solid var(--course-card-dark-border);
     border-radius: 0.25rem;
     padding: 0.75rem 1rem;
     background-color: color-mix(in srgb, var(--fg-color) 2.5%, transparent);
-    box-shadow: 0 4px 24px -1px var(--dark-shadow);
+    box-shadow: 0 4px 24px -1px var(--course-card-dark-shadow);
     display: flex;
     flex-direction: column;
     position: relative;
@@ -156,8 +168,8 @@ const {course} = Astro.props;
     left: 0px;
     width: 0;
     height: 1px;
-    background: var(--hover-border);
-    transition: width var(--hover-step) ease-out;
+    background: var(--course-card-hover-border);
+    transition: width var(--course-card-hover-step) ease-out;
   }
 
   .card::after {
@@ -167,28 +179,28 @@ const {course} = Astro.props;
     right: 0px;
     width: 1px;
     height: 0;
-    background: var(--hover-border);
-    transition: height var(--hover-step) ease-out;
+    background: var(--course-card-hover-border);
+    transition: height var(--course-card-hover-step) ease-out;
   }
 
-  .card .border_bottom {
+  .card .border-bottom {
     position: absolute;
     bottom: 0px;
     right: 0px;
     width: 0;
     height: 1px;
-    background: var(--hover-border);
-    transition: width var(--hover-step) ease-out;
+    background: var(--course-card-hover-border);
+    transition: width var(--course-card-hover-step) ease-out;
   }
 
-  .card .border_left {
+  .card .border-left {
     position: absolute;
     bottom: 0px;
     left: 0px;
     width: 1px;
     height: 0;
-    background: var(--hover-border);
-    transition: height var(--hover-step) ease-out;
+    background: var(--course-card-hover-border);
+    transition: height var(--course-card-hover-step) ease-out;
   }
 
   .card:hover::before {
@@ -199,35 +211,35 @@ const {course} = Astro.props;
 
   .card:hover::after {
     height: calc(100% + 2px);
-    transition-delay: var(--hover-step);
+    transition-delay: var(--course-card-hover-step);
   }
 
-  .card:hover .border_bottom {
+  .card:hover .border-bottom {
     width: calc(100% + 2px);
-    transition-delay: calc(var(--hover-step) * 2);
+    transition-delay: calc(var(--course-card-hover-step) * 2);
   }
 
-  .card:hover .border_left {
+  .card:hover .border-left {
     height: calc(100% + 2px);
-    transition-delay: calc(var(--hover-step) * 3);
+    transition-delay: calc(var(--course-card-hover-step) * 3);
   }
 
   .card:not(:hover)::before {
     width: 0;
-    transition-delay: calc(var(--hover-step) * 3);
+    transition-delay: calc(var(--course-card-hover-step) * 3);
   }
 
   .card:not(:hover)::after {
     height: 0;
-    transition-delay: calc(var(--hover-step) * 2);
+    transition-delay: calc(var(--course-card-hover-step) * 2);
   }
 
-  .card:not(:hover) .border_bottom {
+  .card:not(:hover) .border-bottom {
     width: 0;
-    transition-delay: var(--hover-step);
+    transition-delay: var(--course-card-hover-step);
   }
 
-  .card:not(:hover) .border_left {
+  .card:not(:hover) .border-left {
     height: 0;
     transition-delay: 0;
   }
@@ -252,8 +264,8 @@ const {course} = Astro.props;
     flex-shrink: 0;
     margin: -0.75rem -1rem -0.5rem 0.75rem;
     padding: 0.75rem;
-    border-left: 1px solid var(--dark-border);
-    border-bottom: 1px solid var(--dark-border);
+    border-left: 1px solid var(--course-card-dark-border);
+    border-bottom: 1px solid var(--course-card-dark-border);
     border-bottom-left-radius: 0.25rem;
     background: color-mix(in srgb, var(--bg-color) 10%, transparent);
     position: relative;
@@ -267,8 +279,8 @@ const {course} = Astro.props;
     top: 1px;
     width: 1px;
     height: 0;
-    background: var(--hover-border);
-    transition: height var(--hover-step) ease-out;
+    background: var(--course-card-hover-border);
+    transition: height var(--course-card-hover-step) ease-out;
   }
 
   .information::after {
@@ -278,31 +290,31 @@ const {course} = Astro.props;
     bottom: 0;
     width: 0;
     height: 1px;
-    background: var(--hover-border);
-    transition: width var(--hover-step) ease-out;
+    background: var(--course-card-hover-border);
+    transition: width var(--course-card-hover-step) ease-out;
   }
 
   .card:hover .information {
     border-left: 1px solid transparent;
     border-bottom: 1px solid transparent;
     transition:
-      border-left calc(var(--hover-step) * 5) step-end,
-      border-bottom calc(var(--hover-step) * 6) step-end;
+      border-left calc(var(--course-card-hover-step) * 5) step-end,
+      border-bottom calc(var(--course-card-hover-step) * 6) step-end;
   }
 
   .card:hover .information::before {
     height: 100%;
-    transition-delay: calc(var(--hover-step) * 4);
+    transition-delay: calc(var(--course-card-hover-step) * 4);
   }
 
   .card:hover .information::after {
     width: 100%;
-    transition-delay: calc(var(--hover-step) * 5);
+    transition-delay: calc(var(--course-card-hover-step) * 5);
   }
 
   .card:not(:hover) .information::before {
     height: 0;
-    transition-delay: var(--hover-step);
+    transition-delay: var(--course-card-hover-step);
   }
 
   .card:not(:hover) .information::after {
@@ -314,11 +326,11 @@ const {course} = Astro.props;
     margin: 1rem 0 1.5rem;
   }
 
-  .bottom_separator {
+  .bottom-separator {
     position: relative;
     margin: auto -1rem -0.5rem 0rem;
     padding: 0.25rem 0 0.25rem 0;
-    border-top: 1px solid var(--dark-border);
+    border-top: 1px solid var(--course-card-dark-border);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -329,31 +341,31 @@ const {course} = Astro.props;
     );
   }
 
-  .bottom_separator::before {
+  .bottom-separator::before {
     content: "";
     position: absolute;
     top: -1px;
     right: 1px;
     width: 0;
     height: 1px;
-    background: var(--hover-border);
-    transition: width var(--hover-step) ease-out;
+    background: var(--course-card-hover-border);
+    transition: width var(--course-card-hover-step) ease-out;
     transform-origin: right;
   }
 
-  .card:hover .bottom_separator::before {
+  .card:hover .bottom-separator::before {
     width: 100%;
-    transition-delay: calc(var(--hover-step) * 6);
+    transition-delay: calc(var(--course-card-hover-step) * 6);
   }
 
-  .card:not(:hover) .bottom_separator::before {
+  .card:not(:hover) .bottom-separator::before {
     width: 0;
-    transition-delay: calc(var(--hover-step) * 2);
+    transition-delay: calc(var(--course-card-hover-step) * 2);
   }
 
-  .card:hover .bottom_separator {
+  .card:hover .bottom-separator {
     border-top: 1px solid transparent;
-    transition: border-top calc(var(--hover-step) * 7) step-end;
+    transition: border-top calc(var(--course-card-hover-step) * 7) step-end;
   }
 
   .time {

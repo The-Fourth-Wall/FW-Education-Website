@@ -1,0 +1,29 @@
+.ribbon {
+  z-index: 101;
+  position: absolute;
+  width: 10rem;
+  top: 1rem;
+  left: -3.1rem;
+  transform: rotate(-45deg);
+  background-color: var(--ribbon-color);
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.15) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 1rem 1rem;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  color: var(--white);
+  text-align: center;
+}
+
+.ribbon-text {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--white);
+}

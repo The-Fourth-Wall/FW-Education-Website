@@ -1,0 +1,18 @@
+---
+import "../styles/Text.css";
+
+type Props = {
+  label: string;
+  size: number;
+  type: "primary" | "secondary" | "accent";
+  color: string;
+};
+
+const {label, size, type, color} = Astro.props;
+---
+
+<span
+  class={`text ${type}`}
+  style={`--text-font-size: ${size}rem; --text-color: ${color};`}>
+  {label}
+</span>

@@ -1,0 +1,22 @@
+---
+import "../styles/Badge.css";
+
+import type {Difficulty} from "@models";
+
+type Props = {
+  text: string;
+  variant: Difficulty;
+  size: number;
+};
+
+const {text, variant, size} = Astro.props;
+---
+
+<span
+  class={`badge ${variant === "master" && "master"}`}
+  style={`
+    --badge-font-size: ${size}rem;
+    --badge-padding: ${size * 0.226}rem ${size * 0.857}rem;
+    --badge-background-color: var(--${variant}-background);`}>
+  {text}
+</span>

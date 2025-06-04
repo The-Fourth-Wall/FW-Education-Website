@@ -1,0 +1,15 @@
+---
+import "../styles/Divider.css";
+
+type Props = {
+  faded?: boolean;
+  size: number;
+};
+
+const {faded = false, size} = Astro.props;
+---
+
+<div
+  class={`divider ${faded ? "faded" : "non-faded"}`}
+  style={`--divider-size: ${size}rem;`}>
+</div>

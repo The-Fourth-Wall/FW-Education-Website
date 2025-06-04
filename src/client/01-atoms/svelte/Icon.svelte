@@ -1,0 +1,96 @@
+<script lang="ts">
+  import type {IconName} from "@models";
+
+  const {icon, size} = $props<{
+    icon: IconName;
+    size: number;
+  }>();
+</script>
+
+{#if icon === "profile"}
+  <svg
+    style={`width: ${size}rem; height: ${size}rem;`}
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="var(--fg-color)">
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+  </svg>
+{:else if icon === "settings"}
+  <svg
+    style={`width: ${size}rem; height: ${size}rem;`}
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="var(--fg-color)">
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
+  </svg>
+{:else if icon === "sun"}
+  <svg
+    style={`width: ${size}rem; height: ${size}rem;`}
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="var(--fg-color)">
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+  </svg>
+{:else if icon === "moon"}
+  <svg
+    style={`width: ${size}rem; height: ${size}rem;`}
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="var(--fg-color)">
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+  </svg>
+{:else if icon === "half-moon"}
+  <svg
+    style={`width: ${size}rem; height: ${size}rem;`}
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="lucide lucide-sun-moon-icon lucide-sun-moon">
+    <path d="M12 8a2.83 2.83 0 0 0 4 4 4 4 0 1 1-4-4" />
+    <path d="M12 2v2" />
+    <path d="M12 20v2" />
+    <path d="m4.9 4.9 1.4 1.4" />
+    <path d="m17.7 17.7 1.4 1.4" />
+    <path d="M2 12h2" />
+    <path d="M20 12h2" />
+    <path d="m6.3 17.7-1.4 1.4" />
+    <path d="m19.1 4.9-1.4 1.4" />
+  </svg>
+{:else if icon === "left-arrow"}
+  <svg
+    style={`width: ${size}rem; height: ${size}rem;`}
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 16 16"
+    fill="var(--fg-color)">
+    <path
+      fill-rule="evenodd"
+      d="M14 8a.75.75 0 0 1-.75.75H4.56l3.22 3.22a.75.75 0 1 1-1.06 1.06l-4.5-4.5a.75.75 0 0 1 0-1.06l4.5-4.5a.75.75 0 0 1 1.06 1.06L4.56 7.25h8.69A.75.75 0 0 1 14 8Z"
+      clip-rule="evenodd" />
+  </svg>
+{/if}

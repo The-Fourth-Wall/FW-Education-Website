@@ -1,0 +1,71 @@
+---
+import {Spacer, Text} from "@atoms";
+import {FullButton, InputField, SignInErrorText} from "@molecules";
+---
+
+<div class="auth-container">
+  <div class="auth-title">
+    <Text label="Sign In" size={1.125} type="primary" color="var(--fg-color)" />
+  </div>
+
+  <SignInErrorText />
+  <Spacer size={2} />
+
+  <form action="/auth/signin" method="post">
+    <InputField title="Email" placeholder="name@mail.com" />
+    <Spacer size={2} />
+    <FullButton
+      label="Send One-Time Password"
+      fg_color="var(--white)"
+      bg_color="var(--accent-color)"
+      onclick="this.disabled = true; form.submit();"
+    />
+  </form>
+</div>
+
+<style>
+  .auth-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 30%;
+    padding: 2rem;
+    margin: 0 auto;
+    border: 1px solid var(--fg-color);
+    border-radius: 0.5rem;
+  }
+
+  .auth-title {
+    text-align: center;
+  }
+
+  @media (max-width: 1280px) {
+    .auth-container {
+      max-width: 40%;
+    }
+  }
+
+  @media (max-width: 1072px) {
+    .auth-container {
+      max-width: 50%;
+    }
+  }
+
+  @media (max-width: 864px) {
+    .auth-container {
+      max-width: 60%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .auth-container {
+      max-width: 70%;
+    }
+  }
+
+  @media (max-width: 464px) {
+    .auth-container {
+      max-width: 100%;
+    }
+  }
+</style>

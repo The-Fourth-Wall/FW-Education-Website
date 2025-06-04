@@ -1,0 +1,77 @@
+---
+import {Icon} from "@atoms";
+import {user, type IconName} from "@models";
+
+const icons: IconName[] = ["sun", "moon", "half-moon"];
+---
+
+<button
+  class="theme-toggle"
+  data-theme={user.get()?.theme ?? "system"}
+  aria-label="Theme toggle">
+  <div class="icons">
+    {
+      icons.map((icon, index) => (
+        <div
+          class:list={[icon, "icon"]}
+          data-theme-index={index}
+          data-icon={icon}>
+          <Icon icon={icon} size={1.125} />
+        </div>
+      ))
+    }
+  </div>
+</button>
+
+<script>
+  import {user, type Theme} from "@models";
+
+  const themes = ["dark", "system", "light"] as Theme[];
+  let current_theme_index = themes.indexOf(
+    document.documentElement.className.replace("-theme", "") as Theme,
+  );
+
+  const theme_toggle = document.querySelector(".theme-toggle");
+  theme_toggle?.addEventListener("click", () => {
+    current_theme_index = (current_theme_index + 1) % themes.length;
+    const new_theme = themes[current_theme_index];
+    user.set({...user.get(), theme: new_theme});
+    document.documentElement.className = `${new_theme}-theme`;
+  });
+</script>
+
+<style>
+  .theme-toggle {
+    position: relative;
+  }
+
+  .icons {
+    padding: 1.0625rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    transition: all var(--hover-animation-time) ease;
+  }
+
+  .icons:hover {
+    border: 1px solid color-mix(in srgb, var(--fg-color) 50%, transparent);
+    background-color: color-mix(in srgb, var(--fg-color) 7.5%, transparent);
+  }
+
+  .icon {
+    width: 1.125rem;
+    height: 1.125rem;
+    position: absolute;
+    top: 0.55rem;
+    left: 0.55rem;
+    opacity: 0;
+    transform: scale(0) rotate(-360deg);
+    transition: var(--theme-animation-time) ease;
+  }
+
+  :root.light-theme .icon[data-theme-index="0"],
+  :root.dark-theme .icon[data-theme-index="1"],
+  :root.system-theme .icon[data-theme-index="2"] {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+</style>
