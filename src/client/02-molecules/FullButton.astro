@@ -9,25 +9,31 @@ type Props = {
 };
 
 const {label, fg_color, bg_color, onclick} = Astro.props;
+const full_button_fg_color = fg_color;
+const full_button_bg_color = bg_color;
 ---
 
 <button type="submit" data-astro-history="replace" onclick={onclick}>
   <Text label={label} size={0.875} type="secondary" color="var(--white)" />
 </button>
 
-<style define:vars={{fg_color, bg_color}}>
+<style define:vars={{full_button_fg_color, full_button_bg_color}}>
   button {
     width: 100%;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
-    color: var(--fg_color);
-    background: var(--bg_color);
+    color: var(--full_button_fg_color);
+    background: var(--full_button_bg_color);
     transition: all var(--hover-animation-time) ease-in-out;
     border: none;
     cursor: pointer;
   }
 
   button:hover {
-    background: color-mix(in srgb, var(--bg_color) 75%, transparent);
+    background: color-mix(
+      in srgb,
+      var(--full_button_bg_color) 75%,
+      transparent
+    );
   }
 </style>

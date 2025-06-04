@@ -9,23 +9,23 @@ type Props = {
 
 const {text, variant, size} = Astro.props;
 
-const font_size = `${size}rem`;
-const padding = `${size * 0.226}rem ${size * 0.857}rem`;
-const background_color = `var(--${variant}-background)`;
+const badge_font_size = `${size}rem`;
+const badge_padding = `${size * 0.226}rem ${size * 0.857}rem`;
+const badge_background_color = `var(--${variant}-background)`;
 ---
 
 <span class={`badge ${variant === "master" && "master"}`}>
   {text}
 </span>
 
-<style define:vars={{font_size, padding, background_color}}>
+<style define:vars={{badge_font_size, badge_padding, badge_background_color}}>
   .badge {
-    font-size: var(--font_size);
+    font-size: var(--badge_font_size);
     font-weight: 400;
     text-align: center;
-    padding: var(--padding);
+    padding: var(--badge_padding);
     color: var(--white);
-    background: var(--background_color);
+    background: var(--badge_background_color);
     border: 1px solid transparent;
     border-radius: 0.375rem;
   }
