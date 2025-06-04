@@ -13,7 +13,7 @@
     planned
   🟥 FT-07 - add oauth.
   🟥 FT-08 - add course completion progress tracking.
-  🟥 FT-09 - add react and svelte components for all atoms.
+  🟩 FT-09 - add react and svelte components for all atoms.
 
   🟥 BUG-01 - fix prettier auto-import formatting (prettier-plugin-organize-imports).
   🟥 BUG-02 - fix safari excessive caching for navigations.
@@ -34,3 +34,4 @@
     atoms all have style properties.
     molecules connect atoms, no need for extra divs (all divs are extracted as atoms).
     organisms describe distinct sections of a page 
+  🟥 QOL-09 - figure out how to generalize svg icon component for svelte and react.
