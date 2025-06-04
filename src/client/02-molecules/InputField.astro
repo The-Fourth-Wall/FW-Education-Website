@@ -1,0 +1,50 @@
+---
+import {Spacer} from "@atoms";
+
+type Props = {
+  title: string;
+  placeholder?: string;
+  value?: string;
+  disabled?: boolean;
+};
+
+const {title, placeholder, value, disabled} = Astro.props;
+---
+
+<div>
+  <label for="email">{title}</label>
+  <Spacer size={1} />
+  <input
+    type="email"
+    name="email"
+    id="email"
+    autocomplete="off"
+    placeholder={placeholder}
+    class={disabled ? "disabled" : undefined}
+    disabled={disabled}
+    value={value}
+  />
+</div>
+
+<style>
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input {
+    border: 1px solid var(--fg-color);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    background: transparent;
+    color: var(--fg-color);
+    outline: none;
+    margin-bottom: 0.5rem;
+  }
+
+  input.disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+</style>

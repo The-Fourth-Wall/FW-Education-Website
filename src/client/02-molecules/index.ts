@@ -1,6 +1,10 @@
 export {default as BackButton} from "./BackButton.astro";
 export {default as CourseCard} from "./CourseCard.astro";
+export {default as CourseSection} from "./CourseSection.astro";
 export {default as EnvRibbon} from "./EnvRibbon.astro";
-export {default as Footer} from "./Footer.astro";
+export {default as FullButton} from "./FullButton.astro";
+export {default as InputField} from "./InputField.astro";
 export {default as Logo} from "./Logo.astro";
 export {default as SettingsButton} from "./SettingsButton.astro";
+export {default as SignInErrorText} from "./SignInErrorText.astro";
+export {default as ThemeSwitcher} from "./ThemeSwitcher.astro";

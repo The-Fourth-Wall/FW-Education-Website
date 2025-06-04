@@ -1,6 +1,6 @@
 ---
 import {get_course} from "@app/01-curriculum/courses";
-import {CourseHeader, CourseSection} from "@organisms";
+import {CourseContent, CourseHeader} from "@organisms";
 import {Main} from "@templates";
 
 const {code} = Astro.params;
@@ -13,11 +13,5 @@ if (!course) {
 
 <Main title={`${course.name} - Fourth Wall Education`}>
   <CourseHeader course={course} />
-
-  <CourseSection section_title="Technical Focus" items={course.programming} />
-  <CourseSection section_title="What You'll Learn" items={course.topics} />
-  <CourseSection
-    section_title="Further Reading & Resources"
-    items={course.references}
-  />
+  <CourseContent course={course} />
 </Main>

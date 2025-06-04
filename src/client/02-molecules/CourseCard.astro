@@ -79,8 +79,8 @@ const {course} = Astro.props;
   href={`/course/${course.code.split("-")[1]}`}
   accessibility=`enter course ${course.code}, ${course.name}`>
   <div id="02-molecules/CourseCard.astro" class="card">
-    <div class="border_bottom"></div>
-    <div class="border_left"></div>
+    <div class="border-bottom"></div>
+    <div class="border-left"></div>
     <div class="header">
       <div data-title>
         <Text
@@ -111,7 +111,7 @@ const {course} = Astro.props;
       />
     </div>
 
-    <div class="bottom_separator">
+    <div class="bottom-separator">
       <Text
         label={course.difficulty[0].toUpperCase() + course.difficulty.slice(1)}
         size={0.75}
@@ -171,7 +171,7 @@ const {course} = Astro.props;
     transition: height var(--hover-step) ease-out;
   }
 
-  .card .border_bottom {
+  .card .border-bottom {
     position: absolute;
     bottom: 0px;
     right: 0px;
@@ -181,7 +181,7 @@ const {course} = Astro.props;
     transition: width var(--hover-step) ease-out;
   }
 
-  .card .border_left {
+  .card .border-left {
     position: absolute;
     bottom: 0px;
     left: 0px;
@@ -202,12 +202,12 @@ const {course} = Astro.props;
     transition-delay: var(--hover-step);
   }
 
-  .card:hover .border_bottom {
+  .card:hover .border-bottom {
     width: calc(100% + 2px);
     transition-delay: calc(var(--hover-step) * 2);
   }
 
-  .card:hover .border_left {
+  .card:hover .border-left {
     height: calc(100% + 2px);
     transition-delay: calc(var(--hover-step) * 3);
   }
@@ -222,12 +222,12 @@ const {course} = Astro.props;
     transition-delay: calc(var(--hover-step) * 2);
   }
 
-  .card:not(:hover) .border_bottom {
+  .card:not(:hover) .border-bottom {
     width: 0;
     transition-delay: var(--hover-step);
   }
 
-  .card:not(:hover) .border_left {
+  .card:not(:hover) .border-left {
     height: 0;
     transition-delay: 0;
   }
@@ -314,7 +314,7 @@ const {course} = Astro.props;
     margin: 1rem 0 1.5rem;
   }
 
-  .bottom_separator {
+  .bottom-separator {
     position: relative;
     margin: auto -1rem -0.5rem 0rem;
     padding: 0.25rem 0 0.25rem 0;
@@ -329,7 +329,7 @@ const {course} = Astro.props;
     );
   }
 
-  .bottom_separator::before {
+  .bottom-separator::before {
     content: "";
     position: absolute;
     top: -1px;
@@ -341,17 +341,17 @@ const {course} = Astro.props;
     transform-origin: right;
   }
 
-  .card:hover .bottom_separator::before {
+  .card:hover .bottom-separator::before {
     width: 100%;
     transition-delay: calc(var(--hover-step) * 6);
   }
 
-  .card:not(:hover) .bottom_separator::before {
+  .card:not(:hover) .bottom-separator::before {
     width: 0;
     transition-delay: calc(var(--hover-step) * 2);
   }
 
-  .card:hover .bottom_separator {
+  .card:hover .bottom-separator {
     border-top: 1px solid transparent;
     transition: border-top calc(var(--hover-step) * 7) step-end;
   }

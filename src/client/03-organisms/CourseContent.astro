@@ -1,0 +1,17 @@
+---
+import type {Course} from "@models";
+import {CourseSection} from "@molecules";
+
+type Props = {
+  course: Course;
+};
+
+const {course} = Astro.props;
+---
+
+<CourseSection section_title="Technical Focus" items={course.programming} />
+<CourseSection section_title="What You'll Learn" items={course.topics} />
+<CourseSection
+  section_title="Further Reading & Resources"
+  items={course.references}
+/>
