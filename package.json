@@ -20,6 +20,7 @@
     "@swup/js-plugin": "^3.2.0",
     "@swup/scroll-plugin": "^3.3.2",
     "astro": "^5.8.0",
+    "astro-seo": "^0.8.4",
     "gsap": "^3.13.0",
     "micromatch": "^4.0.8",
     "nanostores": "^1.0.1",

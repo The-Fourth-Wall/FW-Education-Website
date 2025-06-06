@@ -25,7 +25,7 @@
   🟥 QOL-02 - make light theme neobrutalist, while dark theme remains flat.
   🟥 QOL-03 - implement page prefetching.
   🟩 QOL-04 - use magic links instead of username/password.
-  🟥 QOL-05 - formalize SEO potentially using astro-seo.
+  🟩 QOL-05 - formalize SEO potentially using astro-seo.
   🟥 QOL-06 - remove GridAligner finally removing svelte from this project.
   🟥 QOL-07 - generic improvments: refactor names, labels, colors etc.
     rename logout to signout.

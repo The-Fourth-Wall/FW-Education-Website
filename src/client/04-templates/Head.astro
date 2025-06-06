@@ -1,4 +1,6 @@
 ---
+import {SEO} from "astro-seo";
+
 type Props = {
   title: string;
 };
@@ -7,25 +9,53 @@ const {title} = Astro.props;
 ---
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Reweaving the Fabric of Learning" />
-  <link rel="icon" type="image/svg+xml" href="/icon/favicon.svg" />
-  <link rel="icon" type="image/png" href="/icon/favicon.png" />
-  <meta name="generator" content={Astro.generator} />
-  <title>{title}</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-    rel="stylesheet"
+  <SEO
+    charset="UTF-8"
+    title={title}
+    titleDefault="Fourth Wall Education"
+    description="Reweaving the Fabric of Learning"
+    openGraph={{
+      basic: {
+        title: title,
+        type: "website",
+        image: "/icon/logo.svg",
+        url: "https://education.fourth-wall.org",
+      },
+      optional: {
+        description: "Fourth Wall Education",
+      },
+    }}
+    twitter={{
+      creator: "@itsoblivious99",
+      site: "@itsoblivious99",
+      title: title,
+      description: "Fourth Wall Education",
+    }}
+    extend={{
+      link: [
+        {rel: "icon", href: "/icon/logo.svg"},
+        {rel: "icon", href: "/icon/logo.png"},
+        {rel: "preconnect", href: "https://fonts.googleapis.com"},
+        {
+          rel: "preconnect",
+          href: "https://fonts.gstatic.com",
+          crossorigin: "true",
+        },
+        {
+          rel: "stylesheet",
+          href: "https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap",
+        },
+      ],
+      meta: [
+        {
+          name: "viewport",
+          content: "width=device-width, initial-scale=1.0",
+        },
+        {
+          name: "generator",
+          content: Astro.generator,
+        },
+      ],
+    }}
   />
-
-  <meta property="og:title" content={title} />
-  <meta property="og:description" content="Fourth Wall Education" />
-
-  <meta name="twitter:site" content="@itsoblivious99" />
-  <meta name="twitter:title" content={title} />
-  <meta name="twitter:description" content="Fourth Wall Education" />
 </head>
