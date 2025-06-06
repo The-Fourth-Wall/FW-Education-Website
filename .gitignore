@@ -108,7 +108,6 @@ public/build/
 
 # Gatsby files
 .cache/
-public
 
 # Astro files
 .astro/
